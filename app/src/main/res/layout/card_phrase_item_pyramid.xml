@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- ROW 1: Centered text, NO speaker (but we still reserve the speaker lane) -->
+    <LinearLayout
+        android:id="@+id/pyRow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="8dp">
+
+        <!-- Center lane -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tvTagalog1A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:textColor="@color/brown"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:visibility="gone"
+                />
+        </FrameLayout>
+
+        <!-- Speaker lane (reserved space) -->
+        <FrameLayout
+            android:layout_width="32dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- ROW 2: Flex sentence, NO speaker (reserved lane) -->
+    <LinearLayout
+        android:id="@+id/pyRow2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Center lane -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/tagalogFlex1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:flexWrap="wrap"
+                app:justifyContent="center"
+                app:alignItems="center">
+
+                <TextView
+                    android:id="@+id/tvTagalog2A"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown"
+                    android:visibility="gone"
+                    />
+
+                <TextView
+                    android:id="@+id/tvTagalog2B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:visibility="gone"
+                    />
+
+                <TextView
+                    android:id="@+id/tvTagalog2C"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown"
+                    android:visibility="gone"
+                    />
+            </com.google.android.flexbox.FlexboxLayout>
+        </FrameLayout>
+
+        <!-- Speaker lane (reserved space) -->
+        <FrameLayout
+            android:layout_width="32dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- ROW 3: Another flex sentence, NO speaker (reserved lane) -->
+    <LinearLayout
+        android:id="@+id/pyRow3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Center lane -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/tagalogFlex2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:flexWrap="wrap"
+                app:justifyContent="center"
+                app:alignItems="center">
+
+                <TextView
+                    android:id="@+id/tvTagalog3A"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown"
+                    android:visibility="gone"
+                    />
+
+                <TextView
+                    android:id="@+id/tvTagalog3B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:visibility="gone"
+                    />
+
+                <TextView
+                    android:id="@+id/tvTagalog3C"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown"
+                    android:visibility="gone"
+                    />
+            </com.google.android.flexbox.FlexboxLayout>
+        </FrameLayout>
+        <!-- Speaker lane (actual button, same exact 32dp slot) -->
+        <ImageView
+            android:id="@+id/btnSpeak"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:padding="4dp"
+            android:src="@drawable/ic_speaker"
+            android:contentDescription="Speak phrase"
+            app:tint="@color/brown" />
+    </LinearLayout>
+
+    <!-- ROW 4: Centered text WITH speaker (same lane width) -->
+    <LinearLayout
+        android:id="@+id/pyRow4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+
+        <!-- Center lane -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tvTagalog4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:textStyle="italic"
+                android:textColor="@color/brown"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:ellipsize="end"
+                android:visibility="gone"
+                />
+        </FrameLayout>
+
+        <!-- Speaker lane (reserved space) -->
+        <FrameLayout
+            android:layout_width="32dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

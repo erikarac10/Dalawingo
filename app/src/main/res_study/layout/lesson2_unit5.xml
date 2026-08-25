@@ -1,0 +1,3428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:spacing="12dp">
+
+        <!-- Title -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_red"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lesson 2 - Unit 5: Past, Present, and Future Verbs"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 2. Present Tense -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_orange"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Present Tense"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="To turn a root word into a present tense verb, insert -um- and repeat the first syllable."
+                    android:textSize="17sp"
+                    android:textColor="@color/brown"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- 1. consonant -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Root begins with a consonant  → "
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:gravity="start"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Placed between first consonant and vowel."
+                    android:textSize="17sp"
+                    android:textColor="@color/brown"
+                    android:gravity="center"
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="[first consonant] +   -um-   + [first vowel]"
+                    android:textStyle="italic"
+                    android:textSize="15sp"
+                    android:textColor="@color/brown"
+                    android:gravity="center"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- 2. vowel -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Root begins with a vowel  →"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:gravity="start"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Placed at the beginning of the word"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown"
+                    android:gravity="center"
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="um-   +   [first vowel]"
+                    android:textStyle="italic"
+                    android:textSize="15sp"
+                    android:textColor="@color/brown"
+                    android:gravity="center"
+                    android:layout_marginBottom="12dp"/>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Root: Bili -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bili"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="B-um-i-"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="bili"
+                        android:textSize="17sp"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Bumibili"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak verb" />
+                </LinearLayout>
+
+                <!-- Root: Inom -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Inom"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Um-i-"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="inom"
+                        android:textSize="17sp"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Umiinom"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak verb" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- 1. Future Tense -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_yellow"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Future Tense"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="To turn a root word into a future tense verb, repeat the first syllable."
+                    android:textSize="17sp"
+                    android:textColor="@color/brown" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Root: Bili -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bili"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bi-"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="bili"
+                        android:textSize="17sp"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Bibili"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak verb" />
+                </LinearLayout>
+
+
+                <!-- Root: Inom -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Inom"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="I-"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="inom"
+                        android:textSize="17sp"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Iinom"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak verb" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="You may also do this with 'Mag-' to turn verbs into a definite future action by repeating the first syllable."
+                    android:textSize="17sp"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Root: Magluluto -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Maglu"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="luto"
+                        android:textSize="17sp"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Will cook"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Root: Maglalakad -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Magla"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="lakad"
+                        android:textSize="17sp"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Will walk"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 3. Action Words -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_green"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Action Words"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Bangon -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Bangon"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Get up"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Gising -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Gising"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wake up"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Langoy -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Langoy"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Swim"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Lakad -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Lakad"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Walk"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Sisid -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Sisid"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dive"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Lipad -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Lipad"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fly"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Tayo -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Tayo"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stand"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Byahe -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Byahe"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Travel"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 4. Consonant Verb Practice -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_blue"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Consonant Verb Practice"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Root Word Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bili"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/brown"
+                        android:layout_marginRight="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(buy)"
+                        android:textStyle="italic"
+                        android:textSize="14sp"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <!-- Table with evenly split columns -->
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="0,1,2">
+
+                    <!-- Past -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Past"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+
+                        <!-- Word split into parts -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="b"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="um"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ili"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="(bought)"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+                    </TableRow>
+
+                    <!-- Present -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Present"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="bumi"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="bili"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="(buying)"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+                    </TableRow>
+
+                    <!-- Future -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Future"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="bi"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="bili"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="(will buy)"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+                    </TableRow>
+
+                </TableLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Bangon (get up) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Root Word Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bangon"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/brown"
+                        android:layout_marginRight="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(get up)"
+                        android:textStyle="italic"
+                        android:textSize="14sp"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <!-- Table with evenly split columns -->
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="0,1,2">
+
+                    <!-- Past -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Past"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="b"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="um"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="angon"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="(got up)"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+                    </TableRow>
+
+                    <!-- Present -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Present"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="bum"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="abangon"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="(getting up)"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+                    </TableRow>
+
+                    <!-- Future -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Future"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ba"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="bangon"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="(will get up)"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+                    </TableRow>
+
+                </TableLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- Langoy (swim) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Root Word Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Langoy"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/brown"
+                        android:layout_marginRight="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(swim)"
+                        android:textStyle="italic"
+                        android:textSize="14sp"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <!-- Table -->
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="0,1,2">
+
+                    <!-- Past -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Past"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="l"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="um"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="angoy"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="(swam)"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+                    </TableRow>
+
+                    <!-- Present -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Present"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="lum"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="alangoy"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="(swimming)"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+                    </TableRow>
+
+                    <!-- Future -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Future"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="la"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="langoy"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="(will swim)"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+                    </TableRow>
+
+                </TableLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- Gising (wake up) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Root Word Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gising"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/brown"
+                        android:layout_marginRight="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(wake up)"
+                        android:textStyle="italic"
+                        android:textSize="14sp"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <!-- Table -->
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="0,1,2">
+
+                    <!-- Past -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Past"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="g"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="um"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ising"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="(woke up)"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+                    </TableRow>
+
+                    <!-- Present -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Present"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="gum"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="igising"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="(waking up)"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+                    </TableRow>
+
+                    <!-- Future -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Future"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="gi"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="gising"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="(will wake up)"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+                    </TableRow>
+
+                </TableLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- Takbo (run) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Root Word Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Takbo"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/brown"
+                        android:layout_marginRight="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(run)"
+                        android:textStyle="italic"
+                        android:textSize="14sp"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <!-- Table -->
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="0,1,2">
+
+                    <!-- Past -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Past"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="t"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="um"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="akbo"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="(ran)"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+                    </TableRow>
+
+                    <!-- Present -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Present"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="tum"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="atakbo"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="(running)"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+                    </TableRow>
+
+                    <!-- Future -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Future"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ta"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="takbo"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="(will run)"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+                    </TableRow>
+
+                </TableLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- Lakad (walk) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Root Word Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lakad"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/brown"
+                        android:layout_marginRight="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(walk)"
+                        android:textStyle="italic"
+                        android:textSize="14sp"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <!-- Table -->
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="0,1,2">
+
+                    <!-- Past -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Past"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="l"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="um"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="akad"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="(walked)"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+                    </TableRow>
+
+                    <!-- Present -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Present"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="lum"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="alakad"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="(walking)"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+                    </TableRow>
+
+                    <!-- Future -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Future"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="la"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="lakad"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="(will walk)"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+                    </TableRow>
+
+                </TableLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- UM Verbs: Conjugation Table (Sayaw, Tayo, Biyahe, Kain, Punta, Lipad) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="1,2,3">
+
+                    <!-- Header -->
+                    <TableRow>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Root" android:textSize="18sp" android:textStyle="bold" android:textColor="@color/brown"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Past" android:textSize="18sp" android:textStyle="bold" android:textColor="@color/brown"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Present" android:textSize="18sp" android:textStyle="bold" android:textColor="@color/brown"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Future" android:textSize="18sp" android:textStyle="bold" android:textColor="@color/brown"/>
+                    </TableRow>
+
+                    <!-- Sayaw -->
+                    <TableRow>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:paddingEnd="8dp" android:paddingBottom="10dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sayaw" android:textStyle="bold" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dance" android:textStyle="italic" android:textSize="14sp" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="sumayaw" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(danced)" android:textSize="14sp" android:textStyle="italic" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="sumasayaw" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(dancing)" android:textSize="14sp" android:textStyle="italic" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="sasayaw" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(will dance)" android:textSize="14sp" android:textStyle="italic" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                    </TableRow>
+
+                    <!-- Tayo -->
+                    <TableRow>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:paddingEnd="8dp" android:paddingBottom="10dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tayo" android:textStyle="bold" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Stand" android:textStyle="italic" android:textSize="14sp" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="tumayo" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(stood up)" android:textSize="14sp" android:textStyle="italic" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="tumatayo" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(standing)" android:textSize="14sp" android:textStyle="italic" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="tatayo" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(will stand)" android:textSize="14sp" android:textStyle="italic" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                    </TableRow>
+
+                    <!-- Biyahe -->
+                    <TableRow>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:paddingEnd="8dp" android:paddingBottom="10dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Biyahe" android:textStyle="bold" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Travel" android:textStyle="italic" android:textSize="14sp" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="bumiyahe" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(traveled)" android:textSize="14sp" android:textStyle="italic" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="bumabyahe" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(traveling)" android:textSize="14sp" android:textStyle="italic" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="babiyahe" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(will travel)" android:textSize="14sp" android:textStyle="italic" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                    </TableRow>
+
+                    <!-- Kain -->
+                    <TableRow>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:paddingEnd="8dp" android:paddingBottom="10dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Kain" android:textStyle="bold" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Eat" android:textStyle="italic" android:textSize="14sp" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="kumain" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(ate)" android:textSize="14sp" android:textStyle="italic" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="kumakain" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(eating)" android:textSize="14sp" android:textStyle="italic" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="kakain" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(will eat)" android:textSize="14sp" android:textStyle="italic" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                    </TableRow>
+
+                    <!-- Punta -->
+                    <TableRow>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:paddingEnd="8dp" android:paddingBottom="10dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Punta" android:textStyle="bold" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Go" android:textStyle="italic" android:textSize="14sp" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="pumunta" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(went)" android:textSize="14sp" android:textStyle="italic" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="pumupunta" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(going)" android:textSize="14sp" android:textStyle="italic" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="pupunta" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(will go)" android:textSize="14sp" android:textStyle="italic" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                    </TableRow>
+
+                    <!-- Lipad -->
+                    <TableRow>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:paddingEnd="8dp" android:paddingBottom="10dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Lipad" android:textStyle="bold" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Fly" android:textStyle="italic" android:textSize="14sp" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="lumipad" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(flew)" android:textSize="14sp" android:textStyle="italic" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="lumilipad" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(flying)" android:textSize="14sp" android:textStyle="italic" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="lilipad" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(will fly)" android:textSize="14sp" android:textStyle="italic" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                    </TableRow>
+
+                </TableLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- 5. Verb Vowel Practice -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_purple"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Verb Vowel Practice"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Inom (drink) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Root Word Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Inom"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/brown"
+                        android:layout_marginRight="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(drink)"
+                        android:textStyle="italic"
+                        android:textSize="14sp"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <!-- Table -->
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="0,1,2">
+
+                    <!-- Past -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Past"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="u"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="minom"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="(drank)"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+                    </TableRow>
+
+                    <!-- Present -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Present"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="umi"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="inom"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="(drinking)"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+                    </TableRow>
+
+                    <!-- Future -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Future"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="i"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="inom"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="(will drink)"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+                    </TableRow>
+
+                </TableLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Akyat (climb) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Root Word Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Akyat"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/brown"
+                        android:layout_marginRight="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(climb)"
+                        android:textStyle="italic"
+                        android:textSize="14sp"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <!-- Table -->
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="0,1,2">
+
+                    <!-- Past -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Past"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="u"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="makyat"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="(climbed)"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+                    </TableRow>
+
+                    <!-- Present -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Present"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="uma"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="akyat"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="(climbing)"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+                    </TableRow>
+
+                    <!-- Future -->
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Future"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="a"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="akyat"
+                                android:textSize="16sp"
+                                android:textColor="@color/brown"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="(will climb)"
+                            android:textSize="14sp"
+                            android:textStyle="italic"
+                            android:gravity="start"
+                            android:textColor="@color/brown"/>
+                    </TableRow>
+
+                </TableLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- UM Verbs: Conjugation Table (Ulan, Upo) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="1,2,3">
+
+                    <!-- Header -->
+                    <TableRow>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Root" android:textSize="18sp" android:textStyle="bold" android:textColor="@color/brown"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Past" android:textSize="18sp" android:textStyle="bold" android:textColor="@color/brown"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Present" android:textSize="18sp" android:textStyle="bold" android:textColor="@color/brown"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Future" android:textSize="18sp" android:textStyle="bold" android:textColor="@color/brown"/>
+                    </TableRow>
+
+                    <!-- Ulan -->
+                    <TableRow>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:paddingEnd="8dp" android:paddingBottom="10dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Ulan" android:textStyle="bold" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rain" android:textStyle="italic" android:textSize="14sp" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="umulan" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(rained)" android:textSize="14sp" android:textStyle="italic" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="umuulan" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(raining)" android:textSize="14sp" android:textStyle="italic" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="uulan" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(will rain)" android:textSize="14sp" android:textStyle="italic" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                    </TableRow>
+
+                    <!-- Upo -->
+                    <TableRow>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:paddingEnd="24dp" android:paddingBottom="10dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Upo" android:textStyle="bold" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sit" android:textStyle="italic" android:textSize="14sp" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="umupo" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(sat down)" android:textSize="14sp" android:textStyle="italic" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="umuupo" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(sitting)" android:textSize="14sp" android:textStyle="italic" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="uupo" android:textSize="16sp" android:textColor="@color/brown"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(will sit)" android:textSize="14sp" android:textStyle="italic" android:textColor="@color/brown"/>
+                        </LinearLayout>
+                    </TableRow>
+
+                </TableLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 6. Past, Present, Future Tense Sentences -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_pink"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Past, Present, Future Sentences"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Papunta"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Headed to"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Bundok"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mountain"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Maaga"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Early"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ate"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Older sister"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Kuya"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Older brother"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- 1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Bumangon ako."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center"/>
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak sentence"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I got up."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Iinom siya ng tubig."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center"/>
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak sentence"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="She will drink water."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- 3 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Tumatakbo siya sa bahay."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center"/>
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak sentence"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="He is running in the house."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- 4 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Si Marites ay lumalangoy sa pool."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center"/>
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak sentence"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Marites is swimming in the pool."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- 5 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Umakyat ako sa puno."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center"/>
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak sentence"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I climbed the tree."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- 6 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Maglalakad kami papuntang paaralan bukas."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textAlignment="center"/>
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak sentence"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="We will walk to school tomorrow."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- 7 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Uminom ng Coca-cola sina Lolo at Lola."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center"/>
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak sentence"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lolo and Lola drank Coca-cola."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- 8 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Umakyat si Ate Cherry sa bundok."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center"/>
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak sentence"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ate Cherry climbed the mountain."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- 9 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Gigising ako nang maaga."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center"/>
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak sentence"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I will wake up early."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- 10 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Tumakbo ako papuntang supermarket."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center"/>
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak sentence"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I ran to the supermarket."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"/>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- 1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Natuwa"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center"/>
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Happiness/joy"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Sumali"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center"/>
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Join"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- 3 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Bumoto"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center"/>
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vote"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- 4 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Sumunod"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center"/>
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Obey/follow"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- 5 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Umupa"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center"/>
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rent"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"/>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

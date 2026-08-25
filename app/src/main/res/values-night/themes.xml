@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme -->
+    <style name="Theme.Dalawingo" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!-- Text/icon color on top of primary surfaces -->
+        <item name="colorOnPrimary">@color/black</item>
+
+        <!-- Text/icon color on top of secondary surfaces -->
+        <item name="colorOnSecondary">@color/black</item>
+
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+
+        <!-- Optional: make status bar icons dark if status bar is light -->
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- Customize more theme values here if needed -->
+    </style>
+
+</resources>

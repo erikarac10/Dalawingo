@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_lessons">
+
+    <fragment
+        android:id="@+id/navigation_lessons"
+        android:name="com.example.dalawingo.ui.lessons.LessonsFragment"
+        android:label="Lessons" />
+
+    <fragment
+        android:id="@+id/navigation_study"
+        android:name="com.example.dalawingo.ui.study.StudyFragment"
+        android:label="Study" />
+
+    <fragment
+        android:id="@+id/navigation_practice"
+        android:name="com.example.dalawingo.ui.practice.PracticeFragment"
+        android:label="Practice" />
+
+    <fragment
+        android:id="@+id/navigation_game"
+        android:name="com.example.dalawingo.ui.game.GameFragment"
+        android:label="Game" />
+
+    <fragment
+        android:id="@+id/navigation_player"
+        android:name="com.example.dalawingo.ui.player.PlayerFragment"
+        android:label="Player" />
+</navigation>

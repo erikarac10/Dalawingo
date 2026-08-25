@@ -1,0 +1,2273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:spacing="12dp">
+
+        <!-- Title -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_red"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lesson 2 - Unit 4: Making Verbs with -UM-, MAG-, and MA-"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 1. Verbs -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_orange"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Verbs"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="In Tagalog, verbs show past, present, and future tense by changing the form of the root word."
+                    android:textSize="17sp"
+                    android:textColor="@color/brown" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Root Word definition -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center_horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Root Word: "
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="A word that you can turn into a verb."
+                        android:textSize="17sp"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="A word before adding a prefix, infix, or suffix."
+                    android:textSize="17sp"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 2. Completed -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_yellow"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Actor Focused Verbs"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Intro -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="To turn a root word into a verb, insert -um-"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown" />
+
+                <!-- 1. Consonant Rule -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Root begins with a consonant →"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:gravity="start" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Placed between first consonant and vowel."
+                    android:textSize="17sp"
+                    android:textColor="@color/brown"
+                    android:gravity="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="-um-"
+                    android:textStyle="italic"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown"
+                    android:gravity="center" />
+
+                <!-- 2. Vowel Rule -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Root begins with a vowel →"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:gravity="start" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Placed at the beginning of the word"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown"
+                    android:gravity="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="um-"
+                    android:textStyle="italic"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown"
+                    android:gravity="center" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Kain"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Eat"
+                    android:textStyle="italic"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown"
+                    android:lineSpacingExtra="4dp" />
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Inom"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Drink"
+                    android:textStyle="italic"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown"
+                    android:lineSpacingExtra="4dp" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="20dp">
+
+                <!-- Kain Example -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kain"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="K"
+                        android:textSize="17sp"
+                        android:textColor="@color/brown" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-um-"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ain"
+                        android:textSize="17sp"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Kumain"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(Ate)"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Inom Example -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Inom"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Um-"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="inom"
+                        android:textSize="17sp"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Uminom"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(Drank)"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- IMAGE -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="10dp">
+
+                <!-- Image -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/lesson2_unit4image1"
+                    android:contentDescription="Unit 4 image 1"
+                    android:scaleType="fitCenter"
+                    android:layout_marginBottom="16dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- IMAGE -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="10dp">
+
+                <!-- Image -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/lesson2_unit4image2"
+                    android:contentDescription="Unit 4 image 2"
+                    android:scaleType="fitCenter"
+                    android:layout_marginBottom="16dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 3. Using -UM- in Sentences -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_green"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Using -UM- in Sentences"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Tawa"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Laugh"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Higa"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lie down"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Labas"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Go out"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="20dp">
+
+                <!-- Tawa Example -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tawa"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="T"
+                        android:textSize="17sp"
+                        android:textColor="@color/brown" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-um-"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="awa"
+                        android:textSize="17sp"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Tumawa"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(Laughed)"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Bili Example -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Bili"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="B"
+                        android:textSize="17sp"
+                        android:textColor="@color/brown" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-um-"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ili"
+                        android:textSize="17sp"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Bumili"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(Bought)"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Higa Example -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Higa"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="H"
+                        android:textSize="17sp"
+                        android:textColor="@color/brown" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-um-"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="iga"
+                        android:textSize="17sp"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Humiga"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(Laid down)"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Labas Example -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Labas"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="L"
+                        android:textSize="17sp"
+                        android:textColor="@color/brown" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-um-"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="abas"
+                        android:textSize="17sp"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Lumabas"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(Went out)"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- 4. Using UM- in Sentences -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_blue"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Using UM- in Sentences"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Akyat"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hike/Climb"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Upo"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sit"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="20dp">
+
+                <!-- Akyat Example -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Akyat"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Um-"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="akyat"
+                        android:textSize="17sp"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Umakyat"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(Climbed)"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Upo Example -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Upo"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Um-"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="upo"
+                        android:textSize="17sp"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Umupo"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(Sat)"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- IMAGE -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="10dp">
+
+                <!-- Image -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/lesson2_unit4image3"
+                    android:contentDescription="Unit 4 image 3"
+                    android:scaleType="fitCenter"
+                    android:layout_marginBottom="16dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 5. Activities -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_purple"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Activities"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- IMAGE -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="10dp">
+
+                <!-- Image -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/lesson2_unit4image4"
+                    android:contentDescription="Unit 4 image 4"
+                    android:scaleType="fitCenter"
+                    android:layout_marginBottom="16dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Container centered, text left-aligned -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="start"
+                    android:textAlignment="textStart">
+
+                    <!-- Tagalog Pattern -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gusto + kong"
+                        android:textSize="17sp"
+                        android:textColor="@color/brown" />
+
+                    <!-- Formula -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+ [-um- verb] + "
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/brown" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="sa"
+                            android:textSize="17sp"
+                            android:textColor="@color/brown" />
+                    </LinearLayout>
+
+                    <!-- Closing -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="+ [location/receiver]."
+                        android:textSize="17sp"
+                        android:textColor="@color/brown" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Gusto kong umakyat sa rock."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak sentence" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I want to climb the rock."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Gusto kong lumabas sa bahay."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak sentence" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I want to go outside the house."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Takbo -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Takbo"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Run"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Tulong -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Tulong"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Help"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Kanta -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Kanta"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sing"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Tawag -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Tawag"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Call"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Restawran"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Restaurant"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Sayaw"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dance"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Koro"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Choir"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ano ang gusto mong gawin?"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak question" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What do you want/like to do?"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"/>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- 1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Gusto nilang kumanta sa koro."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak sentence" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="They want to sing in the choir."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Gusto niyang kumain sa restawran."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak sentence" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="She wants to eat in the restaurant."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- 3 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Gusto ni Marie na sumayaw."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak sentence" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Marie likes to dance."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- 4 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Gusto kong tumakbo sa labas."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak sentence" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I like to run outside."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 6. Mag- and Ma- -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_pink"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mag- and Ma-"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- mag definition -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center_horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Mag"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/brown"
+                            android:gravity="center"
+                            android:textAlignment="center" />
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/ic_speaker"
+                            app:tint="@color/brown"
+                            android:contentDescription="Speak prefix" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" - is a marker placed before a root word."
+                        android:textSize="17sp"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <!-- Explanation -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="It is used to turn a root word into an incompleted or contemplated action in the future."
+                    android:textSize="17sp"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Magluto Example -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mag"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="luto"
+                        android:textSize="17sp"
+                        android:textColor="@color/brown"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Going to cook"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Maglaro Example -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mag"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="laro ako"
+                        android:textSize="17sp"
+                        android:textColor="@color/brown"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Going to play"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- ma definition -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center_horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Ma"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/brown"
+                            android:gravity="center"
+                            android:textAlignment="center" />
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/ic_speaker"
+                            app:tint="@color/brown"
+                            android:contentDescription="Speak prefix" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" - is a marker placed before a root word."
+                        android:textSize="17sp"
+                        android:textColor="@color/brown"
+                        android:layout_marginBottom="12dp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="It is used show accidental or unintentional actions, or to describe a condition or ability."
+                    android:textSize="17sp"
+                    android:textColor="@color/brown" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- 1 -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ma"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="bili"
+                        android:textSize="19sp"
+                        android:textColor="@color/brown"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Can be bought."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- 2 -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ma"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="gutom"
+                        android:textSize="19sp"
+                        android:textColor="@color/brown"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Could get hungry."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

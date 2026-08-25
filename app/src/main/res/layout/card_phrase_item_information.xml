@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="6dp"
+        android:gravity="top">
+
+        <TextView
+            android:id="@+id/tvTagalog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:layout_marginTop="1dp"
+            android:textColor="@color/brown"
+            android:layout_gravity="top" />
+
+        <ImageView
+            android:id="@+id/btnSpeak"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:src="@drawable/ic_speaker"
+            android:contentDescription="Speak phrase"
+            app:tint="@color/brown"
+            android:layout_gravity="top" />
+
+        <TextView
+            android:id="@+id/tvEnglish"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="17sp"
+            android:textColor="@color/brown"
+            android:layout_gravity="top" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,1906 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:spacing="12dp">
+
+        <!-- Title -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_red"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lesson 1 - Unit 1: Greetings and Introductions"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- 1. Mabuhay! Welcome -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_orange"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mabuhay! Welcome!"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Example card with multiple Tagalog phrases -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Tagalog with speaker -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="May tanong po ako"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I have a question"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog with speaker -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Paki-ulit po"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Please repeat"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 2. Greetings -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_yellow"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Greetings"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Kamusta!"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hi!"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Kamusta ka?"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="How are you?"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Masaya ako."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I'm happy."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mabuti ako."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I'm doing well."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Pagod ako."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I'm tired."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Inaantok ako."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I'm sleepy."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Okay lang ako."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I'm just okay."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Gutom ako."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I'm hungry."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- IMAGE -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="10dp">
+
+                <!-- Image -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/unit1image1"
+                    android:contentDescription="Unit 1 image 1"
+                    android:scaleType="fitCenter"
+                    android:layout_marginBottom="16dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 3. Identity -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_green"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Identity"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Pangalan"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ano"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ang"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="'the' (marks the subject)"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ano ang pangalan mo?"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What is your name?"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ako si _____."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I am _____."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- 4. School & Work -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_blue"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="School and Work"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Taga saan ka?"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Where are you from?"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Taga _____ ako."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I'm from __(place)__."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Saan ka nag-aral?"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Where did you study?"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Nag-aral ako sa _____."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I studied at __(school)__."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Saan ka nagtatrabaho?"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Where do you work?"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ano ang trabaho mo?"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What is your job?"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="_____ po ako."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I am a __(job title)__"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- 5. Time-Based Greetings -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_purple"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Time-Based Greetings"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Maganda"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Beautiful"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="In time-based greetings, 'Maganda' is used to mean 'good'."
+                    android:textSize="17sp"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Magandang umaga!"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Good morning!"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Magandang tanghali!"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Good midday!"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(Said from 12PM-1PM)"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Magandang hapon!"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Good afternoon!"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Magandang araw!"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Good day!"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Magandang gabi!"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Good evening!"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- IMAGE -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="10dp">
+
+                <!-- Image -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/unit1image2"
+                    android:contentDescription="Unit 2 image 2"
+                    android:scaleType="fitCenter"
+                    android:layout_marginBottom="16dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- IMAGE -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="10dp">
+
+                <!-- Image -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/unit1image3"
+                    android:contentDescription="Unit 1 image 3"
+                    android:scaleType="fitCenter"
+                    android:layout_marginBottom="16dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 6. Respect Words -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_pink"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Respect Words"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Po"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="'Po' is used to show respect when speaking or called by someone older or a person with authority."
+                    android:textSize="17sp"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Oo"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yes"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Hindi"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Oo + po = Opo"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yes (polite)"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Hindi + po = Hindi po"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No (polite)"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Salamat"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thank You!"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Maraming Salamat!"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Many Thanks!"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 7. Farewells -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_red"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Farewells"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Paalam!"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Goodbye!"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ingat!"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Take Care!"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</ScrollView>

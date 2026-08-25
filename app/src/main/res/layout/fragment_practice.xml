@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Fullscreen background image -->
+    <ImageView
+        android:id="@+id/bgImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/practice_background"
+        android:scaleType="centerCrop" />
+
+    <!-- Menu container -->
+    <ScrollView
+        android:id="@+id/practiceMenuContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
+
+            <!-- 1. Unit Questions -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardUnitQuestions"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="10dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/grey">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="20dp">
+
+                    <!-- Top Row: Title + Lock -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/unitTitle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Unit Questions"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:fontFamily="sans-serif-black"
+                            android:textColor="@color/pastel_grey" />
+
+                        <ImageView
+                            android:id="@+id/unitLockIcon"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/ic_lock"
+                            app:tint="@color/pastel_grey" />
+                    </LinearLayout>
+
+                    <!-- Spacer -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp" />
+
+                    <!-- progress bar if locked -->
+                    <ProgressBar
+                        android:id="@+id/gameProgress"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="200dp"
+                        android:layout_height="8dp"
+                        android:progress="50"
+                        android:max="100"
+                        android:progressTint="@color/pastel_red"
+                        android:indeterminate="false"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="8dp"/>
+
+                    <!-- Score display -->
+                    <TextView
+                        android:id="@+id/unitScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="0 / 0"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-black"
+                        android:textColor="@color/white"
+                        android:visibility="gone"  />
+
+                    <TextView
+                        android:id="@+id/unitScoreLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Score"
+                        android:textSize="14sp"
+                        android:textColor="@color/pastel_grey"
+                        android:fontFamily="sans-serif-medium"
+                        android:visibility="gone"  />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:id="@+id/gameTitle1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="12dp">
+                <include layout="@layout/card_game" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/gameTitle2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="12dp">
+                <include layout="@layout/card_game" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/gameTitle3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="12dp">
+                <include layout="@layout/card_game" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/gameTitle4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="12dp">
+                <include layout="@layout/card_game" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/gameTitle5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="12dp">
+                <include layout="@layout/card_game" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/gameTitle6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="12dp">
+                <include layout="@layout/card_game" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/gameTitle7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="12dp">
+                <include layout="@layout/card_game" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/gameTitle8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="12dp">
+                <include layout="@layout/card_game" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/gameTitle9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="12dp">
+                <include layout="@layout/card_game" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

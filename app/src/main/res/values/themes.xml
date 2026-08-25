@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme -->
+    <style name="Theme.Dalawingo" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!-- Primary brand colors (set your actual colors here if you want them themed) -->
+        <item name="colorPrimary">@color/pastel_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Secondary brand colors -->
+        <item name="colorSecondary">@color/pastel_pink</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <!-- Status bar color (top system bar) -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- Customize your theme here if needed -->
+    </style>
+
+</resources>

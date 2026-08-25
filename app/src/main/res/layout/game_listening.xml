@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/practiceScroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:gravity="center_horizontal">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/listeningCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="@color/pastel_orange"
+                    app:strokeWidth="4dp"
+                    app:strokeColor="@android:color/transparent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/speakerCard"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            app:cardCornerRadius="10dp"
+                            app:strokeColor="@color/brown"
+                            app:strokeWidth="2dp"
+                            app:cardElevation="0dp"
+                            app:cardBackgroundColor="@android:color/transparent">
+
+                            <ImageView
+                                android:id="@+id/speakerBtn"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="6dp"
+                                android:src="@drawable/ic_speaker"
+                                android:contentDescription="Speaker"
+                                app:tint="@color/brown" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Counter -->
+                <TextView
+                    android:id="@+id/speechCounter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="1/10"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:gravity="center" />
+
+                <!-- Options container -->
+                <LinearLayout
+                    android:id="@+id/speechOptionsContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/speechOption1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@android:color/white"
+                        app:strokeWidth="2dp"
+                        app:strokeColor="@color/pastel_grey">
+
+                        <TextView
+                            android:id="@+id/speechOption1Text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp"
+                            android:gravity="center"
+                            android:text="Option 1"
+                            android:textSize="18sp"
+                            android:textColor="@color/brown"/>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/speechOption2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@android:color/white"
+                        app:strokeWidth="2dp"
+                        app:strokeColor="@color/pastel_grey">
+
+                        <TextView
+                            android:id="@+id/speechOption2Text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp"
+                            android:gravity="center"
+                            android:text="Option 2"
+                            android:textSize="18sp"
+                            android:textColor="@color/brown"/>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/speechOption3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@android:color/white"
+                        app:strokeWidth="2dp"
+                        app:strokeColor="@color/pastel_grey">
+
+                        <TextView
+                            android:id="@+id/speechOption3Text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp"
+                            android:gravity="center"
+                            android:text="Option 3"
+                            android:textSize="18sp"
+                            android:textColor="@color/brown"/>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/speechOption4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@android:color/white"
+                        app:strokeWidth="2dp"
+                        app:strokeColor="@color/pastel_grey">
+
+                        <TextView
+                            android:id="@+id/speechOption4Text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp"
+                            android:gravity="center"
+                            android:text="Option 4"
+                            android:textSize="18sp"
+                            android:textColor="@color/brown"/>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/speechbtnResetGame"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:cardCornerRadius="20dp"
+                        app:strokeColor="@color/pastel_grey"
+                        app:strokeWidth="2dp"
+                        app:cardElevation="0dp"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="@android:color/white">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="6dp"
+                            android:src="@drawable/ic_reset"
+                            android:contentDescription="Reset game"
+                            app:tint="@color/pastel_blue" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

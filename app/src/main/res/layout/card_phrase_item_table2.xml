@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/brown"
+        android:padding="1dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:stretchColumns="1"
+            android:shrinkColumns="1">
+
+            <!-- ROW 1 -->
+            <TableRow>
+                <TextView
+                    android:id="@+id/r1c1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/r1c2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/brown"
+                    android:gravity="center" />
+
+                <ImageView
+                    android:id="@+id/r1Speaker"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_speaker"
+                    app:tint="@color/brown"
+                    android:contentDescription="Speak number" />
+            </TableRow>
+
+            <!-- ROW 2 -->
+            <TableRow>
+                <TextView
+                    android:id="@+id/r2c1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/r2c2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/brown"
+                    android:gravity="center" />
+
+                <ImageView
+                    android:id="@+id/r2Speaker"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_speaker"
+                    app:tint="@color/brown"
+                    android:contentDescription="Speak number" />
+            </TableRow>
+
+            <!-- ROW 3 -->
+            <TableRow>
+                <TextView
+                    android:id="@+id/r3c1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/r3c2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/brown"
+                    android:gravity="center" />
+
+                <ImageView
+                    android:id="@+id/r3Speaker"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_speaker"
+                    app:tint="@color/brown"
+                    android:contentDescription="Speak number" />
+            </TableRow>
+
+            <!-- ROW 4 -->
+            <TableRow>
+                <TextView
+                    android:id="@+id/r4c1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/r4c2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/brown"
+                    android:gravity="center" />
+
+                <ImageView
+                    android:id="@+id/r4Speaker"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_speaker"
+                    app:tint="@color/brown"
+                    android:contentDescription="Speak number" />
+            </TableRow>
+
+            <!-- ROW 5 -->
+            <TableRow>
+                <TextView
+                    android:id="@+id/r5c1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/r5c2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/brown"
+                    android:gravity="center" />
+
+                <ImageView
+                    android:id="@+id/r5Speaker"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_speaker"
+                    app:tint="@color/brown"
+                    android:contentDescription="Speak number" />
+            </TableRow>
+
+            <!-- ROW 6 -->
+            <TableRow>
+                <TextView
+                    android:id="@+id/r6c1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/r6c2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/brown"
+                    android:gravity="center" />
+
+                <ImageView
+                    android:id="@+id/r6Speaker"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_speaker"
+                    app:tint="@color/brown"
+                    android:contentDescription="Speak number" />
+            </TableRow>
+
+            <!-- ROW 7 -->
+            <TableRow>
+                <TextView
+                    android:id="@+id/r7c1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/r7c2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/brown"
+                    android:gravity="center" />
+
+                <ImageView
+                    android:id="@+id/r7Speaker"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_speaker"
+                    app:tint="@color/brown"
+                    android:contentDescription="Speak number" />
+            </TableRow>
+
+            <!-- ROW 8 -->
+            <TableRow>
+                <TextView
+                    android:id="@+id/r8c1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/r8c2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/brown"
+                    android:gravity="center" />
+
+                <ImageView
+                    android:id="@+id/r8Speaker"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_speaker"
+                    app:tint="@color/brown"
+                    android:contentDescription="Speak number" />
+            </TableRow>
+
+            <!-- ROW 9 -->
+            <TableRow>
+                <TextView
+                    android:id="@+id/r9c1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/r9c2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/brown"
+                    android:gravity="center" />
+
+                <ImageView
+                    android:id="@+id/r9Speaker"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_speaker"
+                    app:tint="@color/brown"
+                    android:contentDescription="Speak number" />
+            </TableRow>
+
+            <!-- ROW 10 -->
+            <TableRow>
+                <TextView
+                    android:id="@+id/r10c1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/r10c2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/brown"
+                    android:gravity="center" />
+
+                <ImageView
+                    android:id="@+id/r10Speaker"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_speaker"
+                    app:tint="@color/brown"
+                    android:contentDescription="Speak number" />
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+
+</LinearLayout>

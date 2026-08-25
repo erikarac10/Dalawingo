@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/practiceScroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:id="@+id/tvUnitInstruction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/brown"
+                    android:fontFamily="sans-serif-black" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="end"
+                    android:layout_marginBottom="8dp">
+
+                    <Switch
+                        android:id="@+id/switchQuestionMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Show one question at a time"
+                        android:textColor="@color/brown"
+                        android:checked="false" />
+                </LinearLayout>
+
+                <!-- Questions container -->
+                <LinearLayout
+                    android:id="@+id/unitQuestionsContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp" />
+
+                <!--
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_marginBottom="12dp">
+                    <include layout="@layout/game_unit_questions_answers" />
+                </LinearLayout> -->
+
+                <!-- Navigation arrows + counter -->
+                <LinearLayout
+                    android:id="@+id/questionNavContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:visibility="gone">
+
+                    <ImageButton
+                        android:id="@+id/btnBackQuestion"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_back"
+                        android:contentDescription="Previous question" />
+
+                    <TextView
+                        android:id="@+id/questionCounter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="0/0"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center_vertical" />
+
+                    <ImageButton
+                        android:id="@+id/btnNextQuestion"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_next"
+                        android:contentDescription="Next question" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

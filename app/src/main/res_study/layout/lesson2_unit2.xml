@@ -1,0 +1,3472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:spacing="12dp">
+
+        <!-- Title -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_red"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lesson 2 - Unit 2: Demonstrative Pronouns, Numbers, Plurals and Linkers"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- 1. Demonstrative Pronouns -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_orange"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Demonstrative Pronouns"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Tagalog with speaker -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ito"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="This"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Tagalog with speaker -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Iyan"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="That (near)"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Tagalog with speaker -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Iyon"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="That (far)"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- IMAGE -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="10dp">
+
+                <!-- Image -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/lesson2_unit2image1"
+                    android:contentDescription="Unit 2 image 1"
+                    android:scaleType="fitCenter"
+                    android:layout_marginBottom="16dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- IMAGE -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="20dp">
+
+                <!-- Tagalog with speaker -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ano ito?"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What is this?"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Image -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/lesson2_unit2image2"
+                    android:contentDescription="Unit 2 image 2"
+                    android:scaleType="fitCenter" />
+
+                <!-- Tagalog with speaker -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ito ay puto."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="This is puto."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Extra English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(Filipino Steamed Rice Cakes)"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- IMAGE -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="20dp">
+
+                <!-- Tagalog with speaker -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ano iyan?"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What is that? (near)"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Image -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/lesson2_unit2image3"
+                    android:contentDescription="Unit 2 image 3"
+                    android:scaleType="fitCenter" />
+
+                <!-- Tagalog with speaker -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Iyan ay tabo."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="That is a tabo."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Extra English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(Filipino Hygiene Tool)"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- IMAGE -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="20dp">
+
+                <!-- Tagalog with speaker -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ano iyon?"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What is that? (far)"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Image -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/lesson2_unit2image4"
+                    android:contentDescription="Unit 2 image 4"
+                    android:scaleType="fitCenter" />
+
+                <!-- Tagalog with speaker -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Iyon ay walis."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_speaker"
+                        android:contentDescription="Speak phrase"
+                        app:tint="@color/brown" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="That is a broom."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Extra English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(Filipino Straw Broom)"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- IMAGE -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="10dp">
+
+                <!-- Image -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/lesson2_unit2image13"
+                    android:contentDescription="Unit 2 image 13"
+                    android:scaleType="fitCenter"
+                    android:layout_marginBottom="16dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 2. Numbers -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_yellow"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Numbers"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Outer Border -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/brown"
+                    android:padding="1dp">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:stretchColumns="1,3"
+                        android:shrinkColumns="1,3">
+
+                        <!-- ROW 1 -->
+                        <!--<TableRow android:background="@color/brown">-->
+                        <TableRow>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="1" android:textSize="18sp" android:textStyle="bold"
+                                android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="isa" android:textSize="18sp" android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="11" android:textSize="18sp" android:textStyle="bold"
+                                android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="labing-isa" android:textSize="17sp" android:textColor="@color/brown" android:gravity="center"/>
+                        </TableRow>
+
+                        <!-- ROW 2 -->
+                        <TableRow android:background="@color/brown">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="2" android:textSize="18sp" android:textStyle="bold"
+                                android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="dalawa" android:textSize="18sp" android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="12" android:textSize="18sp" android:textStyle="bold"
+                                android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="labing-dalawa" android:textSize="17sp" android:textColor="@color/brown" android:gravity="center"/>
+                        </TableRow>
+
+                        <!-- ROW 3 -->
+                        <TableRow android:background="@color/brown">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="3" android:textSize="18sp" android:textStyle="bold"
+                                android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="tatlo" android:textSize="18sp" android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="13" android:textSize="18sp" android:textStyle="bold"
+                                android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="labing-tatlo" android:textSize="18sp" android:textColor="@color/brown" android:gravity="center"/>
+                        </TableRow>
+
+                        <!-- ROW 4 -->
+                        <TableRow android:background="@color/brown">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="4" android:textSize="18sp" android:textStyle="bold"
+                                android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="apat" android:textSize="18sp" android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="14" android:textSize="18sp" android:textStyle="bold"
+                                android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="labing-apat" android:textSize="18sp" android:textColor="@color/brown" android:gravity="center"/>
+                        </TableRow>
+
+                        <!-- ROW 5 -->
+                        <TableRow android:background="@color/brown">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="5" android:textSize="18sp" android:textStyle="bold"
+                                android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="lima" android:textSize="18sp" android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="15" android:textSize="18sp" android:textStyle="bold"
+                                android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="labing-lima" android:textSize="18sp" android:textColor="@color/brown" android:gravity="center"/>
+                        </TableRow>
+
+                        <!-- ROW 6 -->
+                        <TableRow android:background="@color/brown">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="6" android:textSize="18sp" android:textStyle="bold"
+                                android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="anim" android:textSize="18sp" android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="16" android:textSize="18sp" android:textStyle="bold"
+                                android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="labing-anim" android:textSize="18sp" android:textColor="@color/brown" android:gravity="center"/>
+                        </TableRow>
+
+                        <!-- ROW 7 -->
+                        <TableRow android:background="@color/brown">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="7" android:textSize="18sp" android:textStyle="bold"
+                                android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="pito" android:textSize="18sp" android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="17" android:textSize="18sp" android:textStyle="bold"
+                                android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="labing-pito" android:textSize="18sp" android:textColor="@color/brown" android:gravity="center"/>
+                        </TableRow>
+
+                        <!-- ROW 8 -->
+                        <TableRow android:background="@color/brown">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="8" android:textSize="18sp" android:textStyle="bold"
+                                android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="walo" android:textSize="18sp" android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="18" android:textSize="18sp" android:textStyle="bold"
+                                android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="labing-walo" android:textSize="18sp" android:textColor="@color/brown" android:gravity="center"/>
+                        </TableRow>
+
+                        <!-- ROW 9 -->
+                        <TableRow android:background="@color/brown">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="9" android:textSize="18sp" android:textStyle="bold"
+                                android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="siyam" android:textSize="18sp" android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="19" android:textSize="18sp" android:textStyle="bold"
+                                android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="labing-siyam" android:textSize="18sp" android:textColor="@color/brown" android:gravity="center"/>
+                        </TableRow>
+
+                        <!-- ROW 10 -->
+                        <TableRow android:background="@color/brown">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="10" android:textSize="18sp" android:textStyle="bold"
+                                android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="sampu" android:textSize="18sp" android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="20" android:textSize="18sp" android:textStyle="bold"
+                                android:textColor="@color/brown" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:padding="8dp" android:background="@android:color/white"
+                                android:text="dalawampu" android:textSize="18sp" android:textColor="@color/brown" android:gravity="center"/>
+                        </TableRow>
+
+                    </TableLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Outer Border -->
+                <!-- Outer Border -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/brown"
+                    android:padding="1dp">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:stretchColumns="1"
+                        android:shrinkColumns="1">
+
+                        <!-- ROW 21 -->
+                        <TableRow android:background="@color/brown">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:text="21"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/brown"
+                                android:gravity="center" />
+
+                            <!-- Tagalog cell with speaker pinned far right -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="dalawampu't isa"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/brown"
+                                    android:gravity="center"
+                                    android:textAlignment="center" />
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_speaker"
+                                    android:contentDescription="Speak number"
+                                    app:tint="@color/brown" />
+                            </LinearLayout>
+
+                        </TableRow>
+
+                        <!-- ROW 22 -->
+                        <TableRow android:background="@color/brown">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:text="22"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/brown"
+                                android:gravity="center" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="dalawampu't dalawa"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/brown"
+                                    android:gravity="center"
+                                    android:textAlignment="center" />
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_speaker"
+                                    android:contentDescription="Speak number"
+                                    app:tint="@color/brown" />
+                            </LinearLayout>
+
+                        </TableRow>
+
+                        <!-- ROW 23 -->
+                        <TableRow android:background="@color/brown">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:text="23"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/brown"
+                                android:gravity="center" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="dalawampu’t tatlo"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/brown"
+                                    android:gravity="center"
+                                    android:textAlignment="center" />
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_speaker"
+                                    android:contentDescription="Speak number"
+                                    app:tint="@color/brown" />
+                            </LinearLayout>
+
+                        </TableRow>
+
+                        <!-- ROW 24 -->
+                        <TableRow android:background="@color/brown">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:text="24"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/brown"
+                                android:gravity="center" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="dalawampu't apat"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/brown"
+                                    android:gravity="center"
+                                    android:textAlignment="center" />
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_speaker"
+                                    android:contentDescription="Speak number"
+                                    app:tint="@color/brown" />
+                            </LinearLayout>
+
+                        </TableRow>
+
+                        <!-- ROW 25 -->
+                        <TableRow android:background="@color/brown">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:text="25"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/brown"
+                                android:gravity="center" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="dalawampu't lima"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/brown"
+                                    android:gravity="center"
+                                    android:textAlignment="center" />
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_speaker"
+                                    android:contentDescription="Speak number"
+                                    app:tint="@color/brown" />
+                            </LinearLayout>
+
+                        </TableRow>
+
+                        <!-- ROW 26 -->
+                        <TableRow android:background="@color/brown">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:text="26"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/brown"
+                                android:gravity="center" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="dalawampu't anim"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/brown"
+                                    android:gravity="center"
+                                    android:textAlignment="center" />
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_speaker"
+                                    android:contentDescription="Speak number"
+                                    app:tint="@color/brown" />
+                            </LinearLayout>
+
+                        </TableRow>
+
+                        <!-- ROW 27 -->
+                        <TableRow android:background="@color/brown">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:text="27"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/brown"
+                                android:gravity="center" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="dalawampu't pito"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/brown"
+                                    android:gravity="center"
+                                    android:textAlignment="center" />
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_speaker"
+                                    android:contentDescription="Speak number"
+                                    app:tint="@color/brown" />
+                            </LinearLayout>
+
+                        </TableRow>
+
+                        <!-- ROW 28 -->
+                        <TableRow android:background="@color/brown">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:text="28"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/brown"
+                                android:gravity="center" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="dalawampu't walo"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/brown"
+                                    android:gravity="center"
+                                    android:textAlignment="center" />
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_speaker"
+                                    android:contentDescription="Speak number"
+                                    app:tint="@color/brown" />
+                            </LinearLayout>
+
+                        </TableRow>
+
+                        <!-- ROW 29 -->
+                        <TableRow android:background="@color/brown">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:text="29"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/brown"
+                                android:gravity="center" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="dalawampu't siyam"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/brown"
+                                    android:gravity="center"
+                                    android:textAlignment="center" />
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_speaker"
+                                    android:contentDescription="Speak number"
+                                    app:tint="@color/brown" />
+                            </LinearLayout>
+
+                        </TableRow>
+
+                        <!-- ROW 30 -->
+                        <TableRow android:background="@color/brown">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:text="30"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/brown"
+                                android:gravity="center" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="tatlumpu"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/brown"
+                                    android:gravity="center"
+                                    android:textAlignment="center" />
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_speaker"
+                                    android:contentDescription="Speak number"
+                                    app:tint="@color/brown" />
+                            </LinearLayout>
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Outer Border -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/brown"
+                    android:padding="1dp">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:stretchColumns="1"
+                        android:shrinkColumns="1">
+
+                        <!-- ROW 40 -->
+                        <TableRow android:background="@color/brown">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:text="40"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/brown"
+                                android:gravity="center" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="apatnapu"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/brown"
+                                    android:gravity="center"
+                                    android:textAlignment="center" />
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_speaker"
+                                    android:contentDescription="Speak number"
+                                    app:tint="@color/brown" />
+                            </LinearLayout>
+                        </TableRow>
+
+                        <!-- ROW 50 -->
+                        <TableRow android:background="@color/brown">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:text="50"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/brown"
+                                android:gravity="center" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="limampu"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/brown"
+                                    android:gravity="center"
+                                    android:textAlignment="center" />
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_speaker"
+                                    android:contentDescription="Speak number"
+                                    app:tint="@color/brown" />
+                            </LinearLayout>
+                        </TableRow>
+
+                        <!-- ROW 60 -->
+                        <TableRow android:background="@color/brown">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:text="60"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/brown"
+                                android:gravity="center" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="animnapu"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/brown"
+                                    android:gravity="center"
+                                    android:textAlignment="center" />
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_speaker"
+                                    android:contentDescription="Speak number"
+                                    app:tint="@color/brown" />
+                            </LinearLayout>
+                        </TableRow>
+
+                        <!-- ROW 70 -->
+                        <TableRow android:background="@color/brown">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:text="70"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/brown"
+                                android:gravity="center" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="pitumpu"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/brown"
+                                    android:gravity="center"
+                                    android:textAlignment="center" />
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_speaker"
+                                    android:contentDescription="Speak number"
+                                    app:tint="@color/brown" />
+                            </LinearLayout>
+                        </TableRow>
+
+                        <!-- ROW 80 -->
+                        <TableRow android:background="@color/brown">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:text="80"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/brown"
+                                android:gravity="center" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="walumpu"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/brown"
+                                    android:gravity="center"
+                                    android:textAlignment="center" />
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_speaker"
+                                    android:contentDescription="Speak number"
+                                    app:tint="@color/brown" />
+                            </LinearLayout>
+                        </TableRow>
+
+                        <!-- ROW 90 -->
+                        <TableRow android:background="@color/brown">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:text="90"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/brown"
+                                android:gravity="center" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="siyamnapu"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/brown"
+                                    android:gravity="center"
+                                    android:textAlignment="center" />
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_speaker"
+                                    android:contentDescription="Speak number"
+                                    app:tint="@color/brown" />
+                            </LinearLayout>
+                        </TableRow>
+
+                        <!-- ROW 100 -->
+                        <TableRow android:background="@color/brown">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:text="100"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/brown"
+                                android:gravity="center" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:background="@android:color/white"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="isang daan / sandaang"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/brown"
+                                    android:gravity="center"
+                                    android:textAlignment="center" />
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_speaker"
+                                    android:contentDescription="Speak number"
+                                    app:tint="@color/brown" />
+                            </LinearLayout>
+                        </TableRow>
+
+                    </TableLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="36"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak number" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tatlumpu't anim"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="69"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak number" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Animnapu't siyam"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="81"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak number" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Walumpu't isa"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="82"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak number" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Walumpu't dalawa"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="121"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak number" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Isang daan dalawampu't isa"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 3. Using Numbers in Sentences -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_green"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Using Numbers in Sentences"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="In Tagalog, when putting a number before a noun... "
+                    android:textSize="17sp"
+                    android:textColor="@color/brown" />
+
+                <!-- Spacing -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" "
+                    android:textSize="17sp"
+                    android:textColor="@color/brown" />
+
+                <!-- 1. consonant -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Number ends in a consonant  →"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:gravity="start"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="attach the linker (-na) to the number"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown"
+                    android:gravity="center"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- 2. vowel -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Number ends in a vowel  →"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:gravity="start"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="attach the linker (-ng) to the number"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown"
+                    android:gravity="center"
+                    android:layout_marginBottom="12dp"/>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Block Container -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="start"
+                    android:textAlignment="textStart">
+
+                    <!-- Example 1 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Apat aso"
+                        android:textSize="17sp"
+                        android:textColor="@color/brown" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Apat"
+                            android:textSize="17sp"
+                            android:textColor="@color/brown" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-na "
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/brown" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="aso"
+                            android:textSize="17sp"
+                            android:textColor="@color/brown" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Apatna aso"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:layout_marginTop="8dp" />
+
+                    <!-- Example 2 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Isa pusa"
+                        android:textSize="17sp"
+                        android:textColor="@color/brown" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Isa"
+                            android:textSize="17sp"
+                            android:textColor="@color/brown" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-ng "
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/brown" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="pusa"
+                            android:textSize="17sp"
+                            android:textColor="@color/brown" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Isang pusa"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:layout_marginTop="8dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ilan?"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak phrase" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="How many?"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Bituin"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stars"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Watawat"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Flag"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Pilipinas"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Philippines"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ilan ang bituin sa watawat ng Pilipinas?"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak question" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="How many stars are there on the Philippine flag?"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mayroong tatlong bituin sa watawat ng Pilipinas."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak sentence" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="There are three stars on the Philippine flag."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Tagalog with speaker -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Kutsara"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Spoon"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:layout_gravity="center"
+                    android:gravity="center" />
+
+                <!-- Next Tagalog with speaker -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Lumpia"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Spring roll"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog with speaker -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Larawan"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Picture"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Next Tagalog with speaker -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Plato"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Plate"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- IMAGE -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ilan ang kutsara sa larawan?"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak question" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="How many spoons are there in the picture?"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Image -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/lesson2_unit2image7"
+                    android:contentDescription="Unit 2 image 7"
+                    android:scaleType="fitCenter" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mayroong labindalawang kutsara sa larawan."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak sentence" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="There are twelve spoons in the picture."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- IMAGE -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="20dp">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ilan ang lumpia sa plato?"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak question" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="How many lumpia are there on the plate?"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Image -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/lesson2_unit2image8"
+                    android:contentDescription="Unit 2 image 8"
+                    android:scaleType="fitCenter" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="May siyam na spring roll sa plato."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak sentence" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="There are nine spring rolls on the plate."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 5. Plural Form -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_purple"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Plural Form"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Explanation text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="To make nouns and demonstrative pronouns plural, add the word:"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Highlighted keyword -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="mga"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="@color/brown"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="4dp"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mabilis"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fast"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- 1 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Maliit ang tricycle.  →"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown"
+                    android:gravity="start"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="(The tricycle is small)"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:gravity="start"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Maliit ang mga tricycle."
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak sentence" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="(The tricycles are small)"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:gravity="center"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- 2 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mabilis ang jeepney.  →"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown"
+                    android:gravity="start"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="(The jeepney is fast)"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:gravity="start"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mabilis ang mga jeepney."
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak sentence" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="(The jeepneys are fast)"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:gravity="center"
+                    android:layout_marginBottom="12dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- IMAGE -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="10dp">
+
+                <!-- Image -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/lesson2_unit2image9"
+                    android:contentDescription="Unit 2 image 9"
+                    android:scaleType="fitCenter"
+                    android:layout_marginBottom="16dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- IMAGE -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="20dp">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ano ang mga ito?"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak question" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What are these?"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Image -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/lesson2_unit2image10"
+                    android:contentDescription="Unit 2 image 10"
+                    android:scaleType="fitCenter"
+                    android:layout_marginTop="12dp"/>
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ito ay mga puto."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak sentence" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="These are puto."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- IMAGE -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="20dp">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ano ang mga iyan?"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak question" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What are those?"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Image -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/lesson2_unit2image11"
+                    android:contentDescription="Unit 2 image 11"
+                    android:scaleType="fitCenter" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Iyan ay mga tabo."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak sentence" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Those are tabos."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- IMAGE --><!-- IMAGE -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="20dp">
+
+                <!-- Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ano ang mga iyon?"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak question" />
+                </LinearLayout>
+
+                <!-- English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What are those?"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <!-- Image -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/lesson2_unit2image12"
+                    android:contentDescription="Unit 2 image 12"
+                    android:scaleType="fitCenter" />
+
+                <!-- Next Tagalog -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Iyon ay mga walis."
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak sentence" />
+                </LinearLayout>
+
+                <!-- Next English -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Those are brooms."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 4. Linking Two Nouns -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/pastel_blue"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Linking Two Nouns"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Explanation text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="To link two nouns, use the linker:"
+                    android:textSize="17sp"
+                    android:textColor="@color/brown"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Highlighted keyword -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="at"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="@color/brown"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="4dp"
+                        android:gravity="center"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_speaker"
+                        app:tint="@color/brown"
+                        android:contentDescription="Speak word" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tricycle at Jeepney"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tricycle and Jeepney"
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Mga tabo at mga walis tambo."
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tabos and brooms."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Tatlong tabo at anim na walis tambo."
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Three tabos and six brooms."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView> -->
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center_horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tricycle "
+                        android:textSize="17sp"
+                        android:textColor="@color/brown"
+                        android:layout_marginBottom="12dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="at "
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jeepney."
+                        android:textSize="17sp"
+                        android:textColor="@color/brown"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tricycle and Jeepney."
+                    android:textSize="17sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:layout_marginBottom="12dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:gravity="center_horizontal">
+
+                    <!-- mag definition -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_horizontal"
+                        android:layout_gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mga tabo "
+                            android:textSize="17sp"
+                            android:textColor="@color/brown"
+                            android:layout_marginBottom="12dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="at "
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/brown" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="mga walis tampo."
+                            android:textSize="17sp"
+                            android:textColor="@color/brown"
+                            android:layout_marginBottom="12dp"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tabos and brooms."
+                        android:textSize="17sp"
+                        android:textStyle="italic"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <!-- mag definition -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_horizontal"
+                        android:layout_gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tatlong tabo "
+                            android:textSize="17sp"
+                            android:textColor="@color/brown"
+                            android:layout_marginBottom="12dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="at "
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/brown" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="anim na walis tambo."
+                            android:textSize="17sp"
+                            android:textColor="@color/brown"
+                            android:layout_marginBottom="12dp"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Three tabos and six brooms."
+                        android:textSize="17sp"
+                        android:textStyle="italic"
+                        android:textColor="@color/brown"
+                        android:layout_marginBottom="12dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

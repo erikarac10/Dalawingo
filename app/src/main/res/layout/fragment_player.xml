@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="16dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/streakCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- 🔥 Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:id="@+id/streakNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:layout_marginEnd="4dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Day Streak"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown" />
+                </LinearLayout>
+
+                <!-- 📊 Weekly Row (Sunday First) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- SUN -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sun"
+                            android:textSize="12sp"
+                            android:textColor="@color/brown" />
+
+                        <ImageView
+                            android:id="@+id/daySun"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:src="@drawable/ic_circle"
+                            app:tint="@color/brown" />
+                    </LinearLayout>
+
+                    <!-- MON -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mon"
+                            android:textSize="12sp"
+                            android:textColor="@color/brown" />
+
+                        <ImageView
+                            android:id="@+id/dayMon"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:src="@drawable/ic_circle"
+                            app:tint="@color/brown" />
+                    </LinearLayout>
+
+                    <!-- TUE -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tue"
+                            android:textSize="12sp"
+                            android:textColor="@color/brown" />
+
+                        <ImageView
+                            android:id="@+id/dayTue"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:src="@drawable/ic_circle"
+                            app:tint="@color/brown" />
+                    </LinearLayout>
+
+                    <!-- WED -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Wed"
+                            android:textSize="12sp"
+                            android:textColor="@color/brown" />
+
+                        <ImageView
+                            android:id="@+id/dayWed"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:src="@drawable/ic_circle"
+                            app:tint="@color/brown" />
+                    </LinearLayout>
+
+                    <!-- THU -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Thu"
+                            android:textSize="12sp"
+                            android:textColor="@color/brown" />
+
+                        <ImageView
+                            android:id="@+id/dayThu"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:src="@drawable/ic_circle"
+                            app:tint="@color/brown" />
+                    </LinearLayout>
+
+                    <!-- FRI -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fri"
+                            android:textSize="12sp"
+                            android:textColor="@color/brown" />
+
+                        <ImageView
+                            android:id="@+id/dayFri"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:src="@drawable/ic_circle"
+                            app:tint="@color/brown" />
+                    </LinearLayout>
+
+                    <!-- SAT -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sat"
+                            android:textSize="12sp"
+                            android:textColor="@color/brown" />
+
+                        <ImageView
+                            android:id="@+id/daySat"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:src="@drawable/ic_circle"
+                            app:tint="@color/brown" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- CHARACTER CARD -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="20dp">
+
+                <!-- Character Image Placeholder -->
+                <!-- INNER WHITE CARD -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="0dp">
+
+                        <!-- Avatar -->
+                        <ImageView
+                            android:id="@+id/avatarImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:contentDescription="Player Avatar"
+                            android:scaleType="fitCenter"
+                            android:layout_marginBottom="16dp" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="20dp">
+
+                <!-- Customize Button -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/customize"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:cardCornerRadius="10dp"
+                    app:strokeColor="@color/pastel_grey"
+                    app:strokeWidth="2dp"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="@android:color/transparent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="6dp"
+                        android:background="@android:color/white"
+                        android:src="@drawable/ic_style"
+                        android:contentDescription="Wrong"
+                        app:tint="@color/brown" />
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/dailyCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="4dp"
+            app:strokeWidth="2dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Daily Progress"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"/>
+
+                </LinearLayout>
+
+                <!-- Progress -->
+                <ProgressBar
+                    android:id="@+id/dailyProgressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="14dp"
+                    android:max="4"
+                    android:progress="0"
+                    android:layout_marginTop="12dp"/>
+
+                <TextView
+                    android:id="@+id/dailyProgressText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 / 4 Completed"
+                    android:textColor="@color/brown"
+                    android:textSize="14sp"
+                    android:layout_marginTop="6dp"/>
+
+                <!-- Spacer -->
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <ImageView
+                        android:id="@+id/quickPracticeStatus"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_box"
+                        app:tint="@color/pastel_red"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Daily Review"
+                        android:textColor="@color/brown"
+                        android:textSize="16sp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnPlayReview"
+                        android:layout_width="80dp"
+                        android:layout_height="36dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:insetLeft="0dp"
+                        android:insetRight="0dp"
+                        app:cornerRadius="18dp"
+                        app:backgroundTint="@color/pastel_red"
+                        app:icon="@drawable/ic_play"
+                        app:iconTint="@color/white"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <ImageView
+                        android:id="@+id/daily1box"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_box"
+                        app:tint="@color/pastel_red"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView
+                        android:id="@+id/daily1text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Complete 1 minigame"
+                        android:textColor="@color/brown"
+                        android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <ImageView
+                        android:id="@+id/daily2box"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_box"
+                        app:tint="@color/pastel_red"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView
+                        android:id="@+id/daily2text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Review 10 flashcards"
+                        android:textColor="@color/brown"
+                        android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <ImageView
+                        android:id="@+id/daily3box"
+                        android:layout_width="24dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_box"
+                        app:tint="@color/pastel_red"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView
+                        android:id="@+id/daily3text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Score 80% on Practice"
+                        android:textColor="@color/brown"
+                        android:textSize="16sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</ScrollView>

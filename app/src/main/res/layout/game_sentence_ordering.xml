@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/practiceScrollOrdering"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:gravity="center_horizontal">
+
+        <!-- Main card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- Sentence ordering bubble -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/orderingCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="@color/pastel_pink"
+                    app:strokeWidth="4dp"
+                    app:strokeColor="@android:color/transparent">
+
+                    <!-- Word spawn area -->
+                    <FrameLayout
+                        android:id="@+id/wordSpawnArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <!-- Drop zone -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="20dp"
+                            android:layout_gravity="center">
+
+                            <!-- Flexbox for slots -->
+                            <com.google.android.flexbox.FlexboxLayout
+                                android:id="@+id/wordSlots"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                app:flexWrap="wrap"
+                                app:justifyContent="center"
+                                app:alignItems="center" />
+
+                        </LinearLayout>
+                    </FrameLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- English phrase card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/orderingEnglishCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="@android:color/white"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/pastel_grey">
+
+                    <TextView
+                        android:id="@+id/orderingEnglish"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:text="English phrase here"
+                        android:textSize="18sp"
+                        android:textColor="@color/brown" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Counter row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="16dp"
+                    android:paddingBottom="8dp"
+                    android:paddingHorizontal="12dp">
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/orderingCounter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="1/10"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"
+                        android:gravity="center_vertical" />
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+                <!--<com.google.android.material.button.MaterialButton
+                    android:id="@+id/orderingbtnResetGame"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="Reset game"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    app:cornerRadius="20dp"
+                    app:backgroundTint="@color/white"
+                    app:strokeColor="@color/pastel_grey"
+                    app:strokeWidth="2dp"
+                    app:icon="@drawable/ic_reset"
+                    app:iconTint="@color/pastel_blue"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp"
+                    app:elevation="0dp"
+                    android:visibility="gone" /> -->
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/orderingbtnResetGame"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:cardCornerRadius="20dp"
+                    app:strokeColor="@color/pastel_grey"
+                    app:strokeWidth="2dp"
+                    app:cardElevation="0dp"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="@android:color/white">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="6dp"
+                        android:src="@drawable/ic_reset"
+                        android:contentDescription="Reset game"
+                        app:tint="@color/pastel_blue" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="120dp" />
+
+    </LinearLayout>
+</ScrollView>

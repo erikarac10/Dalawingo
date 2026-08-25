@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <!-- Root Word Header (placeholders) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/tvRootWord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown"
+                android:layout_marginRight="5dp"
+                android:gravity="start"/>
+
+            <TextView
+                android:id="@+id/tvRootMeaning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                android:textColor="@color/brown"
+                android:gravity="start"/>
+        </LinearLayout>
+
+        <!-- Table -->
+        <TableLayout
+            android:id="@+id/tableConjugation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0,1,2">
+
+            <!-- ROW 1 (Past) -->
+            <TableRow>
+                <TextView
+                    android:id="@+id/r1c1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:gravity="start"/>
+
+                <LinearLayout
+                    android:id="@+id/r1c2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="start">
+
+                    <TextView
+                        android:id="@+id/r1c2a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="@color/brown"/>
+
+                    <TextView
+                        android:id="@+id/r1c2b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"/>
+
+                    <TextView
+                        android:id="@+id/r1c2c"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="@color/brown"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/r1c3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:gravity="start"/>
+            </TableRow>
+
+            <!-- ROW 2 (Present) -->
+            <TableRow>
+                <TextView
+                    android:id="@+id/r2c1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:gravity="start"/>
+
+                <LinearLayout
+                    android:id="@+id/r2c2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="start">
+
+                    <TextView
+                        android:id="@+id/r2c2a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="@color/brown"/>
+
+                    <TextView
+                        android:id="@+id/r2c2b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"/>
+
+                    <TextView
+                        android:id="@+id/r2c2c"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="@color/brown"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/r2c3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:gravity="start"/>
+            </TableRow>
+
+            <!-- ROW 3 (Future) -->
+            <TableRow>
+                <TextView
+                    android:id="@+id/r3c1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:gravity="start"/>
+
+                <LinearLayout
+                    android:id="@+id/r3c2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="start">
+
+                    <TextView
+                        android:id="@+id/r3c2a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="@color/brown"/>
+
+                    <TextView
+                        android:id="@+id/r3c2b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brown"/>
+
+                    <TextView
+                        android:id="@+id/r3c2c"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="@color/brown"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/r3c3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:textStyle="italic"
+                    android:textColor="@color/brown"
+                    android:gravity="start"/>
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
