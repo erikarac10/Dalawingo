@@ -1,147 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <!-- Soft overlay for depth -->
-    <View
+    <ImageView
+        android:id="@+id/bgImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#40FFFFFF"/>
-
+        android:src="@drawable/lesson_background"
+        android:scaleType="centerCrop"/>
     <ScrollView
         android:id="@+id/lessonsScroll"
+        android:padding="24dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:clipToPadding="false"
-        android:paddingTop="40dp"
-        android:paddingBottom="120dp">
-
+        android:fillViewport="true">
         <LinearLayout
             android:orientation="vertical"
+            android:padding="12dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="24dp"
-            android:paddingEnd="24dp">
-
-            <!-- ===================== -->
-            <!-- LESSON 1 HERO CARD -->
-            <!-- ===================== -->
+            android:layout_height="wrap_content">
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="48dp"
-                app:cardElevation="14dp"
+                android:layout_height="140dp"
+                android:layout_marginBottom="12dp"
                 app:cardBackgroundColor="@color/pastel_red"
-                app:strokeColor="@android:color/white"
-                app:strokeWidth="2dp">
-
-                <LinearLayout
+                app:cardCornerRadius="40dp"
+                app:cardElevation="8dp">
+                <TextView
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:gravity="center"
+                    android:padding="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:text="🌸 Lesson 1"
-                        android:textSize="32sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/brown"
-                        android:fontFamily="sans-serif-black"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                    <TextView
-                        android:text="Start your journey"
-                        android:textSize="16sp"
-                        android:textColor="@color/brown"
-                        android:alpha="0.8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                </LinearLayout>
+                    android:text="Lesson 1"
+                    android:fontFamily="sans-serif-black"/>
             </com.google.android.material.card.MaterialCardView>
-
-            <!-- Lesson 1 Units Container (Path Style) -->
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="40dp">
-
-                <!-- Vertical path line -->
-                <com.example.dalawingo.ui.SnakePathView
-                    android:id="@+id/snakePathLesson1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-
-                <LinearLayout
-                    android:id="@+id/unitListLesson1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"/>
-            </FrameLayout>
-
-
-            <!-- ===================== -->
-            <!-- LESSON 2 HERO CARD -->
-            <!-- ===================== -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="48dp"
-                app:cardElevation="14dp"
-                app:cardBackgroundColor="@color/pastel_orange"
-                app:strokeColor="@android:color/white"
-                app:strokeWidth="2dp">
-
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="4dp">
                 <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/unitListLesson1"
+                    android:padding="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@color/pastel_orange"
+                app:cardCornerRadius="40dp"
+                app:cardElevation="8dp">
+                <TextView
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown"
+                    android:gravity="center"
+                    android:padding="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:text="🌼 Lesson 2"
-                        android:textSize="32sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/brown"
-                        android:fontFamily="sans-serif-black"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                    <TextView
-                        android:text="Level up your skills"
-                        android:textSize="16sp"
-                        android:textColor="@color/brown"
-                        android:alpha="0.8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                </LinearLayout>
+                    android:text="Lesson 2"
+                    android:fontFamily="sans-serif-black"/>
             </com.google.android.material.card.MaterialCardView>
-
-            <!-- Lesson 2 Units Path -->
-            <FrameLayout
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="40dp">
-
-                <com.example.dalawingo.ui.SnakePathView
-                    android:id="@+id/snakePathLesson2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-
+                android:layout_marginBottom="24dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="4dp">
                 <LinearLayout
+                    android:orientation="vertical"
                     android:id="@+id/unitListLesson2"
+                    android:padding="12dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"/>
-            </FrameLayout>
-
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

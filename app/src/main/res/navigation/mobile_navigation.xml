@@ -1,31 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/navigation_lessons">
-
+    app:startDestination="@+id/navigation_lessons">
     <fragment
-        android:id="@+id/navigation_lessons"
+        android:label="Lessons"
         android:name="com.example.dalawingo.ui.lessons.LessonsFragment"
-        android:label="Lessons" />
-
+        android:id="@+id/navigation_lessons"/>
     <fragment
-        android:id="@+id/navigation_study"
+        android:label="Study"
         android:name="com.example.dalawingo.ui.study.StudyFragment"
-        android:label="Study" />
-
+        android:id="@+id/navigation_study"/>
     <fragment
-        android:id="@+id/navigation_practice"
+        android:label="Practice"
         android:name="com.example.dalawingo.ui.practice.PracticeFragment"
-        android:label="Practice" />
-
+        android:id="@+id/navigation_practice"/>
     <fragment
-        android:id="@+id/navigation_game"
+        android:label="Game"
         android:name="com.example.dalawingo.ui.game.GameFragment"
-        android:label="Game" />
-
-    <fragment
-        android:id="@+id/navigation_player"
-        android:name="com.example.dalawingo.ui.player.PlayerFragment"
-        android:label="Player" />
+        android:id="@+id/navigation_game"/>
 </navigation>
