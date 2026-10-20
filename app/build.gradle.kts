@@ -1,67 +1,47 @@
 plugins {
-    alias(libs.plugins.android.application)
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.plugin.compose")
 }
 
 android {
-    namespace = "com.example.dalawingo"
-    compileSdk = 35
+    namespace = "com.dalawingo.app"
+    compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.dalawingo"
-        minSdk = 24
+        applicationId = "com.dalawingo.app"
+        minSdk = 26
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
         }
     }
+
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
-    buildFeatures {
-        viewBinding = true
-    }
-    // Extra resource dirs for tidy layout grouping
-    sourceSets {
-        getByName("main") {
-            res.srcDirs(
-                "src/main/res",
-                "src/main/res_lessons",
-                "src/main/res_study",
-                "src/main/res_practice"
-            )
-            assets.srcDirs("src/main/assets")
-        }
+    kotlinOptions { jvmTarget = "17" }
+    buildFeatures { compose = true }
+    packaging {
+        resources.excludes += "/META-INF/{AL2.0,LGPL2.1}"
     }
 }
 
 dependencies {
-
-    implementation(libs.appcompat)
-    implementation(libs.material)
-    implementation(libs.constraintlayout)
-    implementation(libs.lifecycle.livedata.ktx)
-    implementation(libs.lifecycle.viewmodel.ktx)
-    implementation(libs.navigation.fragment)
-    implementation(libs.navigation.ui)
-
-    implementation("com.google.android.flexbox:flexbox:3.0.0")
-    implementation("nl.dionsegijn:konfetti-xml:2.0.2")
-    implementation("com.airbnb.android:lottie:6.3.0")
-    implementation(libs.ui.text.android)
-
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.ext.junit)
-    androidTestImplementation(libs.espresso.core)
+    implementation(platform("androidx.compose:compose-bom:2026.04.01"))
+    implementation("androidx.activity:activity-compose:1.10.1")
+    implementation("androidx.core:core-ktx:1.16.0")
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    implementation("androidx.compose.foundation:foundation")
+    implementation("androidx.compose.material3:material3")
+    implementation("androidx.compose.animation:animation")
+    debugImplementation("androidx.compose.ui:ui-tooling")
+    testImplementation("junit:junit:4.13.2")
 }

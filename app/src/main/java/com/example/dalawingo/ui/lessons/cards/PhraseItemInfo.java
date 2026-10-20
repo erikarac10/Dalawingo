@@ -1,18 +1,12 @@
 package com.example.dalawingo.ui.lessons.cards;
 
-import androidx.annotation.NonNull;
-
+/* JADX INFO: loaded from: classes10.dex */
 public final class PhraseItemInfo {
-
-    @NonNull public final String tagalog;
-    @NonNull public final String english;
+    public final String english;
     public final boolean showSpeaker;
+    public final String tagalog;
 
-    public PhraseItemInfo(
-            @NonNull String tagalog,
-            @NonNull String english,
-            boolean showSpeaker
-    ) {
+    public PhraseItemInfo(String tagalog, String english, boolean showSpeaker) {
         this.tagalog = tagalog;
         this.english = english;
         this.showSpeaker = showSpeaker;
