@@ -1,0 +1,30 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Rounded, playful right-pointing arrow -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#2A830A"
+        android:strokeWidth="12"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M23,55 L71,55 M51,29 L78,55 L51,81" />
+
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#67CD20"
+        android:strokeWidth="11"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M23,48 L71,48 M51,22 L78,48 L51,74" />
+
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#B7F57B"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:pathData="M64,44 L29,44" />
+</vector>

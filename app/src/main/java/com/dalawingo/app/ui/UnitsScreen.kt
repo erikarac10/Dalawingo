@@ -1,5 +1,7 @@
 package com.dalawingo.app.ui
 
+import com.dalawingo.app.R
+
 import android.speech.tts.TextToSpeech
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -47,7 +49,10 @@ fun UnitsScreen(
     Column(Modifier.fillMaxSize().background(Color.White)) {
         Row(Modifier.fillMaxWidth().height(67.dp)
             .padding(horizontal = 18.dp), verticalAlignment = Alignment.CenterVertically) {
-            RaisedIconButton(GameGlyph.CLOSE, "Return to Learn", onClose, size = 41.dp)
+            Box(Modifier.size(41.dp).clickable(onClick = onClose),
+                contentAlignment = Alignment.Center) {
+                GameIcon(GameGlyph.CLOSE, Modifier.size(29.dp), Color(0xFF999999))
+            }
             Spacer(Modifier.weight(1f))
             Text("Tagalog Course", color = Muted, fontSize = 17.sp,
                 fontWeight = FontWeight.Bold)
@@ -91,16 +96,20 @@ fun UnitsScreen(
                                     Spacer(Modifier.height(3.dp))
                                     Text(unit.title, color = Muted, fontSize = 13.sp)
                                 }
-                                Text(if (accessible) "🇵🇭" else "🔒",
-                                    fontSize = 20.sp)
+                                if (accessible) DalaIcon(R.drawable.ic_ph_flag, "Tagalog", 26.dp)
+                                else Text("🔒", fontSize = 20.sp)
                             }
                             Spacer(Modifier.height(12.dp))
                             ProgressLine(completedRounds.toFloat() / total.coerceAtLeast(1),
                                 Leaf, Modifier.fillMaxWidth(), 12.dp)
                             if (accessible) {
                                 Spacer(Modifier.height(11.dp))
-                                Text("JUMP HERE  →", color = SkyDark,
-                                    fontSize = 14.sp, fontWeight = FontWeight.ExtraBold)
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Text("JUMP HERE", color = SkyDark,
+                                        fontSize = 14.sp, fontWeight = FontWeight.ExtraBold)
+                                    Spacer(Modifier.width(4.dp))
+                                    DalaIcon(R.drawable.ic_arrow_right, null, 17.dp, SkyDark)
+                                }
                             }
                         }
                     }
@@ -127,7 +136,10 @@ fun GuidebookScreen(unit: CourseUnit, onClose: () -> Unit) {
     Column(Modifier.fillMaxSize().background(Color.White)) {
         Row(Modifier.fillMaxWidth().height(56.dp)
             .padding(horizontal = 14.dp), verticalAlignment = Alignment.CenterVertically) {
-            RaisedIconButton(GameGlyph.CLOSE, "Close guidebook", onClose, size = 41.dp)
+            Box(Modifier.size(41.dp).clickable(onClick = onClose),
+                contentAlignment = Alignment.Center) {
+                GameIcon(GameGlyph.CLOSE, Modifier.size(29.dp), Color(0xFF999999))
+            }
         }
         LazyColumn(modifier = Modifier.weight(1f),
             contentPadding = PaddingValues(bottom = 25.dp)) {
@@ -167,7 +179,7 @@ fun GuidebookScreen(unit: CourseUnit, onClose: () -> Unit) {
                                     TextToSpeech.QUEUE_FLUSH, null, "guide_${lesson.id}_$index")
                             }.padding(14.dp)) {
                             Row(verticalAlignment = Alignment.CenterVertically) {
-                                Text("🔊", color = SkyDark, fontSize = 22.sp)
+                                DalaIcon(R.drawable.ic_speaker, "Play phrase", 25.dp, SkyDark)
                                 Spacer(Modifier.width(8.dp))
                                 Text(phrase.tagalog, color = Ink, fontSize = 17.sp,
                                     modifier = Modifier.weight(1f), lineHeight = 23.sp)

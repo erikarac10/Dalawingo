@@ -1,12 +1,35 @@
 package com.dalawingo.app.ui
 
 import android.speech.tts.TextToSpeech
+import android.media.MediaPlayer
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutVertically
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.ui.text.input.ImeAction
+import com.dalawingo.app.R
+import androidx.compose.animation.AnimatedVisibility as ComposeAnimatedVisibility
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.expandVertically
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.foundation.Canvas
+import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.layout.positionInRoot
+import androidx.compose.ui.geometry.Offset as ScreenOffset
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
+import kotlin.math.sin
+import kotlin.math.PI
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.zIndex
 import kotlinx.coroutines.delay
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -57,28 +80,43 @@ fun LessonScreen(
     var selectedTileIds by remember { mutableStateOf<List<Int>>(emptyList()) }
     var checked by remember { mutableStateOf(false) }
     var answerIsCorrect by remember { mutableStateOf(false) }
+    var wasSkipped by remember { mutableStateOf(false) }
     var correctCount by remember { mutableIntStateOf(0) }
+    var skippedCount by remember { mutableIntStateOf(0) }
+    var inARow by remember { mutableIntStateOf(0) }
     var answerHistory by remember { mutableStateOf<List<AnswerAttempt>>(emptyList()) }
     var showTranscript by remember { mutableStateOf(false) }
     var showExitDialog by remember { mutableStateOf(false) }
     val context = LocalContext.current
     var ttsReady by remember { mutableStateOf(false) }
+    // Remember a tapped audio tile even if Android TTS is still initializing.
+    var pendingAudio by remember { mutableStateOf<Pair<String, Boolean>?>(null) }
     val tts = remember { TextToSpeech(context.applicationContext) { status ->
         ttsReady = status == TextToSpeech.SUCCESS
     } }
     fun listenTo(text: String, slower: Boolean = false) {
-        if (ttsReady) {
-            tts.setSpeechRate(if (slower) .65f else .88f)
-            tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, "dala_${current}")
+        if (!ttsReady) {
+            pendingAudio = text to slower
+            return
         }
+        tts.setSpeechRate(if (slower) .65f else .88f)
+        tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, "dala_${current}")
     }
     DisposableEffect(tts) { onDispose { tts.stop(); tts.shutdown() } }
     LaunchedEffect(ttsReady) {
         if (ttsReady) {
-            if (tts.setLanguage(Locale.forLanguageTag("fil-PH")) < TextToSpeech.LANG_AVAILABLE) {
-                tts.setLanguage(Locale.forLanguageTag("tl-PH"))
-            }
+            val supported = listOf(
+                Locale.forLanguageTag("fil-PH"),
+                Locale.forLanguageTag("tl-PH"),
+                Locale.getDefault()
+            ).firstOrNull { tts.setLanguage(it) >= TextToSpeech.LANG_AVAILABLE }
+            if (supported == null) tts.setLanguage(Locale.US)
             tts.setSpeechRate(.88f)
+            pendingAudio?.let { (text, slower) ->
+                tts.setSpeechRate(if (slower) .65f else .88f)
+                tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, "dala_queued_${current}")
+                pendingAudio = null
+            }
         }
     }
     if (exercises.isEmpty()) {
@@ -96,22 +134,35 @@ fun LessonScreen(
     val automatic = exercise.type in setOf(
         ExerciseType.SPEAK_TAGALOG, ExerciseType.SPEAK_SET,
         ExerciseType.SPEAK_FLASHCARDS, ExerciseType.MATCH_AUDIO,
-        ExerciseType.IMAGE_FLASHCARD, ExerciseType.TYPE_TAGALOG
+        ExerciseType.MATCH_TEXT, ExerciseType.IMAGE_FLASHCARD
     )
     val response = when (exercise.type) {
-        ExerciseType.WORD_BANK -> selectedTileIds.mapNotNull { id ->
+        ExerciseType.WORD_BANK, ExerciseType.COMPLETE_SENTENCE -> selectedTileIds.mapNotNull { id ->
             exercise.tiles.find { it.id == id }?.text }.joinToString(" ")
+        ExerciseType.TYPE_TAGALOG, ExerciseType.TYPE_HEARD -> typedText
         else -> selectedOption.orEmpty()
     }
     val canCheck = response.isNotBlank()
     val answer = exercise.correctAnswer
 
-    fun completeAutomatic(success: Boolean, attempts: List<AnswerAttempt>) {
+    fun completeAutomatic(success: Boolean, attempts: List<AnswerAttempt>, skipped: Boolean = false) {
         if (checked) return
-        answerHistory = answerHistory + attempts
+        answerHistory = answerHistory + attempts.map { it.copy(exerciseType = exercise.type) }
+        wasSkipped = skipped
         answerIsCorrect = success
         checked = true
-        if (success) correctCount += 1
+        if (skipped) skippedCount++
+        if (success) { correctCount += 1; inARow += 1 }
+        else if (!skipped) inARow = 0
+    }
+
+    LaunchedEffect(checked, current) {
+        if (checked && !wasSkipped) {
+            val resource = if (answerIsCorrect) R.raw.sfx_correct else R.raw.sfx_wrong
+            val player = runCatching { MediaPlayer.create(context.applicationContext, resource) }.getOrNull()
+            player?.setOnCompletionListener { it.release() }
+            runCatching { player?.start() }.onFailure { player?.release() }
+        }
     }
 
     if (showExitDialog) {
@@ -126,22 +177,29 @@ fun LessonScreen(
     Column(Modifier.fillMaxSize().background(Color.White)) {
         Row(Modifier.fillMaxWidth().padding(horizontal = 18.dp, vertical = 16.dp),
             verticalAlignment = Alignment.CenterVertically) {
-            RaisedIconButton(GameGlyph.CLOSE, "Quit lesson", { showExitDialog = true },
-                size = 41.dp)
+            Box(Modifier.size(38.dp).clickable { showExitDialog = true },
+                contentAlignment = Alignment.Center) {
+                GameIcon(GameGlyph.CLOSE, Modifier.size(27.dp), Color(0xFFAAAAAA))
+            }
             Spacer(Modifier.width(13.dp))
-            ProgressLine((current + if (checked) 1 else 0).toFloat() / questionQueue.size,
-                Leaf, Modifier.weight(1f), 13.dp)
+            Column(Modifier.weight(1f), horizontalAlignment = Alignment.CenterHorizontally) {
+                if (inARow >= 2) Text("ON A ROLL ×$inARow", color = LeafDark,
+                    fontWeight = FontWeight.ExtraBold, fontSize = 12.sp)
+                ProgressLine((current + if (checked) 1 else 0).toFloat() / questionQueue.size,
+                    if (inARow >= 3) Color(0xFFFFCA31) else Leaf,
+                    Modifier.fillMaxWidth(), 13.dp)
+            }
         }
         Column(Modifier.weight(1f).verticalScroll(rememberScrollState())
             .padding(horizontal = 23.dp, vertical = 16.dp)) {
-            Eyebrow(if (practice) "DAILY PRACTICE" else "$title  ·  ROUND $roundNumber/4", LeafDark)
-            Spacer(Modifier.height(13.dp))
             Heading(when (exercise.type) {
                 ExerciseType.CHOOSE_TAGALOG -> "Choose the translation"
                 ExerciseType.CHOOSE_ENGLISH -> "What does this mean?"
-                ExerciseType.WORD_BANK -> "Build the translation"
+                ExerciseType.WORD_BANK -> "Translate this sentence"
                 ExerciseType.LISTEN -> "What do you hear?"
-                ExerciseType.TYPE_TAGALOG -> "Say it in Tagalog"
+                ExerciseType.TYPE_TAGALOG -> "Type the translation"
+                ExerciseType.TYPE_HEARD -> "Type what you hear"
+                ExerciseType.COMPLETE_CHAT -> "Complete the chat"
                 ExerciseType.PICTURE_MATCH -> "Choose the picture"
                 ExerciseType.IMAGE_FLASHCARD -> "Say the word in Tagalog"
                 ExerciseType.SPEAK_TAGALOG -> "Repeat after your friend"
@@ -149,36 +207,91 @@ fun LessonScreen(
                 ExerciseType.MATCH_AUDIO -> "Tap the matching pairs"
                 ExerciseType.SPEAK_SET -> "Say the words in Tagalog"
                 ExerciseType.SPEAK_FLASHCARDS -> "Say the words in Tagalog"
+                ExerciseType.MATCH_TEXT -> "Tap the matching pairs"
+                ExerciseType.FILL_BLANK -> "Fill in the blank"
+                ExerciseType.COMPLETE_SENTENCE -> "Complete the sentence"
+                ExerciseType.LISTEN_MISSING -> "Listen for the missing word"
             }, 24.sp)
             Spacer(Modifier.height(23.dp))
             when (exercise.type) {
-                ExerciseType.MATCH_AUDIO, ExerciseType.SPEAK_SET,
+                ExerciseType.MATCH_AUDIO, ExerciseType.MATCH_TEXT, ExerciseType.SPEAK_SET,
                 ExerciseType.SPEAK_FLASHCARDS, ExerciseType.SPEAK_TAGALOG,
-                ExerciseType.TYPE_TAGALOG, ExerciseType.IMAGE_FLASHCARD -> Unit
-                ExerciseType.LISTEN -> {
-                    Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier
-                        .fillMaxWidth().clip(RoundedCornerShape(22.dp))
-                        .background(Sky.copy(alpha = .08f))
-                        .clickable { listenTo(exercise.phrase.tagalog) }.padding(17.dp)) {
-                        TarsierMascot(Modifier.size(78.dp))
-                        Spacer(Modifier.width(12.dp))
-                        Column {
-                            Text("🔊  LISTEN", fontSize = 15.sp,
-                                fontWeight = FontWeight.ExtraBold, color = SkyDark)
-                            Text(if (showTranscript) exercise.phrase.tagalog else "Tap to play",
-                                color = Muted, fontSize = 13.sp)
+                ExerciseType.IMAGE_FLASHCARD -> Unit
+                ExerciseType.LISTEN, ExerciseType.TYPE_HEARD -> {
+                    Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Center,
+                        ) {
+                        Box(Modifier.size(91.dp)
+                            .clip(RoundedCornerShape(20.dp))
+                            .background(Color(0xFF168ACB))
+                            .clickable { listenTo(exercise.phrase.tagalog) }
+                            .padding(bottom = 5.dp), contentAlignment = Alignment.Center) {
+                            Box(Modifier.fillMaxSize().clip(RoundedCornerShape(19.dp))
+                                .background(Color(0xFF1CB0F6)), contentAlignment = Alignment.Center) {
+                                DalaIcon(R.drawable.ic_speaker, "Listen", 52.dp, Color.White)
+                            }
+                        }
+                        Spacer(Modifier.width(15.dp))
+                        Box(Modifier.size(59.dp)
+                            .clip(RoundedCornerShape(15.dp))
+                            .background(Color(0xFF168ACB))
+                            .clickable { listenTo(exercise.phrase.tagalog, slower = true) }
+                            .padding(bottom = 4.dp), contentAlignment = Alignment.Center) {
+                            Box(Modifier.fillMaxSize().clip(RoundedCornerShape(14.dp))
+                                .background(Color(0xFF1CB0F6)), contentAlignment = Alignment.Center) {
+                                DalaIcon(R.drawable.ic_slow, "Slow audio", 38.dp, Color.White)
+                            }
                         }
                     }
-                    Spacer(Modifier.height(8.dp))
-                    Row(horizontalArrangement = Arrangement.spacedBy(15.dp)) {
-                        Text("🐢 SLOW", Modifier.clickable {
-                            listenTo(exercise.phrase.tagalog, slower = true)
-                        }.padding(vertical = 8.dp), fontSize = 12.sp,
-                            fontWeight = FontWeight.ExtraBold, color = SkyDark)
-                        Text(if (showTranscript) "HIDE TEXT" else "SHOW TEXT",
-                            Modifier.clickable { showTranscript = !showTranscript }
-                                .padding(vertical = 8.dp), fontSize = 12.sp,
-                            fontWeight = FontWeight.ExtraBold, color = Muted)
+                }
+                ExerciseType.FILL_BLANK, ExerciseType.COMPLETE_SENTENCE,
+                ExerciseType.LISTEN_MISSING -> {
+                    Row(Modifier.fillMaxWidth().heightIn(min = 80.dp)
+                        .clip(RoundedCornerShape(21.dp))
+                        .border(2.dp, Border, RoundedCornerShape(21.dp))
+                        .padding(15.dp), verticalAlignment = Alignment.CenterVertically) {
+                        if (exercise.type == ExerciseType.LISTEN_MISSING) {
+                            Box(Modifier.clickable { listenTo(exercise.phrase.tagalog) }) {
+                                DalaIcon(R.drawable.ic_speaker, "Play complete sentence", 30.dp, Sky)
+                            }
+                            Spacer(Modifier.width(10.dp))
+                        }
+                        Text(exercise.promptText, color = Ink, fontSize = 20.sp,
+                            lineHeight = 29.sp)
+                    }
+                    if (exercise.type != ExerciseType.LISTEN_MISSING) {
+                        Spacer(Modifier.height(10.dp))
+                        Text(exercise.phrase.english, color = Muted, fontSize = 14.sp)
+                    }
+                }
+                ExerciseType.COMPLETE_CHAT -> {
+                    Column(Modifier.fillMaxWidth().heightIn(min = 214.dp),
+                        verticalArrangement = Arrangement.spacedBy(17.dp)) {
+                        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                            TarsierMascot(Modifier.size(58.dp))
+                            Spacer(Modifier.width(12.dp))
+                            Row(Modifier.weight(1f)
+                                .clip(RoundedCornerShape(21.dp))
+                                .border(2.dp, Border, RoundedCornerShape(21.dp))
+                                .clickable { listenTo(exercise.promptText) }
+                                .padding(15.dp), verticalAlignment = Alignment.CenterVertically) {
+                                DalaIcon(R.drawable.ic_speaker, "Play message", 27.dp, Sky)
+                                Spacer(Modifier.width(9.dp))
+                                Text(exercise.promptText, color = Ink, fontSize = 18.sp,
+                                    lineHeight = 24.sp)
+                            }
+                        }
+                        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End,
+                            verticalAlignment = Alignment.CenterVertically) {
+                            Box(Modifier.widthIn(min = 107.dp).height(54.dp)
+                                .clip(RoundedCornerShape(17.dp))
+                                .border(2.dp, Border, RoundedCornerShape(17.dp)),
+                                contentAlignment = Alignment.Center) {
+                                Text("________", color = Muted, fontSize = 20.sp)
+                            }
+                            Spacer(Modifier.width(10.dp))
+                            TarsierMascot(Modifier.size(49.dp))
+                        }
                     }
                 }
                 ExerciseType.STORY -> {
@@ -220,34 +333,68 @@ fun LessonScreen(
                 ExerciseType.MATCH_AUDIO -> AudioPairMatching(
                     phrases = exercise.pairs,
                     onSpeakAudio = { listenTo(it) },
-                    onDone = ::completeAutomatic
+                    onDone = { success, attempts -> completeAutomatic(success, attempts) },
+                    onSkip = { completeAutomatic(false, emptyList(), skipped = true) }
+                )
+                ExerciseType.MATCH_TEXT -> WrittenPairMatching(
+                    phrases = exercise.pairs,
+                    onSpeakAudio = { listenTo(it) },
+                    onDone = { success, attempts -> completeAutomatic(success, attempts) }
                 )
                 ExerciseType.SPEAK_SET, ExerciseType.SPEAK_FLASHCARDS -> SpeakingSequence(
                     phrases = exercise.pairs,
                     isCardStack = exercise.type == ExerciseType.SPEAK_FLASHCARDS,
                     onSpeakAudio = { listenTo(it) },
-                    onDone = ::completeAutomatic
+                    onDone = { success, attempts -> completeAutomatic(success, attempts) },
+                    onSkip = { completeAutomatic(false, emptyList(), skipped = true) }
                 )
-                ExerciseType.SPEAK_TAGALOG, ExerciseType.TYPE_TAGALOG -> SingleSpeakingExercise(
+                ExerciseType.SPEAK_TAGALOG -> SingleSpeakingExercise(
                     phrase = exercise.phrase,
                     onSpeakAudio = { listenTo(it) },
                     onSuccess = { completeAutomatic(true, listOf(AnswerAttempt(
-                        vocabularyKey(exercise.phrase), true))) },
+                        vocabularyKey(exercise.phrase), true, exercise.type))) },
                     onMiss = { answerHistory = answerHistory + AnswerAttempt(
-                        vocabularyKey(exercise.phrase), false) },
-                    onSkip = { completeAutomatic(false, emptyList()) }
+                        vocabularyKey(exercise.phrase), false, exercise.type) },
+                    onSkip = { completeAutomatic(false, emptyList(), skipped = true) }
                 )
                 ExerciseType.IMAGE_FLASHCARD -> SpeakingSequence(
                     phrases = listOf(exercise.phrase),
                     isCardStack = true,
                     onSpeakAudio = { listenTo(it) },
-                    onDone = ::completeAutomatic
+                    onDone = { success, attempts -> completeAutomatic(success, attempts) },
+                    onSkip = { completeAutomatic(false, emptyList(), skipped = true) }
                 )
-                ExerciseType.WORD_BANK -> WordBank(
+                ExerciseType.WORD_BANK, ExerciseType.COMPLETE_SENTENCE -> WordBank(
                     exercise.tiles, selectedTileIds, checked,
-                    onSelect = { id -> selectedTileIds = selectedTileIds + id },
+                    onSelect = { id ->
+                        selectedTileIds = selectedTileIds + id
+                        exercise.tiles.find { it.id == id }?.let { listenTo(it.text) }
+                    },
                     onRemove = { id -> selectedTileIds = selectedTileIds - id }
                 )
+                ExerciseType.TYPE_TAGALOG, ExerciseType.TYPE_HEARD -> {
+                    OutlinedTextField(
+                        value = typedText, onValueChange = { typedText = it },
+                        modifier = Modifier.fillMaxWidth(),
+                        placeholder = { Text("Type in Tagalog…") },
+                        singleLine = false, maxLines = 3,
+                        keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
+                        enabled = !checked,
+                        shape = RoundedCornerShape(18.dp)
+                    )
+                }
+                ExerciseType.LISTEN_MISSING -> {
+                    exercise.answers.forEachIndexed { i, option ->
+                        ChoiceAudioTile(i, selectedOption == option,
+                            checked && selectedOption == option,
+                            checked && normalized(option) == normalized(answer),
+                            onClick = {
+                                selectedOption = option
+                                listenTo(option)
+                            })
+                        Spacer(Modifier.height(10.dp))
+                    }
+                }
                 ExerciseType.PICTURE_MATCH -> {
                     exercise.answers.chunked(2).forEach { pair ->
                         Row(Modifier.fillMaxWidth(),
@@ -280,23 +427,42 @@ fun LessonScreen(
                 }
             }
         }
+        key(current) {
         AnimatedVisibility(visible = checked,
-            enter = expandVertically() + fadeIn()) {
-            Column(Modifier.fillMaxWidth().background(if (answerIsCorrect) Color(0xFFE8F8D9)
-                else Color(0xFFFFE6E4)).padding(horizontal = 22.dp, vertical = 16.dp)) {
+            enter = slideInVertically(initialOffsetY = { it }, animationSpec = tween(260)) + fadeIn(),
+            exit = slideOutVertically(targetOffsetY = { it }, animationSpec = tween(180))) {
+            Column(Modifier.fillMaxWidth().background(when {
+                wasSkipped -> Color(0xFFFFF2CD)
+                answerIsCorrect -> Color(0xFFE8F8D9)
+                else -> Color(0xFFFFE6E4)
+            }).padding(horizontal = 22.dp, vertical = 16.dp)) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    TarsierMascot(Modifier.size(39.dp), happy = answerIsCorrect)
+                    if (wasSkipped) DalaIcon(R.drawable.ic_sparkle, null, 32.dp,
+                        Color(0xFFE4A323))
+                    else TarsierMascot(Modifier.size(39.dp), happy = answerIsCorrect)
                     Spacer(Modifier.width(10.dp))
-                    Text(if (answerIsCorrect) listOf("Awesome!", "Excellent!", "Tama!", "Great job!")[current % 4]
-                        else "Try the next one!", fontSize = 20.sp,
+                    Text(when {
+                        wasSkipped -> "We'll skip this for now!"
+                        answerIsCorrect -> listOf("Awesome!", "Excellent!", "Tama!", "Great job!")[current % 4]
+                        else -> "Try the next one!"
+                    }, fontSize = 20.sp,
                         fontWeight = FontWeight.ExtraBold,
-                        color = if (answerIsCorrect) LeafDark else Red)
+                        color = when {
+                            wasSkipped -> Color(0xFFAC7A11)
+                            answerIsCorrect -> LeafDark
+                            else -> Red
+                        })
                 }
-                if (!answerIsCorrect) {
+                if (!answerIsCorrect && !wasSkipped &&
+                    exercise.type !in setOf(ExerciseType.MATCH_AUDIO,
+                        ExerciseType.MATCH_TEXT, ExerciseType.SPEAK_SET,
+                        ExerciseType.SPEAK_FLASHCARDS, ExerciseType.IMAGE_FLASHCARD,
+                        ExerciseType.SPEAK_TAGALOG)) {
                     Spacer(Modifier.height(4.dp))
                     Text("Correct answer: $answer", color = Ink, fontSize = 14.sp)
                 }
             }
+        }
         }
         Column(Modifier.fillMaxWidth().padding(horizontal = 22.dp, vertical = 14.dp)) {
             if (!checked && !automatic) {
@@ -305,10 +471,12 @@ fun LessonScreen(
                     answerIsCorrect = normalized(response) == normalized(answer)
                     checked = true
                     answerHistory = answerHistory + AnswerAttempt(
-                        vocabularyKey(exercise.phrase), answerIsCorrect
+                        vocabularyKey(exercise.phrase), answerIsCorrect, exercise.type
                     )
+                    if (!answerIsCorrect) inARow = 0
                     if (answerIsCorrect) {
                         correctCount += 1
+                        inARow += 1
                     } else if (practice || questionQueue.any {
                             it.type == ExerciseType.IMAGE_FLASHCARD
                         }) {
@@ -326,20 +494,24 @@ fun LessonScreen(
                     if (current == questionQueue.lastIndex) "FINISH" else "CONTINUE",
                     onClick = {
                         if (current == questionQueue.lastIndex) {
-                            onFinished(correctCount, questionQueue.size, answerHistory)
+                            // A player choosing "can't listen/speak now" has not made a mistake.
+                            // Exclude skipped questions from accuracy and perfect-lesson eligibility.
+                            // If everything was skipped, total=0 prevents an undeserved perfect award.
+                            onFinished(correctCount, questionQueue.size - skippedCount, answerHistory)
                         } else {
-                            current += 1
+                            checked = false
                             selectedOption = null
                             typedText = ""
                             selectedTileIds = emptyList()
-                            checked = false
+                            current += 1
                             answerIsCorrect = false
+                            wasSkipped = false
                             showTranscript = false
                         }
                     },
                     Modifier.fillMaxWidth(),
-                    color = if (answerIsCorrect) Leaf else Red,
-                    pressedColor = if (answerIsCorrect) LeafDark else Color(0xFFD63838)
+                    color = if (wasSkipped) Color(0xFFE8B23B) else if (answerIsCorrect) Leaf else Red,
+                    pressedColor = if (wasSkipped) Color(0xFFC39322) else if (answerIsCorrect) LeafDark else Color(0xFFD63838)
                 )
             }
         }
@@ -376,6 +548,30 @@ private fun PictureChoice(
 }
 
 @Composable
+private fun ChoiceAudioTile(
+    number: Int, selected: Boolean, checked: Boolean, correct: Boolean,
+    onClick: () -> Unit
+) {
+    val border = when {
+        checked && correct -> Leaf
+        checked -> Red
+        selected -> Sky
+        else -> Border
+    }
+    Row(Modifier.fillMaxWidth().height(63.dp).clip(RoundedCornerShape(18.dp))
+        .background(if (selected) Sky.copy(alpha = .12f) else Color.White)
+        .border(2.dp, border, RoundedCornerShape(18.dp)).clickable(onClick = onClick)
+        .padding(12.dp), horizontalArrangement = Arrangement.Center,
+        verticalAlignment = Alignment.CenterVertically) {
+        DalaIcon(R.drawable.ic_speaker, "Listen option ${number + 1}", 28.dp,
+            if (selected) SkyDark else Sky)
+        Spacer(Modifier.width(12.dp))
+        DalaIcon(R.drawable.ic_soundwave, null, 110.dp,
+            if (selected) SkyDark else Sky)
+    }
+}
+
+@Composable
 private fun ChoiceTile(
     text: String,
     selected: Boolean,
@@ -383,38 +579,38 @@ private fun ChoiceTile(
     correctAnswer: Boolean,
     onClick: () -> Unit
 ) {
-    val accent = when {
+    val outline = when {
         checked && correctAnswer -> Leaf
         checked && selected -> Red
         selected -> Sky
         else -> Border
     }
-    val pressed = when {
+    val fill = when {
         checked && correctAnswer -> Color(0xFFE9F9DC)
         checked && selected -> Color(0xFFFFE9E7)
         selected -> Color(0xFFE8F7FF)
         else -> Color.White
     }
-    Box(
-        Modifier.fillMaxWidth().heightIn(min = 61.dp)
-            .clip(RoundedCornerShape(16.dp))
-            .background(if (accent == Border) Color(0xFFD2D2D2) else accent.copy(alpha = .83f))
+    // One uniformly thick border. No second, offset backing layer / fake
+    // drop shadow: the bottom edge is exactly as thick as the other edges.
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .heightIn(min = 48.dp)
+            .clip(RoundedCornerShape(15.dp))
+            .background(fill)
+            .border(2.dp, outline, RoundedCornerShape(15.dp))
             .clickable(enabled = !checked, onClick = onClick)
+            .padding(horizontal = 14.dp, vertical = 12.dp),
+        verticalAlignment = Alignment.CenterVertically
     ) {
-        Row(
-            Modifier.fillMaxWidth().padding(bottom = 4.dp)
-                .clip(RoundedCornerShape(15.dp)).background(pressed)
-                .border(2.dp, accent, RoundedCornerShape(15.dp))
-                .padding(horizontal = 16.dp, vertical = 16.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(text, color = Ink, fontSize = 16.sp,
-                fontWeight = FontWeight.Bold, modifier = Modifier.weight(1f))
-            if (selected || (checked && correctAnswer)) {
-                Text(if (checked && selected && !correctAnswer) "✕" else "✓",
-                    color = accent, fontSize = 18.sp, fontWeight = FontWeight.Black)
-            }
-        }
+        Text(
+            text = text,
+            color = if (selected && !checked) SkyDark else Ink,
+            fontSize = 15.sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.weight(1f)
+        )
     }
 }
 
@@ -424,34 +620,107 @@ private fun WordBank(
     tiles: List<WordTile>, selectedIds: List<Int>, checked: Boolean,
     onSelect: (Int) -> Unit, onRemove: (Int) -> Unit
 ) {
-    Text("YOUR TRANSLATION", color = Muted, fontWeight = FontWeight.ExtraBold,
-        letterSpacing = 1.sp, fontSize = 11.sp)
-    Spacer(Modifier.height(8.dp))
-    FlowRow(Modifier.fillMaxWidth().defaultMinSize(minHeight = 94.dp)
-        .clip(RoundedCornerShape(16.dp)).background(Pale).padding(11.dp),
-        horizontalArrangement = Arrangement.spacedBy(7.dp),
-        verticalArrangement = Arrangement.spacedBy(7.dp)) {
-        selectedIds.forEach { id ->
-            tiles.find { it.id == id }?.let { tile ->
-                WordTileChip(tile.text, true, !checked) { onRemove(tile.id) }
+    val originalSlots = remember(tiles) { mutableStateMapOf<Int, ScreenOffset>() }
+    val destinationSlots = remember(tiles) { mutableStateMapOf<Int, ScreenOffset>() }
+    val arrived = remember(tiles) { mutableStateMapOf<Int, Boolean>() }
+    var origin by remember { mutableStateOf<ScreenOffset?>(null) }
+    LaunchedEffect(selectedIds) {
+        arrived.keys.filter { it !in selectedIds }.toList().forEach { arrived.remove(it) }
+    }
+
+    // The entire source+destination lives in one parent. Flying tiles are drawn
+    // LAST in its topmost overlay, above BOTH answer lines and untouched cards.
+    Box(Modifier.fillMaxWidth().zIndex(35f)
+        .onGloballyPositioned { origin = it.positionInRoot() }) {
+        Column(Modifier.fillMaxWidth()) {
+            FlowRow(
+                Modifier.fillMaxWidth().heightIn(min = 48.dp),
+                horizontalArrangement = Arrangement.spacedBy(7.dp),
+                verticalArrangement = Arrangement.spacedBy(7.dp)
+            ) {
+                selectedIds.forEach { id ->
+                    tiles.find { it.id == id }?.let { tile ->
+                        Box(Modifier.onGloballyPositioned {
+                            destinationSlots[id] = it.positionInRoot()
+                        }) {
+                            WordTileChip(tile.text, true, !checked,
+                                { onRemove(tile.id) },
+                                Modifier.graphicsLayer(alpha = if (arrived[id] == true) 1f else 0f))
+                        }
+                    }
+                }
+            }
+            Spacer(Modifier.height(3.dp))
+            Box(Modifier.fillMaxWidth().height(2.dp).background(Border))
+            Spacer(Modifier.height(39.dp))
+            Box(Modifier.fillMaxWidth().height(2.dp).background(Border))
+            Spacer(Modifier.height(25.dp))
+            FlowRow(
+                Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp),
+                verticalArrangement = Arrangement.spacedBy(9.dp)
+            ) {
+                tiles.forEach { tile ->
+                    Box(Modifier.onGloballyPositioned {
+                        originalSlots[tile.id] = it.positionInRoot()
+                    }) {
+                        if (tile.id in selectedIds) {
+                            Box(Modifier.clip(RoundedCornerShape(12.dp))
+                                .background(Color(0xFFE7E7E7))
+                                .padding(horizontal = 14.dp, vertical = 12.dp)) {
+                                Text(tile.text, fontWeight = FontWeight.Bold,
+                                    fontSize = 15.sp, color = Color.Transparent)
+                            }
+                        } else {
+                            WordTileChip(tile.text, false, !checked,
+                                { onSelect(tile.id) })
+                        }
+                    }
+                }
             }
         }
-    }
-    Spacer(Modifier.height(19.dp))
-    Text("TAP THE WORDS IN ORDER", color = Muted, fontWeight = FontWeight.ExtraBold,
-        letterSpacing = 1.sp, fontSize = 11.sp)
-    Spacer(Modifier.height(12.dp))
-    FlowRow(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp),
-        verticalArrangement = Arrangement.spacedBy(9.dp)) {
-        tiles.filter { it.id !in selectedIds }.forEach { tile ->
-            WordTileChip(tile.text, false, !checked) { onSelect(tile.id) }
+
+        // Unlike translating a destination child, this overlay is painted above
+        // the ENTIRE word-bank including its source tray and sentence rules.
+        Box(Modifier.matchParentSize().zIndex(100f), contentAlignment = Alignment.TopStart) {
+            selectedIds.forEach { id ->
+                if (arrived[id] != true) {
+                    val tile = tiles.firstOrNull { it.id == id } ?: return@forEach
+                    val source = originalSlots[id]
+                    val destination = destinationSlots[id]
+                    val parent = origin
+                    if (source != null && destination != null && parent != null) {
+                        key(id) {
+                            val movement = remember { Animatable(0f) }
+                            LaunchedEffect(id) {
+                                movement.animateTo(1f,
+                                    tween(350, easing = FastOutSlowInEasing))
+                                arrived[id] = true
+                            }
+                            WordTileChip(
+                                tile.text, true, false, {},
+                                Modifier.graphicsLayer {
+                                    translationX = source.x +
+                                        (destination.x - source.x) * movement.value - parent.x
+                                    translationY = source.y +
+                                        (destination.y - source.y) * movement.value - parent.y
+                                }
+                            )
+                        }
+                    }
+                }
+            }
         }
     }
 }
 
 @Composable
-private fun WordTileChip(label: String, chosen: Boolean, enabled: Boolean, onClick: () -> Unit) {
-    Box(Modifier.clip(RoundedCornerShape(12.dp))
+private fun WordTileChip(label: String, chosen: Boolean, enabled: Boolean,
+    onClick: () -> Unit, modifier: Modifier = Modifier) {
+    val jump by androidx.compose.animation.core.animateFloatAsState(
+        targetValue = if (chosen && !enabled) 1.08f else 1f,
+        animationSpec = tween(200), label = "Word tile confirmation")
+    Box(modifier.graphicsLayer(scaleX = jump, scaleY = jump)
+        .clip(RoundedCornerShape(12.dp))
         .background(if (chosen) Sky.copy(alpha = .11f) else Color.White)
         .border(2.dp, if (chosen) Sky else Border, RoundedCornerShape(12.dp))
         .clickable(enabled = enabled, onClick = onClick)
@@ -460,11 +729,7 @@ private fun WordTileChip(label: String, chosen: Boolean, enabled: Boolean, onCli
     }
 }
 
-/**
- * Duolingo-inspired result layout: spacious art, oversized yellow headline,
- * three colour-coded metric cards, and one prominent blue Continue button.
- * Continue always returns to the Learn path (wired by MainActivity).
- */
+/** Celebration runs while the player is looking at the result and never modifies awards. */
 @Composable
 fun LessonResultScreen(
     title: String,
@@ -483,122 +748,190 @@ fun LessonResultScreen(
 ) {
     val perfect = total > 0 && correct == total
     val accuracy = if (total > 0) (correct * 100f / total).toInt() else 0
-    val showTime = "%d:%02d".format(secondsElapsed / 60, secondsElapsed % 60)
-    val timeLabel = if (secondsElapsed < 240) "QUICK" else "COMMITTED"
+    val elapsed = "%d:%02d".format(secondsElapsed / 60, secondsElapsed % 60)
+    val perfectLesson = perfect && !practice && !pathActivity && roundCompleted >= 4
+    val flawlessRound = perfect && !practice && !pathActivity && roundCompleted in 1..3
     val heading = when {
         practice -> "Practice complete!"
+        perfectLesson -> "Perfect lesson!"
+        flawlessRound -> "Perfect round!"
         pathActivity -> "Challenge complete!"
         else -> "Lesson complete!"
     }
-    val mascotScale = remember { Animatable(0.75f) }
+    val mascot = remember { Animatable(.25f) }
+    val headingScale = remember { Animatable(.45f) }
     LaunchedEffect(Unit) {
-        mascotScale.animateTo(1.12f, tween(430))
-        mascotScale.animateTo(1f, tween(240))
+        mascot.animateTo(1.20f, tween(480, easing = FastOutSlowInEasing))
+        mascot.animateTo(1f, tween(210))
+        headingScale.animateTo(1.12f, tween(250))
+        headingScale.animateTo(1f, tween(210))
     }
     BoxWithConstraints(Modifier.fillMaxSize().background(Color.White)) {
-        val compact = maxHeight < 690.dp
-        Column(
-            Modifier.fillMaxSize().padding(horizontal = 18.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Spacer(Modifier.weight(if (compact) 0.12f else 0.55f))
-            Box(
-                Modifier.fillMaxWidth().height(if (compact) 176.dp else 242.dp),
-                contentAlignment = Alignment.Center
-            ) {
-                // Original Dalawingo mascot, not Duolingo's copyrighted characters.
-                TarsierMascot(
-                    Modifier.size(if (compact) 157.dp else 203.dp)
-                        .graphicsLayer(scaleX = mascotScale.value, scaleY = mascotScale.value),
-                    happy = true
-                )
-                Text("✨", Modifier.align(Alignment.TopStart)
-                    .padding(start = 33.dp, top = 22.dp), fontSize = 30.sp)
-                Text("🎉", Modifier.align(Alignment.TopEnd)
-                    .padding(end = 32.dp, top = 10.dp), fontSize = 27.sp)
-                Text("⭐", Modifier.align(Alignment.BottomEnd)
-                    .padding(end = 64.dp), fontSize = 23.sp)
+        val compact = maxHeight < 715.dp
+        ConfettiRain(Modifier.fillMaxSize())
+        Column(Modifier.fillMaxSize().padding(horizontal = 18.dp),
+            horizontalAlignment = Alignment.CenterHorizontally) {
+            Spacer(Modifier.weight(if (compact) .08f else .32f))
+            Box(Modifier.fillMaxWidth().height(if (compact) 165.dp else 220.dp),
+                contentAlignment = Alignment.Center) {
+                if (perfectLesson) {
+                    val radiance = rememberInfiniteTransition(label = "Perfect gold celebration")
+                    val spin by radiance.animateFloat(0f, 360f,
+                        animationSpec = infiniteRepeatable(tween(4800), RepeatMode.Restart),
+                        label = "Gold star rotation")
+                    val shine by radiance.animateFloat(.42f, .94f,
+                        animationSpec = infiniteRepeatable(tween(650), RepeatMode.Reverse),
+                        label = "Gold star shimmer")
+                    Canvas(Modifier.size(if (compact) 165.dp else 215.dp)
+                        .graphicsLayer(rotationZ = spin)) {
+                        val mid = Offset(size.width / 2f, size.height / 2f)
+                        repeat(12) { i ->
+                            val angle = (i * PI / 6.0)
+                            val inner = size.minDimension * .34f
+                            val outer = size.minDimension * .48f
+                            val x0 = mid.x + kotlin.math.cos(angle).toFloat() * inner
+                            val y0 = mid.y + kotlin.math.sin(angle).toFloat() * inner
+                            val x1 = mid.x + kotlin.math.cos(angle).toFloat() * outer
+                            val y1 = mid.y + kotlin.math.sin(angle).toFloat() * outer
+                            drawLine(Color(0xFFFFC800).copy(alpha = shine),
+                                Offset(x0,y0), Offset(x1,y1),
+                                strokeWidth = 4.dp.toPx(), cap = androidx.compose.ui.graphics.StrokeCap.Round)
+                        }
+                    }
+                    DalaIcon(R.drawable.ic_star, null, 67.dp, Color(0xFFFFD026),
+                        Modifier.align(Alignment.TopEnd).padding(end = 2.dp)
+                            .graphicsLayer(rotationZ = -spin * .3f))
+                }
+                TarsierMascot(Modifier.size(if (compact) 148.dp else 191.dp)
+                    .graphicsLayer(scaleX = mascot.value, scaleY = mascot.value))
+                DalaIcon(R.drawable.ic_sparkle, null, 38.dp, Color(0xFFF9C73E),
+                    Modifier.align(Alignment.TopStart).padding(start = 21.dp))
+                DalaIcon(R.drawable.ic_star, null, 33.dp, Color(0xFF79CE28),
+                    Modifier.align(Alignment.TopEnd).padding(end = 20.dp))
+                DalaIcon(R.drawable.ic_sparkle, null, 30.dp, Sky,
+                    Modifier.align(Alignment.BottomEnd).padding(end = 42.dp))
             }
-            Spacer(Modifier.height(if (compact) 8.dp else 22.dp))
-            Text(
-                heading,
-                color = Color(0xFFFFC800),
+            Spacer(Modifier.height(12.dp))
+            Text(heading, color = if (perfectLesson) Color(0xFFE5AE00)
+                else Color(0xFFFCC936),
+                modifier = Modifier.graphicsLayer(scaleX = headingScale.value,
+                    scaleY = headingScale.value),
                 fontSize = if (compact) 29.sp else 34.sp,
-                lineHeight = if (compact) 33.sp else 40.sp,
-                fontWeight = FontWeight.ExtraBold,
-                textAlign = TextAlign.Center
-            )
-            Spacer(Modifier.weight(if (compact) 0.14f else 0.70f))
-            Row(
-                Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(9.dp)
-            ) {
-                CelebrationStatCard("TOTAL XP", "⚡", "$xp", Color(0xFFFFCC41), Modifier.weight(1f))
-                CelebrationStatCard(timeLabel, "◷", showTime, Color(0xFF51B0ED), Modifier.weight(1f))
-                CelebrationStatCard(
-                    if (perfect) "PERFECT!" else "ACCURACY",
-                    "🎯", "$accuracy%", Color(0xFF79CA37), Modifier.weight(1f)
-                )
+                lineHeight = if (compact) 34.sp else 40.sp,
+                fontWeight = FontWeight.ExtraBold, textAlign = TextAlign.Center)
+            if (perfectLesson) {
+                Spacer(Modifier.height(7.dp))
+                Text("Every answer correct!", color = Color(0xFFB28A00),
+                    fontWeight = FontWeight.Bold, fontSize = 14.sp)
             }
-            if (pesosEarned > 0 || streakMilestone > 0 || earnedQuests.isNotEmpty()) {
-                Spacer(Modifier.height(12.dp))
-                Row(
-                    horizontalArrangement = Arrangement.spacedBy(13.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    if (pesosEarned > 0) Text("🪙 +$pesosEarned", color = Color(0xFFBA8400),
-                        fontWeight = FontWeight.ExtraBold, fontSize = 15.sp)
-                    if (streakMilestone > 0) Text("🔥 $streakMilestone days", color = Tangerine,
+            Spacer(Modifier.weight(if (compact) .14f else .48f))
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                CelebrationStatCard("TOTAL XP", R.drawable.ic_xp, "$xp",
+                    Color(0xFFFFCC41), 0, Modifier.weight(1f))
+                CelebrationStatCard(if (secondsElapsed < 240) "QUICK" else "COMMITTED",
+                    R.drawable.ic_clock, elapsed, Color(0xFF51B0ED), 125, Modifier.weight(1f))
+                CelebrationStatCard(if (perfect) "PERFECT!" else "ACCURACY",
+                    R.drawable.ic_target, "$accuracy%", Color(0xFF79CA37), 250, Modifier.weight(1f))
+            }
+            if (pesosEarned > 0) {
+                Spacer(Modifier.height(8.dp))
+                CoinShower(pesosEarned)
+            }
+            if (streakMilestone > 0) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    DalaIcon(R.drawable.ic_fire, null, 23.dp, Tangerine)
+                    Text("$streakMilestone day streak!", color = Tangerine,
                         fontWeight = FontWeight.ExtraBold, fontSize = 14.sp)
-                    if (earnedQuests.isNotEmpty()) Text("🎁 ${earnedQuests.size}",
-                        color = Purple, fontWeight = FontWeight.ExtraBold, fontSize = 14.sp)
                 }
             }
-            Spacer(Modifier.weight(if (compact) 0.17f else 1.1f))
-            // Raised blue CTA, like the reference. XP is awarded before this screen.
-            DalaButton(
-                "CONTINUE",
-                onContinue,
-                Modifier.fillMaxWidth(),
-                color = Color(0xFF1CB0F6),
-                pressedColor = Color(0xFF168ACA),
-                textColor = Color.White
-            )
+            Spacer(Modifier.weight(if (compact) .12f else .65f))
+            DalaButton("CONTINUE", onContinue, Modifier.fillMaxWidth(),
+                color = Color(0xFF1CB0F6), pressedColor = Color(0xFF168ACA),
+                textColor = Color.White)
             Spacer(Modifier.height(24.dp))
         }
     }
 }
 
 @Composable
-private fun CelebrationStatCard(
-    label: String,
-    emoji: String,
-    value: String,
-    color: Color,
-    modifier: Modifier = Modifier
-) {
-    Column(
-        modifier.height(112.dp)
-            .clip(RoundedCornerShape(23.dp))
-            .background(color)
-            .padding(3.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Box(Modifier.height(27.dp), contentAlignment = Alignment.Center) {
-            Text(
-                label, color = Color.White, fontWeight = FontWeight.ExtraBold,
-                fontSize = 11.sp, maxLines = 1
-            )
+private fun ConfettiRain(modifier: Modifier = Modifier) {
+    val pulse = rememberInfiniteTransition(label = "Celebration confetti")
+    val fall by pulse.animateFloat(0f, 1f,
+        animationSpec = infiniteRepeatable(tween(3300), RepeatMode.Restart),
+        label = "Confetti fall")
+    val colors = listOf(Leaf, Sky, Color(0xFFFFC800), Purple, Color(0xFFED87A9))
+    Canvas(modifier) {
+        repeat(43) { i ->
+            val x = (i * 137 % 101) / 101f * size.width
+            val phase = ((i * 37 % 100) / 100f + fall) % 1f
+            val drift = sin((phase * 6.28 + i).toDouble()).toFloat() * 13.dp.toPx()
+            val y = phase * (size.height + 140.dp.toPx()) - 90.dp.toPx()
+            drawLine(colors[i % colors.size],
+                Offset(x + drift, y), Offset(x + drift + 6.dp.toPx(), y + 6.dp.toPx()),
+                strokeWidth = 3.dp.toPx())
         }
-        Row(
-            Modifier.fillMaxSize().clip(RoundedCornerShape(20.dp))
-                .background(Color.White),
-            horizontalArrangement = Arrangement.Center,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(emoji, fontSize = 18.sp)
+    }
+}
+
+@Composable
+private fun CoinShower(pesos: Int) {
+    val fall = remember { Animatable(0f) }
+    LaunchedEffect(pesos) {
+        fall.snapTo(0f)
+        fall.animateTo(1f, tween(1700, easing = FastOutSlowInEasing))
+    }
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        BoxWithConstraints(Modifier.fillMaxWidth().height(64.dp)) {
+            val center = maxWidth / 2
+            repeat(9) { i ->
+                val x0 = maxWidth * ((i + .5f) / 9f)
+                val t = fall.value
+                val drop = (t * 2f).coerceIn(0f, 1f)
+                val collect = ((t - .67f) * 3f).coerceIn(0f, 1f)
+                val x = x0 + (center - x0) * collect
+                val y = (-15 + (i % 3) * -16).dp + (64.dp * drop) - (33.dp * collect)
+                DalaIcon(R.drawable.ic_peso_coin, null, 23.dp,
+                    modifier = Modifier.offset(x = x - 12.dp, y = y)
+                        .graphicsLayer(alpha = (1f - collect).coerceIn(0f, 1f),
+                            rotationZ = i * 38f + t * 110f))
+            }
+        }
+        Row(verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.graphicsLayer(scaleX = .75f + fall.value * .25f,
+                scaleY = .75f + fall.value * .25f)) {
+            DalaIcon(R.drawable.ic_peso_coin, "Pesos earned", 37.dp)
+            Spacer(Modifier.width(7.dp))
+            Text("+$pesos Pesos", color = Color(0xFFBA8400),
+                fontSize = 26.sp, fontWeight = FontWeight.ExtraBold)
+        }
+    }
+}
+
+@Composable
+private fun CelebrationStatCard(
+    label: String, icon: Int, value: String, color: Color,
+    delayMillis: Long, modifier: Modifier = Modifier
+) {
+    val scale = remember { Animatable(.15f) }
+    LaunchedEffect(Unit) {
+        delay(delayMillis)
+        scale.animateTo(1.10f, tween(300, easing = FastOutSlowInEasing))
+        scale.animateTo(1f, tween(170))
+    }
+    Column(modifier.height(109.dp)
+        .graphicsLayer(scaleX = scale.value, scaleY = scale.value)
+        .clip(RoundedCornerShape(22.dp)).background(color).padding(3.dp),
+        horizontalAlignment = Alignment.CenterHorizontally) {
+        Box(Modifier.height(27.dp), contentAlignment = Alignment.Center) {
+            Text(label, color = Color.White, fontWeight = FontWeight.ExtraBold,
+                fontSize = 11.sp, maxLines = 1)
+        }
+        Row(Modifier.fillMaxSize().clip(RoundedCornerShape(19.dp))
+            .background(Color.White), horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically) {
+            DalaIcon(icon, null, 20.dp, color)
             Spacer(Modifier.width(3.dp))
-            Text(value, color = color, fontSize = 21.sp,
+            Text(value, color = color, fontSize = 19.sp,
                 fontWeight = FontWeight.ExtraBold, maxLines = 1)
         }
     }

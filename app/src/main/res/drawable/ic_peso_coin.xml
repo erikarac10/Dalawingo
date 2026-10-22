@@ -1,0 +1,101 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Thick golden edge -->
+    <path
+        android:fillColor="#E58A06"
+        android:pathData="M45,7 A36,43 0,1 1,45,93 A36,43 0,1 1,45,7 Z"/>
+
+    <!-- Rounded edge grooves -->
+    <group>
+        <clip-path
+            android:pathData="M45,7 A36,43 0,1 1,45,93 A36,43 0,1 1,45,7 Z"/>
+        <path
+            android:fillColor="#00000000"
+            android:strokeColor="#BF6806"
+            android:strokeWidth="2.5"
+            android:strokeLineCap="round"
+            android:pathData="
+                M14,17 L47,17
+                M9,24 L37,24
+                M6,31 L31,31
+                M5,38 L26,38
+                M5,45 L23,45
+                M5,52 L22,52
+                M5,59 L24,59
+                M7,66 L27,66
+                M10,73 L31,73
+                M15,80 L37,80
+                M24,87 L47,87"/>
+    </group>
+
+    <!-- Bright front rim -->
+    <path
+        android:fillColor="#FFE137"
+        android:pathData="M55,7 A36,43 0,1 1,55,93 A36,43 0,1 1,55,7 Z"/>
+
+    <!-- Broad shine bands clipped to the coin -->
+    <group>
+        <clip-path
+            android:pathData="M55,7 A36,43 0,1 1,55,93 A36,43 0,1 1,55,7 Z"/>
+        <path
+            android:fillColor="#FFF392"
+            android:pathData="
+                M15,20 L22,13 L92,75 L85,83 Z
+                M13,31 L17,26 L86,88 L81,93 Z"/>
+    </group>
+
+    <!-- Recessed centre -->
+    <path
+        android:fillColor="#F39D0C"
+        android:pathData="M55,17 A27,33 0,1 1,55,83 A27,33 0,1 1,55,17 Z"/>
+    <path
+        android:fillColor="#FFBC28"
+        android:pathData="M55,21 A26,31 0,1 1,55,83 A26,31 0,1 1,55,21 Z"/>
+
+    <!-- Soft rim highlight -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFF5AD"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M21,43 C24,23 37,8 55,8 C72,8 86,24 89,43"/>
+
+    <!-- Embossed peso shadow -->
+    <group android:translateX="-1.5" android:translateY="2">
+        <path
+            android:fillColor="#F2A00D"
+            android:fillType="evenOdd"
+            android:pathData="
+                M44,71 L44,31 L56,31
+                C66,31 71,37 71,46
+                C71,55 66,61 56,61
+                L51,61 L51,71 Z
+                M51,38 L51,54 L56,54
+                C62,54 64,51 64,46
+                C64,41 62,38 56,38 Z"/>
+        <path
+            android:fillColor="#F2A00D"
+            android:pathData="M39,40 L74,40 L74,44 L39,44 Z M39,48 L74,48 L74,52 L39,52 Z"/>
+    </group>
+
+    <!-- Chunky peso symbol -->
+    <path
+        android:fillColor="#FFE345"
+        android:fillType="evenOdd"
+        android:pathData="
+            M44,71 L44,31 L56,31
+            C66,31 71,37 71,46
+            C71,55 66,61 56,61
+            L51,61 L51,71 Z
+            M51,38 L51,54 L56,54
+            C62,54 64,51 64,46
+            C64,41 62,38 56,38 Z"/>
+    <path
+        android:fillColor="#FFE345"
+        android:pathData="M39,40 L74,40 L74,44 L39,44 Z M39,48 L74,48 L74,52 L39,52 Z"/>
+
+</vector>

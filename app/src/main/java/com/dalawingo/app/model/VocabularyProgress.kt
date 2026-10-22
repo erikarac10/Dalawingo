@@ -5,7 +5,11 @@ import java.util.Locale
 /** The course teaches phrases; each Tagalog phrase is tracked independently. */
 fun vocabularyKey(phrase: Phrase): String = phrase.tagalog.trim().lowercase(Locale.ROOT)
 
-data class AnswerAttempt(val vocabularyId: String, val correct: Boolean)
+data class AnswerAttempt(
+    val vocabularyId: String,
+    val correct: Boolean,
+    val exerciseType: ExerciseType? = null
+)
 
 enum class VocabularyLevel { NEW, WEAK, DEVELOPING, MASTERED }
 

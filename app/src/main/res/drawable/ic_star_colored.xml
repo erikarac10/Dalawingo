@@ -1,0 +1,11 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp" android:height="48dp"
+    android:viewportWidth="100" android:viewportHeight="100">
+    <!-- Soft chubby five-point star, curved sides and tiny glossy sparkle. -->
+    <path android:fillColor="#D89008"
+        android:pathData="M50,10 C55,10 58,14 62,24 L67,36 L81,38 C93,39 97,44 94,52 C93,56 88,61 77,69 L80,83 C82,96 75,99 65,94 L50,86 L34,94 C22,100 17,95 20,83 L23,69 L11,60 C1,52 4,42 17,39 L33,36 L39,23 C43,14 46,10 50,10 Z"/>
+    <path android:fillColor="#FFD438"
+        android:pathData="M50,5 C56,5 60,12 63,21 L68,33 L82,35 C94,36 97,43 91,51 L77,64 L81,79 C84,93 75,95 64,89 L50,81 L35,89 C23,95 16,90 20,79 L24,64 L9,51 C3,43 7,36 18,35 L33,33 L39,20 C43,12 45,5 50,5 Z"/>
+    <path android:fillColor="#FFE984" android:pathData="M25,41 Q38,38 42,24 Q45,16 49,13 Q45,36 28,46 Z"/>
+    <path android:fillColor="#FFF7C2" android:pathData="M71,45 L75,50 L80,51 L75,54 L71,60 L68,54 L63,51 L68,50 Z"/>
+</vector>

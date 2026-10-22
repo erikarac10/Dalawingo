@@ -11,6 +11,13 @@ import android.speech.SpeechRecognizer
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.tween
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.res.painterResource
+import androidx.compose.material3.Icon
+import com.dalawingo.app.R
+import kotlinx.coroutines.delay
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -66,12 +73,16 @@ private fun acceptedSpeech(heard: String, expected: String): Boolean {
 fun InAppMicrophone(
     enabled: Boolean,
     onSpeech: (String) -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    continuous: Boolean = false
 ) {
     val context = LocalContext.current
     var recording by remember { mutableStateOf(false) }
     var level by remember { mutableFloatStateOf(0f) }
     var hint by remember { mutableStateOf("") }
+    var keepGoing by remember { mutableStateOf(false) }
+    var restartToken by remember { mutableIntStateOf(0) }
+    val currentlyEnabled by rememberUpdatedState(enabled)
     val currentCallback by rememberUpdatedState(onSpeech)
     val available = remember(context) { SpeechRecognizer.isRecognitionAvailable(context) }
     val recognizer = remember(context) {
@@ -84,13 +95,20 @@ fun InAppMicrophone(
             override fun onRmsChanged(rmsdB: Float) { level = rmsdB.coerceIn(0f, 10f) }
             override fun onBufferReceived(buffer: ByteArray?) {}
             override fun onEndOfSpeech() { recording = false; hint = "Checking…" }
-            override fun onError(error: Int) { recording = false; hint = "Didn't catch that. Try again." }
+            override fun onError(error: Int) {
+                recording = false
+                hint = if (error == SpeechRecognizer.ERROR_INSUFFICIENT_PERMISSIONS)
+                    "Microphone permission needed" else ""
+                if (continuous && keepGoing && currentlyEnabled &&
+                    (error == SpeechRecognizer.ERROR_NO_MATCH ||
+                     error == SpeechRecognizer.ERROR_SPEECH_TIMEOUT)) restartToken++
+            }
             override fun onResults(results: Bundle?) {
                 recording = false
                 val heard = results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
                     ?.firstOrNull()
-                if (heard.isNullOrBlank()) hint = "Didn't catch that. Try again."
-                else { hint = ""; currentCallback(heard) }
+                if (!heard.isNullOrBlank()) { hint = ""; currentCallback(heard) }
+                if (continuous && keepGoing && currentlyEnabled) restartToken++
             }
             override fun onPartialResults(partialResults: Bundle?) {}
             override fun onEvent(eventType: Int, params: Bundle?) {}
@@ -117,6 +135,12 @@ fun InAppMicrophone(
             recording = false; hint = "Microphone unavailable. Try again."
         }
     }
+    LaunchedEffect(restartToken) {
+        if (restartToken > 0 && continuous && keepGoing) {
+            delay(720)
+            if (currentlyEnabled && keepGoing && !recording) start()
+        }
+    }
     val permissionLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) { allowed ->
@@ -127,7 +151,7 @@ fun InAppMicrophone(
         targetValue = if (recording) 1f else .3f,
         label = "Speech recording pulse"
     )
-    Column(modifier, horizontalAlignment = Alignment.CenterHorizontally) {
+    Column(modifier.widthIn(min = 190.dp), horizontalAlignment = Alignment.CenterHorizontally) {
         Box(
             Modifier
                 .width(if (recording) 190.dp else 106.dp)
@@ -135,10 +159,16 @@ fun InAppMicrophone(
                 .clip(RoundedCornerShape(23.dp))
                 .background(Color(0xFF0788CA))
                 .clickable(enabled = enabled) {
-                    if (recording) { recognizer?.stopListening(); recording = false }
-                    else if (ContextCompat.checkSelfPermission(context, Manifest.permission.RECORD_AUDIO)
-                        == PackageManager.PERMISSION_GRANTED) start()
-                    else permissionLauncher.launch(Manifest.permission.RECORD_AUDIO)
+                    if (recording) {
+                        keepGoing = false
+                        recognizer?.stopListening()
+                        recording = false
+                    } else {
+                        keepGoing = continuous
+                        if (ContextCompat.checkSelfPermission(context, Manifest.permission.RECORD_AUDIO)
+                            == PackageManager.PERMISSION_GRANTED) start()
+                        else permissionLauncher.launch(Manifest.permission.RECORD_AUDIO)
+                    }
                 }.padding(bottom = 5.dp), contentAlignment = Alignment.Center
         ) {
             Row(
@@ -155,12 +185,13 @@ fun InAppMicrophone(
                             .height(waveHeight)
                             .clip(RoundedCornerShape(3.dp)).background(Color.White))
                     }
-                } else Text("🎙", color = Color.White, fontSize = 41.sp)
+                } else DalaIcon(R.drawable.ic_microphone, "Record pronunciation", 43.dp,
+                    Color.White)
             }
         }
-        if (hint.isNotBlank()) {
-            Spacer(Modifier.height(9.dp))
-            Text(hint, color = Muted, fontSize = 12.sp, textAlign = TextAlign.Center)
+        Box(Modifier.fillMaxWidth().height(39.dp), contentAlignment = Alignment.TopCenter) {
+            if (hint.isNotBlank()) Text(hint, color = Muted, fontSize = 12.sp,
+                textAlign = TextAlign.Center, maxLines = 2)
         }
     }
 }
@@ -173,7 +204,7 @@ fun SingleSpeakingExercise(
     onMiss: () -> Unit,
     onSkip: () -> Unit
 ) {
-    var hint by remember(phrase) { mutableStateOf("") }
+    var wrongFlash by remember(phrase) { mutableIntStateOf(0) }
     Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
             TarsierMascot(Modifier.size(105.dp))
@@ -183,20 +214,18 @@ fun SingleSpeakingExercise(
                 .border(2.dp, Border, RoundedCornerShape(21.dp))
                 .clickable { onSpeakAudio(phrase.tagalog) }
                 .padding(15.dp)) {
-                Text("🔊  ${phrase.tagalog}", color = Ink,
-                    fontSize = 17.sp, lineHeight = 23.sp)
-                Text("Tap to listen", color = Sky, fontSize = 12.sp)
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    DalaIcon(R.drawable.ic_speaker, "Listen", 26.dp, Sky)
+                    Spacer(Modifier.width(7.dp))
+                    Text(phrase.tagalog, color = Ink, fontSize = 17.sp, lineHeight = 23.sp)
+                }
             }
         }
         Spacer(Modifier.height(46.dp))
         InAppMicrophone(enabled = true, onSpeech = { heard ->
             if (acceptedSpeech(heard, phrase.tagalog)) onSuccess()
-            else { hint = "Try that again!"; onMiss() }
+            else { wrongFlash++; onMiss() }
         })
-        if (hint.isNotBlank()) {
-            Spacer(Modifier.height(12.dp))
-            Text(hint, color = Red, fontWeight = FontWeight.Bold)
-        }
         Spacer(Modifier.height(32.dp))
         Text("CAN'T SPEAK NOW", Modifier.clickable(onClick = onSkip)
             .padding(12.dp), fontWeight = FontWeight.ExtraBold,
@@ -210,30 +239,63 @@ fun SpeakingSequence(
     phrases: List<Phrase>,
     isCardStack: Boolean,
     onSpeakAudio: (String) -> Unit,
-    onDone: (Boolean, List<AnswerAttempt>) -> Unit
+    onDone: (Boolean, List<AnswerAttempt>) -> Unit,
+    onSkip: () -> Unit = {}
 ) {
     var remaining by remember(phrases) { mutableStateOf(phrases) }
     var finished by remember(phrases) { mutableStateOf<Set<String>>(emptySet()) }
     var mistakes by remember(phrases) { mutableStateOf(false) }
     var attempts by remember(phrases) { mutableStateOf<List<AnswerAttempt>>(emptyList()) }
     var error by remember(phrases) { mutableStateOf(false) }
+    LaunchedEffect(error) {
+        if (error) {
+            delay(420)
+            error = false
+        }
+    }
+    var advancing by remember(phrases) { mutableStateOf(false) }
+    var advanceToken by remember(phrases) { mutableIntStateOf(0) }
+    val successScale = remember { Animatable(1f) }
+    val successSlide = remember { Animatable(0f) }
+    LaunchedEffect(advanceToken) {
+        if (advanceToken > 0) {
+            successScale.snapTo(1f)
+            successSlide.snapTo(0f)
+            successScale.animateTo(1.055f, tween(140))
+            delay(120)
+            successSlide.animateTo(1f, tween(235))
+            remaining = remaining.drop(1)
+            advancing = false
+            if (remaining.isEmpty()) onDone(!mistakes, attempts)
+            successSlide.snapTo(0f)
+            successScale.snapTo(1f)
+        }
+    }
     val target = remaining.firstOrNull()
     Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
         if (isCardStack) {
-            Box(Modifier.fillMaxWidth().height(290.dp), contentAlignment = Alignment.Center) {
+            // All layers use the same width, centre, and corner radius.
+            Box(Modifier.fillMaxWidth().height(307.dp), contentAlignment = Alignment.Center) {
                 for (i in 3 downTo 1) {
-                    Box(Modifier.width((238 + i * 8).dp)
-                        .height((245 + i * 5).dp)
-                        .offset(y = (-i * 9).dp)
-                        .clip(RoundedCornerShape(29.dp)).background(Color.White)
-                        .border(2.dp, Border, RoundedCornerShape(29.dp)))
+                    Box(Modifier.size(width = 270.dp, height = 253.dp)
+                        .offset(y = (-i * 6).dp)
+                        .clip(RoundedCornerShape(28.dp)).background(Color.White)
+                        .border(2.dp, Border, RoundedCornerShape(28.dp)))
                 }
-                Box(Modifier.width(273.dp).height(260.dp)
-                    .clip(RoundedCornerShape(28.dp)).background(Color.White)
-                    .border(2.dp, Border, RoundedCornerShape(28.dp)),
+                Box(Modifier.size(width = 270.dp, height = 253.dp)
+                    .graphicsLayer(
+                        translationX = successSlide.value * 370f,
+                        rotationZ = successSlide.value * 10f,
+                        scaleX = successScale.value,
+                        scaleY = successScale.value
+                    )
+                    .clip(RoundedCornerShape(28.dp))
+                    .background(if (advancing) Color(0xFFD9FFBD) else Color.White)
+                    .border(2.dp, if (advancing) Leaf else if (error) Red else Border,
+                        RoundedCornerShape(28.dp)),
                     contentAlignment = Alignment.Center) {
-                    Text(if (error) target?.tagalog.orEmpty() else target?.english.orEmpty(),
-                        color = if (error) Red else Ink,
+                    Text(target?.english.orEmpty(),
+                        color = if (advancing) LeafDark else Ink,
                         fontWeight = FontWeight.Bold, fontSize = 31.sp,
                         textAlign = TextAlign.Center)
                 }
@@ -257,7 +319,8 @@ fun SpeakingSequence(
         Spacer(Modifier.height(34.dp))
         Row(verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            InAppMicrophone(enabled = target != null, onSpeech = { heard ->
+            InAppMicrophone(enabled = target != null && !advancing, continuous = true,
+                onSpeech = { heard ->
                 val phrase = remaining.firstOrNull()
                 if (phrase != null) {
                     val correct = acceptedSpeech(heard, phrase.tagalog)
@@ -266,11 +329,11 @@ fun SpeakingSequence(
                     if (correct) {
                         error = false
                         finished = finished + vocabularyKey(phrase)
-                        remaining = remaining.drop(1)
-                        if (remaining.isEmpty()) onDone(!mistakes, attempts)
+                        advancing = true
+                        advanceToken++
                     } else {
                         mistakes = true; error = true
-                        onSpeakAudio(phrase.tagalog)
+                        // Brief red outline only: don't insert text or shift the layout.
                     }
                 }
             })
@@ -279,82 +342,164 @@ fun SpeakingSequence(
                     .border(2.dp, Border, RoundedCornerShape(15.dp))
                     .clickable { remaining = remaining.shuffled() },
                     contentAlignment = Alignment.Center) {
-                    Text("🔄", fontSize = 29.sp)
+                    DalaIcon(R.drawable.ic_refresh, "Shuffle cards", 29.dp, SkyDark)
                 }
             }
         }
-        if (error && target != null) {
-            Spacer(Modifier.height(12.dp))
-            Text("Try again: ${target.tagalog}", color = Red, fontSize = 14.sp)
-        }
         Spacer(Modifier.height(22.dp))
-        Text("CAN'T SPEAK NOW", Modifier.clickable { onDone(false, attempts) }
+        Text("CAN'T SPEAK NOW", Modifier.clickable { onSkip() }
             .padding(12.dp), color = Muted, fontWeight = FontWeight.ExtraBold,
             fontSize = 13.sp)
     }
 }
 
-/** Audible tile-to-translation pairs, with a per-phrase success/mistake history. */
+/** Both audio and written pair activities support choosing either column first. */
 @Composable
 fun AudioPairMatching(
     phrases: List<Phrase>,
     onSpeakAudio: (String) -> Unit,
+    onDone: (Boolean, List<AnswerAttempt>) -> Unit,
+    onSkip: () -> Unit = {}
+) = PairMatching(phrases, true, onSpeakAudio, onDone, onSkip)
+
+@Composable
+fun WrittenPairMatching(
+    phrases: List<Phrase>,
+    onSpeakAudio: (String) -> Unit,
     onDone: (Boolean, List<AnswerAttempt>) -> Unit
+) = PairMatching(phrases, false, onSpeakAudio, onDone)
+
+@Composable
+private fun PairMatching(
+    phrases: List<Phrase>,
+    audio: Boolean,
+    onSpeakAudio: (String) -> Unit,
+    onDone: (Boolean, List<AnswerAttempt>) -> Unit,
+    onSkip: () -> Unit = {}
 ) {
-    val entries = remember(phrases) { phrases.distinctBy { vocabularyKey(it) } }
-    val answers = remember(entries) { entries.shuffled() }
-    var audioSelected by remember(entries) { mutableStateOf<Int?>(null) }
-    var matched by remember(entries) { mutableStateOf<Set<String>>(emptySet()) }
-    var attempts by remember(entries) { mutableStateOf<List<AnswerAttempt>>(emptyList()) }
-    var hadMistake by remember(entries) { mutableStateOf(false) }
-    var wrong by remember(entries) { mutableStateOf<String?>(null) }
+    val pairs = remember(phrases) { phrases.distinctBy(::vocabularyKey) }
+    val mixed = remember(pairs) { pairs.shuffled() }
+    var selectedLeft by remember(pairs) { mutableStateOf<Int?>(null) }
+    var selectedRight by remember(pairs) { mutableStateOf<Int?>(null) }
+    var wrongLeft by remember(pairs) { mutableStateOf<Int?>(null) }
+    var wrongRight by remember(pairs) { mutableStateOf<Int?>(null) }
+    var matched by remember(pairs) { mutableStateOf<Set<String>>(emptySet()) }
+    var attempts by remember(pairs) { mutableStateOf<List<AnswerAttempt>>(emptyList()) }
+    var mistakes by remember(pairs) { mutableStateOf(false) }
+    var wrongCounter by remember(pairs) { mutableIntStateOf(0) }
+    val shake = remember { Animatable(0f) }
+    LaunchedEffect(wrongCounter) {
+        if (wrongCounter > 0) {
+            repeat(3) {
+                shake.animateTo(-7f, tween(55))
+                shake.animateTo(7f, tween(65))
+            }
+            shake.animateTo(0f, tween(70))
+            delay(180)
+            wrongLeft = null; wrongRight = null
+        }
+    }
+    fun compare(left: Int, right: Int) {
+        val item = pairs[left]
+        val success = vocabularyKey(item) == vocabularyKey(mixed[right])
+        attempts = attempts + AnswerAttempt(vocabularyKey(item), success,
+            if (audio) com.dalawingo.app.model.ExerciseType.MATCH_AUDIO
+            else com.dalawingo.app.model.ExerciseType.MATCH_TEXT)
+        if (success) {
+            matched = matched + vocabularyKey(item)
+            wrongLeft = null; wrongRight = null
+            if (matched.size == pairs.size) onDone(!mistakes, attempts)
+        } else {
+            mistakes = true; wrongLeft = left; wrongRight = right
+            wrongCounter += 1
+        }
+        selectedLeft = null; selectedRight = null
+    }
     Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-        entries.forEachIndexed { i, pair ->
-            val leftDone = vocabularyKey(pair) in matched
-            val right = answers.getOrNull(i)
-            val rightDone = right != null && vocabularyKey(right) in matched
-            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(14.dp)) {
-                Box(Modifier.weight(1f).height(66.dp)
-                    .clip(RoundedCornerShape(17.dp))
-                    .background(if (leftDone) Color(0xFFD9FFBD) else if (audioSelected == i)
-                        Color(0xFFDDF4FF) else Color.White)
-                    .border(2.dp, if (leftDone) Color(0xFF9CE96C)
-                        else if (audioSelected == i) Color(0xFF6DD3FA) else Border,
-                        RoundedCornerShape(17.dp))
-                    .clickable(enabled = !leftDone) {
-                        audioSelected = i; wrong = null; onSpeakAudio(pair.tagalog)
-                    }, contentAlignment = Alignment.Center) {
-                    Text(if (leftDone) "✓" else "🔊  ▂▅▇▅▂", fontSize = 20.sp,
-                        color = if (leftDone) LeafDark else SkyDark)
+        pairs.forEachIndexed { row, phrase ->
+            val right = mixed.getOrNull(row)
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(13.dp)) {
+                val leftDone = vocabularyKey(phrase) in matched
+                MatchTile(
+                    selected = selectedLeft == row, wrong = wrongLeft == row,
+                    matched = leftDone,
+                    modifier = Modifier.weight(1f),
+                    shakeX = if (wrongLeft == row) shake.value else 0f,
+                    onClick = {
+                        onSpeakAudio(phrase.tagalog)
+                        val other = selectedRight
+                        if (other != null) compare(row, other)
+                        else selectedLeft = row
+                    }
+                ) {
+                    if (audio) Row(verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Center) {
+                        DalaIcon(R.drawable.ic_speaker, "Play audio", 23.dp,
+                            if (selectedLeft == row) SkyDark else Sky)
+                        Spacer(Modifier.width(7.dp))
+                        DalaIcon(R.drawable.ic_soundwave, null, 59.dp,
+                            if (selectedLeft == row) SkyDark else Sky)
+                    }
+                    else Text(phrase.tagalog, fontWeight = FontWeight.Bold, fontSize = 15.sp,
+                        color = if (selectedLeft == row) SkyDark else Ink,
+                        textAlign = TextAlign.Center)
                 }
-                Box(Modifier.weight(1f).height(66.dp)
-                    .clip(RoundedCornerShape(17.dp))
-                    .background(if (rightDone) Color(0xFFD9FFBD) else Color.White)
-                    .border(2.dp, if (rightDone) Color(0xFF9CE96C)
-                        else if (right != null && wrong == vocabularyKey(right)) Red else Border,
-                        RoundedCornerShape(17.dp))
-                    .clickable(enabled = right != null && !rightDone) {
-                        val picked = audioSelected
-                        if (picked != null && right != null) {
-                            val selectedPair = entries[picked]
-                            val success = vocabularyKey(selectedPair) == vocabularyKey(right)
-                            val newAttempt = AnswerAttempt(vocabularyKey(selectedPair), success)
-                            attempts = attempts + newAttempt
-                            if (success) {
-                                matched = matched + vocabularyKey(right)
-                                audioSelected = null; wrong = null
-                                if (matched.size == entries.size) onDone(!hadMistake, attempts)
-                            } else { hadMistake = true; wrong = vocabularyKey(right) }
-                        }
-                    }, contentAlignment = Alignment.Center) {
-                    Text(right?.english.orEmpty(), textAlign = TextAlign.Center,
-                        fontSize = 17.sp, color = Ink)
+                if (right != null) {
+                    val rightDone = vocabularyKey(right) in matched
+                    MatchTile(selected = selectedRight == row, wrong = wrongRight == row,
+                        matched = rightDone, modifier = Modifier.weight(1f),
+                        shakeX = if (wrongRight == row) shake.value else 0f,
+                        onClick = {
+                            val other = selectedLeft
+                            if (other != null) compare(other, row)
+                            else selectedRight = row
+                        }) {
+                        Text(right.english, color = when {
+                            rightDone -> LeafDark
+                            selectedRight == row -> SkyDark
+                            wrongRight == row -> Red
+                            else -> Ink
+                        }, fontSize = 16.sp, textAlign = TextAlign.Center)
+                    }
                 }
             }
         }
-        Spacer(Modifier.height(14.dp))
-        Text("CAN'T LISTEN NOW", Modifier.align(Alignment.CenterHorizontally)
-            .clickable { onDone(false, attempts) }.padding(12.dp),
-            color = Muted, fontSize = 13.sp, fontWeight = FontWeight.ExtraBold)
+        if (audio) Text("CAN'T LISTEN NOW", modifier = Modifier.align(Alignment.CenterHorizontally)
+            .clickable(onClick = onSkip).padding(14.dp),
+            color = Muted, fontSize = 12.sp, fontWeight = FontWeight.ExtraBold)
+    }
+}
+
+@Composable
+private fun MatchTile(
+    selected: Boolean,
+    wrong: Boolean,
+    matched: Boolean,
+    modifier: Modifier = Modifier,
+    shakeX: Float,
+    onClick: () -> Unit,
+    content: @Composable () -> Unit
+) {
+    val outline = when {
+        wrong -> Red
+        matched -> Leaf
+        selected -> Sky
+        else -> Border
+    }
+    val fill = when {
+        wrong -> Color(0xFFFFDFDE)
+        matched -> Color(0xFFE1FFCC)
+        selected -> Color(0xFFDDF4FF)
+        else -> Color.White
+    }
+    val bounce by animateFloatAsState(if (matched) 1.045f else 1f,
+        animationSpec = tween(200), label = "Matched tile bounce")
+    Box(modifier.height(66.dp)
+        .graphicsLayer(translationX = shakeX, scaleX = bounce, scaleY = bounce)
+        .clip(RoundedCornerShape(17.dp)).background(fill)
+        .border(2.dp, outline, RoundedCornerShape(17.dp))
+        .clickable(enabled = !matched, onClick = onClick).padding(7.dp),
+        contentAlignment = Alignment.Center) {
+        content()
     }
 }

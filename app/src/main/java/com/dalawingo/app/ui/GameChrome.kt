@@ -3,6 +3,11 @@ package com.dalawingo.app.ui
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.collectIsPressedAsState
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.getValue
+import com.dalawingo.app.R
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -99,17 +104,31 @@ fun RaisedIconButton(
     shade: Color = Border,
     iconColor: Color = Ink
 ) {
+    val interaction = remember { MutableInteractionSource() }
+    val pressed by interaction.collectIsPressedAsState()
+    val controlShape = if (glyph == GameGlyph.EDIT) RoundedCornerShape(14.dp)
+        else CircleShape
     Box(
-        modifier.size(size).clip(CircleShape).background(shade)
+        modifier.size(size).clip(controlShape).background(shade)
             .semantics { contentDescription = description; role = Role.Button }
-            .clickable(onClick = onClick)
+            .clickable(interactionSource = interaction, indication = null, onClick = onClick)
     ) {
         Box(
-            Modifier.fillMaxWidth().height(size - 4.dp)
-                .clip(CircleShape).background(face).align(Alignment.TopCenter),
+            Modifier.offset(y = if (pressed) 4.dp else 0.dp)
+                .fillMaxWidth().height(size - 4.dp)
+                .clip(controlShape).background(face).align(Alignment.TopCenter),
             contentAlignment = Alignment.Center
         ) {
-            GameIcon(glyph, Modifier.size(size * .48f), iconColor)
+            val drawable = when (glyph) {
+                GameGlyph.UP -> R.drawable.ic_arrow_up
+                GameGlyph.EDIT -> R.drawable.ic_edit
+                GameGlyph.HOME -> R.drawable.ic_home
+                GameGlyph.LEARN -> R.drawable.ic_book
+                GameGlyph.TROPHY -> R.drawable.ic_trophy
+                else -> null
+            }
+            if (drawable != null) DalaIcon(drawable, description, size * .48f, iconColor)
+            else GameIcon(glyph, Modifier.size(size * .48f), iconColor)
         }
     }
 }

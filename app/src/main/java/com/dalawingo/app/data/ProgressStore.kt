@@ -5,6 +5,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import com.dalawingo.app.model.AnswerAttempt
+import com.dalawingo.app.model.ExerciseType
 import com.dalawingo.app.model.AchievementDefinition
 import com.dalawingo.app.model.AchievementMetric
 import com.dalawingo.app.model.AchievementReward
@@ -65,7 +66,22 @@ data class LearnerProgress(
     val claimedAchievements: Set<String> = emptySet(),
     val xpBoostTokens: Int = 0,
     val xpBoostUntilMillis: Long = 0L,
-    val unlockedAnimals: Set<String> = emptySet()
+    val unlockedAnimals: Set<String> = emptySet(),
+    val earlyDays: Int = 0,
+    val nightDays: Int = 0,
+    val lastEarlyDay: String = "",
+    val lastNightDay: String = "",
+    val totalQuests: Int = 0,
+    val fullQuestDays: Int = 0,
+    val lastFullQuestDay: String = "",
+    val speakingCorrect: Int = 0,
+    val listeningCorrect: Int = 0,
+    val matchingCorrect: Int = 0,
+    val sentencesCorrect: Int = 0,
+    val mistakesCorrected: Int = 0,
+    val dueRecallCorrect: Int = 0,
+    val visitedRooms: Set<String> = setOf("room_cozy"),
+    val perfectRoundMasks: Map<String, Int> = emptyMap()
 )
 
 fun AchievementDefinition.currentValue(progress: LearnerProgress): Int = when (metric) {
@@ -75,6 +91,23 @@ fun AchievementDefinition.currentValue(progress: LearnerProgress): Int = when (m
     AchievementMetric.XP -> progress.xp
     AchievementMetric.PRACTICES -> progress.totalPractices
     AchievementMetric.MASTERED -> progress.vocabulary.values.count { it.level == VocabularyLevel.MASTERED }
+    AchievementMetric.EARLY_DAYS -> progress.earlyDays
+    AchievementMetric.NIGHT_DAYS -> progress.nightDays
+    AchievementMetric.QUESTS -> progress.totalQuests
+    AchievementMetric.FULL_QUEST_DAYS -> progress.fullQuestDays
+    AchievementMetric.SPEAKING -> progress.speakingCorrect
+    AchievementMetric.LISTENING -> progress.listeningCorrect
+    AchievementMetric.MATCHING -> progress.matchingCorrect
+    AchievementMetric.SENTENCES -> progress.sentencesCorrect
+    AchievementMetric.STORIES -> progress.completedActivities.count { it.endsWith("_story") }
+    AchievementMetric.CORRECTIONS -> progress.mistakesCorrected
+    AchievementMetric.DUE_RECALL -> progress.dueRecallCorrect
+    AchievementMetric.COSMETICS -> progress.ownedCosmetics.size
+    AchievementMetric.ROOMS -> progress.visitedRooms.size
+    AchievementMetric.BONUS -> progress.completedActivities.size
+    AchievementMetric.PERFECT_NODES -> progress.perfectRoundMasks.values.count { it and 15 == 15 }
+    AchievementMetric.UNITS -> course.count { unit -> unit.lessons.all { it.id in progress.completed } }
+    AchievementMetric.COURSE -> allLessons.count { it.id in progress.completed }
 }
 
 const val ROUNDS_PER_LESSON = 4
@@ -187,6 +220,17 @@ class ProgressStore(context: Context) {
         rounds.forEach { (id, count) -> put(id, count.coerceIn(0, ROUNDS_PER_LESSON)) }
     }.toString()
 
+    private fun readPerfectRoundMasks(): Map<String, Int> = runCatching {
+        val json = JSONObject(prefs.getString("perfectRoundMasks", "{}") ?: "{}")
+        buildMap {
+            val keys = json.keys()
+            while (keys.hasNext()) {
+                val key = keys.next()
+                put(key, json.optInt(key))
+            }
+        }
+    }.getOrDefault(emptyMap())
+
     private fun loadAndRefresh(): LearnerProgress {
         var model = LearnerProgress(
             name = prefs.getString("name", "Learner") ?: "Learner",
@@ -224,7 +268,23 @@ class ProgressStore(context: Context) {
             claimedAchievements = readSet("claimedAchievements"),
             xpBoostTokens = prefs.getInt("xpBoostTokens", 0),
             xpBoostUntilMillis = prefs.getLong("xpBoostUntilMillis", 0L),
-            unlockedAnimals = readSet("unlockedAnimals")
+            unlockedAnimals = readSet("unlockedAnimals"),
+            earlyDays = prefs.getInt("earlyDays", 0),
+            nightDays = prefs.getInt("nightDays", 0),
+            lastEarlyDay = prefs.getString("lastEarlyDay", "") ?: "",
+            lastNightDay = prefs.getString("lastNightDay", "") ?: "",
+            totalQuests = prefs.getInt("totalQuests", 0),
+            fullQuestDays = prefs.getInt("fullQuestDays", 0),
+            lastFullQuestDay = prefs.getString("lastFullQuestDay", "") ?: "",
+            speakingCorrect = prefs.getInt("speakingCorrect", 0),
+            listeningCorrect = prefs.getInt("listeningCorrect", 0),
+            matchingCorrect = prefs.getInt("matchingCorrect", 0),
+            sentencesCorrect = prefs.getInt("sentencesCorrect", 0),
+            mistakesCorrected = prefs.getInt("mistakesCorrected", 0),
+            dueRecallCorrect = prefs.getInt("dueRecallCorrect", 0),
+            visitedRooms = readSet("visitedRooms") + "room_cozy" +
+                (prefs.getString("equippedRoom", "room_cozy") ?: "room_cozy"),
+            perfectRoundMasks = readPerfectRoundMasks()
         )
         model = readyForToday(model)
         val previous = runCatching { LocalDate.parse(model.lastActiveDate) }.getOrNull()
@@ -274,6 +334,23 @@ class ProgressStore(context: Context) {
             .putInt("xpBoostTokens", next.xpBoostTokens)
             .putLong("xpBoostUntilMillis", next.xpBoostUntilMillis)
             .putString("unlockedAnimals", next.unlockedAnimals.sorted().joinToString("|"))
+            .putInt("earlyDays", next.earlyDays)
+            .putInt("nightDays", next.nightDays)
+            .putString("lastEarlyDay", next.lastEarlyDay)
+            .putString("lastNightDay", next.lastNightDay)
+            .putInt("totalQuests", next.totalQuests)
+            .putInt("fullQuestDays", next.fullQuestDays)
+            .putString("lastFullQuestDay", next.lastFullQuestDay)
+            .putInt("speakingCorrect", next.speakingCorrect)
+            .putInt("listeningCorrect", next.listeningCorrect)
+            .putInt("matchingCorrect", next.matchingCorrect)
+            .putInt("sentencesCorrect", next.sentencesCorrect)
+            .putInt("mistakesCorrected", next.mistakesCorrected)
+            .putInt("dueRecallCorrect", next.dueRecallCorrect)
+            .putString("visitedRooms", next.visitedRooms.sorted().joinToString("|"))
+            .putString("perfectRoundMasks", JSONObject().apply {
+                next.perfectRoundMasks.forEach { (k,v) -> put(k,v) }
+            }.toString())
             .apply()
     }
 
@@ -309,9 +386,15 @@ class ProgressStore(context: Context) {
     private fun grantDailyQuestRewards(next: LearnerProgress): LearnerProgress {
         val newlyFinished = next.dailyQuestIds.mapNotNull(::findDailyQuest)
             .filter { it.id !in next.dailyQuestClaimed && it.isCompleted(next.questStats()) }
+        val allClaimed = next.dailyQuestClaimed + newlyFinished.map { it.id }
+        val achievedAll = next.dailyQuestIds.size == 3 &&
+            next.dailyQuestIds.all { it in allClaimed } && next.lastFullQuestDay != today()
         return next.copy(
             pesos = next.pesos + newlyFinished.sumOf { it.tier.pesos },
-            dailyQuestClaimed = next.dailyQuestClaimed + newlyFinished.map { it.id }
+            dailyQuestClaimed = allClaimed,
+            totalQuests = next.totalQuests + newlyFinished.size,
+            fullQuestDays = next.fullQuestDays + if (achievedAll) 1 else 0,
+            lastFullQuestDay = if (achievedAll) today() else next.lastFullQuestDay
         )
     }
 
@@ -330,6 +413,37 @@ class ProgressStore(context: Context) {
     private fun update(transform: (LearnerProgress) -> LearnerProgress) {
         state = refreshAchievements(transform(state))
         persist(state)
+    }
+
+    private fun recordStudy(old: LearnerProgress, attempts: List<AnswerAttempt>): LearnerProgress {
+        val hour = java.time.LocalTime.now().hour
+        val day = today()
+        val corrected = attempts.count { attempt ->
+            attempt.correct && (old.vocabulary[attempt.vocabularyId]?.let {
+                it.attempts > it.correct
+            } == true)
+        }
+        val due = attempts.count { attempt ->
+            attempt.correct && old.vocabulary[attempt.vocabularyId]?.isDue(LocalDate.now().toEpochDay()) == true
+        }
+        return old.copy(
+            earlyDays = old.earlyDays + if (hour < 9 && old.lastEarlyDay != day) 1 else 0,
+            nightDays = old.nightDays + if (hour >= 22 && old.lastNightDay != day) 1 else 0,
+            lastEarlyDay = if (hour < 9) day else old.lastEarlyDay,
+            lastNightDay = if (hour >= 22) day else old.lastNightDay,
+            speakingCorrect = old.speakingCorrect + attempts.count { it.correct && it.exerciseType in setOf(
+                ExerciseType.SPEAK_TAGALOG, ExerciseType.SPEAK_SET, ExerciseType.SPEAK_FLASHCARDS) },
+            listeningCorrect = old.listeningCorrect + attempts.count { it.correct && it.exerciseType in setOf(
+                ExerciseType.LISTEN, ExerciseType.MATCH_AUDIO, ExerciseType.LISTEN_MISSING,
+                ExerciseType.TYPE_HEARD) },
+            matchingCorrect = old.matchingCorrect + attempts.count { it.correct && it.exerciseType in setOf(
+                ExerciseType.MATCH_AUDIO, ExerciseType.MATCH_TEXT) },
+            sentencesCorrect = old.sentencesCorrect + attempts.count { it.correct && it.exerciseType in setOf(
+                ExerciseType.WORD_BANK, ExerciseType.COMPLETE_SENTENCE, ExerciseType.FILL_BLANK,
+                ExerciseType.TYPE_TAGALOG, ExerciseType.COMPLETE_CHAT) },
+            mistakesCorrected = old.mistakesCorrected + corrected,
+            dueRecallCorrect = old.dueRecallCorrect + due
+        )
     }
 
     fun rename(name: String) = update { it.copy(name = name.trim().take(24).ifEmpty { "Learner" }) }
@@ -358,7 +472,11 @@ class ProgressStore(context: Context) {
             val previousRounds = old.roundsFor(lessonId)
             val newRounds = (previousRounds + 1).coerceAtMost(ROUNDS_PER_LESSON)
             val firstCompletion = previousRounds < ROUNDS_PER_LESSON && newRounds == ROUNDS_PER_LESSON
-            val firstPerfect = total > 0 && correct == total && lessonId !in old.golden
+            // A node becomes Perfect only on its final (4/4) round or on a perfect
+            // review of an already-completed node. Earlier perfect rounds still count
+            // for daily quests, but no longer award a gold node prematurely.
+            val firstPerfect = total > 0 && correct == total &&
+                newRounds == ROUNDS_PER_LESSON && lessonId !in old.golden
             val nowCompleted = if (firstCompletion) old.completed + lessonId else old.completed
             val newUnits = course.filter { unit ->
                 unit.number !in old.rewardedUnits &&
@@ -373,6 +491,16 @@ class ProgressStore(context: Context) {
             val updated = old.copy(
                 completed = nowCompleted,
                 lessonRounds = old.lessonRounds + (lessonId to newRounds),
+                // A perfect review also advances the four-perfect-round achievement.
+                // Existing mastery and first-perfect Peso rewards are never reset.
+                perfectRoundMasks = if (total > 0 && correct == total) {
+                    val existingMask = old.perfectRoundMasks[lessonId] ?: 0
+                    val slot = if (previousRounds < ROUNDS_PER_LESSON) previousRounds
+                        else (0 until ROUNDS_PER_LESSON).firstOrNull {
+                            existingMask and (1 shl it) == 0
+                        } ?: 3
+                    old.perfectRoundMasks + (lessonId to (existingMask or (1 shl slot)))
+                } else old.perfectRoundMasks,
                 golden = if (firstPerfect) old.golden + lessonId else old.golden,
                 rewardedUnits = old.rewardedUnits + newUnits,
                 xp = old.xp + xpEarned,
@@ -396,7 +524,17 @@ class ProgressStore(context: Context) {
                     System.currentTimeMillis()
                 )
             )
-            grantDailyQuestRewards(updated)
+            grantDailyQuestRewards(recordStudy(updated, answers).copy(
+                // Corrected / due history is evaluated from the OLD state, not newly recorded attempts.
+                mistakesCorrected = old.mistakesCorrected + answers.count { attempt ->
+                    attempt.correct && (old.vocabulary[attempt.vocabularyId]?.let {
+                        it.attempts > it.correct
+                    } == true)
+                },
+                dueRecallCorrect = old.dueRecallCorrect + answers.count { attempt ->
+                    attempt.correct && old.vocabulary[attempt.vocabularyId]?.isDue(LocalDate.now().toEpochDay()) == true
+                }
+            ))
         }
         return xpEarned
     }
@@ -436,7 +574,17 @@ class ProgressStore(context: Context) {
                     System.currentTimeMillis()
                 )
             )
-            grantDailyQuestRewards(updated)
+            grantDailyQuestRewards(recordStudy(updated, answers).copy(
+                // Corrected / due history is evaluated from the OLD state, not newly recorded attempts.
+                mistakesCorrected = old.mistakesCorrected + answers.count { attempt ->
+                    attempt.correct && (old.vocabulary[attempt.vocabularyId]?.let {
+                        it.attempts > it.correct
+                    } == true)
+                },
+                dueRecallCorrect = old.dueRecallCorrect + answers.count { attempt ->
+                    attempt.correct && old.vocabulary[attempt.vocabularyId]?.isDue(LocalDate.now().toEpochDay()) == true
+                }
+            ))
         }
         return earnedXp
     }
@@ -470,7 +618,17 @@ class ProgressStore(context: Context) {
                     LocalDate.now().toEpochDay(), System.currentTimeMillis()
                 )
             )
-            grantDailyQuestRewards(updated)
+            grantDailyQuestRewards(recordStudy(updated, answers).copy(
+                // Corrected / due history is evaluated from the OLD state, not newly recorded attempts.
+                mistakesCorrected = old.mistakesCorrected + answers.count { attempt ->
+                    attempt.correct && (old.vocabulary[attempt.vocabularyId]?.let {
+                        it.attempts > it.correct
+                    } == true)
+                },
+                dueRecallCorrect = old.dueRecallCorrect + answers.count { attempt ->
+                    attempt.correct && old.vocabulary[attempt.vocabularyId]?.isDue(LocalDate.now().toEpochDay()) == true
+                }
+            ))
         }
         return earnedXp
     }
@@ -500,7 +658,7 @@ class ProgressStore(context: Context) {
             CosmeticSlot.HAT -> old.copy(equippedHat = id)
             CosmeticSlot.OUTFIT -> old.copy(equippedOutfit = id)
             CosmeticSlot.ACCESSORY -> old.copy(equippedAccessory = id)
-            CosmeticSlot.ROOM -> old.copy(equippedRoom = id)
+            CosmeticSlot.ROOM -> old.copy(equippedRoom = id, visitedRooms = old.visitedRooms + id)
         } }
     }
 

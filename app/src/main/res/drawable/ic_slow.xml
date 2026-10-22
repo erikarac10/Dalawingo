@@ -1,0 +1,127 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="48dp"
+    android:viewportWidth="96"
+    android:viewportHeight="72">
+
+    <!-- Tail -->
+    <path
+        android:fillColor="#58A700"
+        android:pathData="M18,44 L5,38 Q2,37 4,41 L14,52 Z"/>
+
+    <!-- Back feet -->
+    <path
+        android:fillColor="#58A700"
+        android:pathData="
+            M26,48 L37,49 L34,62
+            Q33,66 28,65 L24,64
+            Q21,63 23,59 Z
+            M53,48 L64,47 L67,59
+            Q68,64 63,65 L59,65
+            Q55,65 55,61 Z"/>
+
+    <!-- Neck -->
+    <path
+        android:fillColor="#89E219"
+        android:pathData="M59,38 Q68,40 73,34 L83,42 Q76,55 61,53 Z"/>
+
+    <!-- Head -->
+    <path
+        android:fillColor="#89E219"
+        android:pathData="
+            M78,24
+            C88,24 93,30 93,39
+            C93,48 86,53 78,51
+            C70,50 67,44 68,36
+            C69,28 72,24 78,24 Z"/>
+
+    <!-- Head highlight -->
+    <path
+        android:fillColor="#B8F571"
+        android:pathData="M74,29 Q79,25 84,29 Q86,31 83,32 L76,33 Q72,33 74,29 Z"/>
+
+    <!-- Eye -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M82,30 A5,6 0,1 1,82,42 A5,6 0,1 1,82,30 Z"/>
+    <path
+        android:fillColor="#244B21"
+        android:pathData="M84,33 A2.5,3.5 0,1 1,84,40 A2.5,3.5 0,1 1,84,33 Z"/>
+
+    <!-- Smile -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#397D22"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M83,45 Q87,47 89,43"/>
+
+    <!-- Shell silhouette -->
+    <path
+        android:fillColor="#58A700"
+        android:pathData="
+            M13,44
+            C13,24 23,12 41,12
+            C59,12 70,25 70,44
+            Q70,55 42,56
+            Q13,55 13,44 Z"/>
+
+    <!-- Shell face -->
+    <path
+        android:fillColor="#89E219"
+        android:pathData="
+            M17,42
+            C17,26 26,16 41,16
+            C56,16 66,27 66,42
+            Q65,49 42,50
+            Q18,49 17,42 Z"/>
+
+    <!-- Simple shell plates -->
+    <path
+        android:fillColor="#58A700"
+        android:pathData="
+            M34,26 L46,23 L55,33 L49,43 L35,42 L28,33 Z"/>
+
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#58A700"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="
+            M34,26 L29,19
+            M46,23 L49,18
+            M55,33 L63,30
+            M49,43 L52,49
+            M35,42 L31,49
+            M28,33 L19,32"/>
+
+    <!-- Shell shine -->
+    <path
+        android:fillColor="#C5F58A"
+        android:pathData="
+            M22,27
+            Q26,20 34,19
+            Q37,19 36,22
+            Q28,24 26,29
+            Q23,32 22,27 Z"/>
+
+    <!-- Rounded shell rim -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#B5ED65"
+        android:strokeWidth="5"
+        android:strokeLineCap="round"
+        android:pathData="M16,46 Q41,57 67,46"/>
+
+    <!-- Front feet -->
+    <path
+        android:fillColor="#89E219"
+        android:pathData="
+            M20,51 Q25,49 30,53
+            L28,63 Q27,67 22,66
+            L18,65 Q15,64 17,60 Z
+            M49,54 Q54,51 59,54
+            L62,63 Q63,67 58,68
+            L53,68 Q49,68 49,64 Z"/>
+</vector>

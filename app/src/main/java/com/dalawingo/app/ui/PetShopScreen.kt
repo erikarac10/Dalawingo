@@ -34,6 +34,7 @@ import com.dalawingo.app.model.Cosmetic
 import com.dalawingo.app.model.CosmeticSlot
 import com.dalawingo.app.model.cosmetics
 import com.dalawingo.app.model.pets
+import com.dalawingo.app.R
 
 private fun LearnerProgress.equippedFor(slot: CosmeticSlot): String? = when (slot) {
     CosmeticSlot.HAT -> equippedHat
@@ -84,7 +85,7 @@ fun PetPreview(
             StatsHeader(
                 progress = progress,
                 onPesos = onPesos,
-                modifier = Modifier.align(Alignment.TopCenter).padding(top = 7.dp)
+                modifier = Modifier.align(Alignment.TopCenter)
             )
         }
         Column(
@@ -108,8 +109,9 @@ fun PetPreview(
                 glyph = GameGlyph.EDIT,
                 description = "Customize pet",
                 onClick = onEdit,
-                modifier = Modifier.align(Alignment.BottomEnd).padding(12.dp),
-                size = 46.dp,
+                modifier = Modifier.align(Alignment.BottomEnd)
+                    .padding(bottom = 12.dp, end = 13.dp),
+                size = 45.dp,
                 face = Color.White,
                 shade = Color(0xFFC5A7B6),
                 iconColor = Color(0xFF735369)
@@ -132,9 +134,12 @@ fun PesosWalletDialog(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
-                RaisedIconButton(GameGlyph.CLOSE, "Close wallet", onClose, size = 38.dp)
+                Box(Modifier.size(40.dp).clickable(onClick = onClose),
+                    contentAlignment = Alignment.Center) {
+                    GameIcon(GameGlyph.CLOSE, Modifier.size(28.dp), Muted)
+                }
             }
-            Text("🪙", fontSize = 52.sp)
+            DalaIcon(R.drawable.ic_peso_coin, "Pesos", 60.dp)
             Heading("Your Pesos", 25.sp)
             Spacer(Modifier.height(5.dp))
             Text("$pesos", color = Tangerine, fontWeight = FontWeight.ExtraBold, fontSize = 31.sp)
@@ -143,17 +148,17 @@ fun PesosWalletDialog(
             Text("HOW TO EARN", Modifier.fillMaxWidth(), color = Ink, fontWeight = FontWeight.ExtraBold)
             Spacer(Modifier.height(11.dp))
             listOf(
-                Triple("📖", "Complete 4 lesson rounds", "+20"),
-                Triple("👑", "First perfect score", "+10"),
-                Triple("🏆", "Complete a unit", "+50"),
-                Triple("📅", "First daily practice", "+25"),
-                Triple("🥉", "Bronze daily quest", "+5"),
-                Triple("🥈", "Silver daily quest", "+10"),
-                Triple("🥇", "Gold daily quest", "+15"),
-                Triple("🎖️", "Claim achievements", "VARIES")
+                Triple(R.drawable.ic_book, "Complete 4 lesson rounds", "+20"),
+                Triple(R.drawable.ic_star, "First perfect score", "+10"),
+                Triple(R.drawable.ic_trophy, "Complete a unit", "+50"),
+                Triple(R.drawable.ic_calendar, "First daily practice", "+25"),
+                Triple(R.drawable.ic_chest, "Bronze daily quest", "+5"),
+                Triple(R.drawable.ic_chest, "Silver daily quest", "+10"),
+                Triple(R.drawable.ic_chest, "Gold daily quest", "+15"),
+                Triple(R.drawable.ic_trophy, "Claim achievements", "VARIES")
             ).forEach { (symbol, label, amount) ->
                 Row(Modifier.fillMaxWidth().padding(vertical = 7.dp), verticalAlignment = Alignment.CenterVertically) {
-                    Text(symbol, fontSize = 20.sp)
+                    DalaIcon(symbol, null, 21.dp, LeafDark)
                     Spacer(Modifier.width(12.dp))
                     Text(label, Modifier.weight(1f), fontSize = 13.sp, color = Ink)
                     Text(amount, color = Tangerine, fontWeight = FontWeight.ExtraBold)
@@ -163,7 +168,7 @@ fun PesosWalletDialog(
             Text("Lesson bonuses pay once. Daily quests reset at midnight.",
                 fontSize = 12.sp, color = Muted, textAlign = TextAlign.Center)
             Spacer(Modifier.height(17.dp))
-            DalaButton("🛍️  VISIT SHOP  →", onShop, Modifier.fillMaxWidth())
+            DalaButton("VISIT SHOP", onShop, Modifier.fillMaxWidth())
         }
     }
 }
@@ -191,17 +196,28 @@ fun CosmeticShopScreen(
 
     Column(Modifier.fillMaxSize().background(Color.White).padding(horizontal = 17.dp)) {
         Row(Modifier.fillMaxWidth().padding(vertical = 12.dp), verticalAlignment = Alignment.CenterVertically) {
-            RaisedIconButton(GameGlyph.CLOSE, "Close", onClose, size = 40.dp)
+            Box(Modifier.size(40.dp).clickable(onClick = onClose),
+                contentAlignment = Alignment.Center) {
+                GameIcon(GameGlyph.CLOSE, Modifier.size(28.dp), Muted)
+            }
             Spacer(Modifier.width(8.dp))
             Heading("Shop", 25.sp, Modifier.weight(1f))
-            Text("🪙 ${progress.pesos}", color = Tangerine, fontWeight = FontWeight.ExtraBold, fontSize = 18.sp)
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                DalaIcon(R.drawable.ic_peso_coin, null, 25.dp)
+                Text(" ${progress.pesos}", color = Tangerine, fontWeight = FontWeight.ExtraBold, fontSize = 18.sp)
+            }
         }
         PetPreview(progress, Modifier.fillMaxWidth().height(154.dp), preview = selected)
         Spacer(Modifier.height(8.dp))
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
             Spacer(Modifier.weight(1f))
-            Text("WARDROBE →", Modifier.clickable(onClick = onWardrobe).padding(6.dp),
-                color = LeafDark, fontSize = 12.sp, fontWeight = FontWeight.ExtraBold)
+            Row(Modifier.clickable(onClick = onWardrobe).padding(6.dp),
+                verticalAlignment = Alignment.CenterVertically) {
+                Text("WARDROBE", color = LeafDark, fontSize = 12.sp,
+                    fontWeight = FontWeight.ExtraBold)
+                Spacer(Modifier.width(3.dp))
+                DalaIcon(R.drawable.ic_arrow_right, null, 16.dp, LeafDark)
+            }
         }
         Spacer(Modifier.height(9.dp))
         Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(7.dp)) {
@@ -281,7 +297,7 @@ fun CosmeticShopScreen(
                 Column {
                     Text(when {
                         item.achievementOnly -> "Earn this exclusive item from the Achievements collection in Progress."
-                        item.goldenNeeded > 0 -> "Earn ${item.goldenNeeded} golden lesson(s) to unlock this reward."
+                        item.goldenNeeded > 0 -> "Earn ${item.goldenNeeded} perfect lesson(s) to unlock this reward."
                         item.xpNeeded > 0 -> "Requires ${item.xpNeeded} total XP."
                         item.price > 0 -> "Price: ${item.price} Pesos"
                         else -> "Free starter item"
@@ -329,7 +345,10 @@ fun PetWardrobeScreen(
     Column(Modifier.fillMaxSize().background(Color.White).verticalScroll(rememberScrollState())
         .padding(horizontal = 18.dp)) {
         Row(Modifier.fillMaxWidth().padding(vertical = 12.dp), verticalAlignment = Alignment.CenterVertically) {
-            RaisedIconButton(GameGlyph.CLOSE, "Close", onClose, size = 40.dp)
+            Box(Modifier.size(40.dp).clickable(onClick = onClose),
+                contentAlignment = Alignment.Center) {
+                GameIcon(GameGlyph.CLOSE, Modifier.size(28.dp), Muted)
+            }
             Spacer(Modifier.width(8.dp))
             Heading("Customize", 25.sp)
         }

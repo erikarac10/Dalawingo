@@ -7,7 +7,9 @@ import kotlin.random.Random
 enum class ExerciseType {
     CHOOSE_TAGALOG, CHOOSE_ENGLISH, WORD_BANK, LISTEN,
     TYPE_TAGALOG, PICTURE_MATCH, IMAGE_FLASHCARD, SPEAK_TAGALOG, STORY,
-    MATCH_AUDIO, SPEAK_SET, SPEAK_FLASHCARDS
+    MATCH_AUDIO, SPEAK_SET, SPEAK_FLASHCARDS,
+    MATCH_TEXT, FILL_BLANK, COMPLETE_SENTENCE, LISTEN_MISSING,
+    TYPE_HEARD, COMPLETE_CHAT
 }
 
 data class WordTile(val text: String, val id: Int)
@@ -19,13 +21,60 @@ data class Exercise(
     val tiles: List<WordTile> = emptyList(),
     val scene: String = "",
     val speaker: String = "",
-    val pairs: List<Phrase> = emptyList()
+    val pairs: List<Phrase> = emptyList(),
+    val promptText: String = "",
+    val blankWord: String = ""
 ) {
     val correctAnswer: String get() = when (type) {
         ExerciseType.CHOOSE_ENGLISH, ExerciseType.LISTEN -> phrase.english
+        ExerciseType.FILL_BLANK, ExerciseType.COMPLETE_SENTENCE,
+        ExerciseType.LISTEN_MISSING -> blankWord
         else -> phrase.tagalog
     }
 }
+
+/** Authentic response prompts; we never pair an unrelated question with a random answer. */
+private val chatPrompts = mapOf(
+    "Kumusta" to "Kumusta!",
+    "Magandang umaga" to "Umaga na!",
+    "Magandang gabi" to "Gabi na!",
+    "Masaya akong makilala ka" to "Kumusta! Ako si Ana.",
+    "Kita tayo mamaya" to "Aalis muna ako.",
+    "Paumanhin" to "May itatanong ako.",
+    "Hindi ko maintindihan" to "Mabilis ba akong magsalita?",
+    "Masarap ito" to "Kumusta ang pagkain?",
+    "Puwede bang umorder?" to "Handa ka nang umorder?",
+    "Magkano ito?" to "Gusto mong bilhin ito?",
+    "Walang asukal" to "Gusto mo ba ng asukal?",
+    "Nasaan ang bus?" to "Naghihintay ka ng bus?",
+    "Tara na" to "Handa ka na ba?",
+    "Naliligaw ako" to "Kailangan mo ba ng tulong?",
+    "Kailangan ko ng tulong" to "May problema ba?",
+    "Uuwi na ako" to "Saan ka pupunta?",
+    "Kumakain ako" to "Anong ginagawa mo?",
+    "Umiinom ako ng tubig" to "Anong ginagawa mo?",
+    "Nag-aaral ako" to "Anong ginagawa mo?",
+    "Nagbabasa ako" to "Anong ginagawa mo?",
+    "Natutulog ako" to "Anong ginagawa mo?",
+    "Salamat" to "Tinulungan kita!",
+    "Walang anuman" to "Salamat sa tulong mo!",
+    "Paalam" to "Aalis na ako.",
+    "Ayos lang ako" to "Kumusta ka?",
+    "Ang pangalan ko ay Ana" to "Ano ang pangalan mo?",
+    "Kumusta ka?" to "Kumusta!",
+    "Oo" to "Gusto mo ba ng tubig?",
+    "Hindi" to "Gusto mo ba ng tubig?",
+    "Pasensya na" to "Nasaktan ba kita?",
+    "Walang problema" to "Pasensya na!",
+    "Gutom ako" to "Kumusta ka?",
+    "Gusto ko ng tubig" to "Ano ang gusto mo?",
+    "Kain tayo" to "Handa na ang pagkain!",
+    "Masaya ako" to "Kumusta ka?",
+    "Pagod ako" to "Kumusta ka?",
+    "Ingat ka" to "Aalis na ako.",
+    "Mahal kita" to "Mahal kita!",
+    "Miss na kita" to "Matagal na tayong hindi nagkita!"
+)
 
 /** Only show visual matches when the emoji actually depicts the intended vocabulary. */
 private val pictureVocabulary = mapOf(
@@ -46,13 +95,43 @@ private fun createExercise(
     type: ExerciseType, phrase: Phrase, pool: List<Phrase>,
     scene: String = "", speaker: String = ""
 ): Exercise {
+    if (type == ExerciseType.COMPLETE_CHAT) {
+        val prompt = chatPrompts[phrase.tagalog] ?: return createExercise(
+            ExerciseType.CHOOSE_TAGALOG, phrase, pool
+        )
+        val incorrect = pool.map { it.tagalog }
+            .filter { it != phrase.tagalog && it != prompt }.distinct().shuffled().take(2)
+        return Exercise(type, phrase, answers = (incorrect + phrase.tagalog).shuffled(),
+            promptText = prompt)
+    }
     // Multiple words belong to a single matching/speaking mini-game.
-    if (type == ExerciseType.MATCH_AUDIO || type == ExerciseType.SPEAK_SET ||
-        type == ExerciseType.SPEAK_FLASHCARDS) {
-        val needed = if (type == ExerciseType.MATCH_AUDIO) 4 else 5
+    if (type == ExerciseType.MATCH_AUDIO || type == ExerciseType.MATCH_TEXT ||
+        type == ExerciseType.SPEAK_SET || type == ExerciseType.SPEAK_FLASHCARDS) {
+        val needed = if (type == ExerciseType.MATCH_AUDIO || type == ExerciseType.MATCH_TEXT) 4 else 5
         val choices = (listOf(phrase) + pool.shuffled())
             .distinctBy { it.tagalog.lowercase() }.take(needed)
         return Exercise(type = type, phrase = phrase, pairs = choices)
+    }
+    if (type == ExerciseType.FILL_BLANK || type == ExerciseType.COMPLETE_SENTENCE ||
+        type == ExerciseType.LISTEN_MISSING) {
+        val words = phrase.tagalog.replace(Regex("[?.!,]"), "")
+            .split(Regex("\\s+")).filter { it.isNotBlank() }
+        val blanks = if (type == ExerciseType.COMPLETE_SENTENCE) 2 else 1
+        if (words.size < blanks + 1) return createExercise(ExerciseType.CHOOSE_ENGLISH, phrase, pool)
+        val first = if (blanks == 2) (words.size - 2).coerceAtLeast(0)
+            else if (words.size > 2) words.size / 2 else words.lastIndex
+        val missing = words.subList(first, first + blanks)
+        val shown = words.mapIndexed { i, word ->
+            if (i in first until first + blanks) "_____" else word
+        }.joinToString(" ")
+        val poolWords = pool.flatMap { it.tagalog.replace(Regex("[?.!,]"), "")
+            .split(Regex("\\s+")) }.filter { it.isNotBlank() && it !in missing }
+            .distinct().shuffled().take(if (blanks == 1) 3 else 4)
+        return if (type == ExerciseType.COMPLETE_SENTENCE) Exercise(
+            type, phrase, tiles = (missing + poolWords).shuffled().mapIndexed { i, w -> WordTile(w, i) },
+            promptText = shown, blankWord = missing.joinToString(" ")
+        ) else Exercise(type, phrase, answers = (missing + poolWords).shuffled(),
+            promptText = shown, blankWord = missing.joinToString(" "))
     }
     if (type == ExerciseType.WORD_BANK) {
         val tokens = phrase.tagalog.replace(Regex("[?.!,]"), "")
@@ -63,8 +142,7 @@ private fun createExercise(
         return Exercise(type, phrase,
             tiles = (tokens + wrong).shuffled().mapIndexed { i, word -> WordTile(word, i) })
     }
-    if (type == ExerciseType.TYPE_TAGALOG || type == ExerciseType.SPEAK_TAGALOG ||
-        type == ExerciseType.IMAGE_FLASHCARD) {
+    if (type in setOf(ExerciseType.TYPE_TAGALOG, ExerciseType.TYPE_HEARD, ExerciseType.SPEAK_TAGALOG, ExerciseType.IMAGE_FLASHCARD)) {
         return Exercise(type, phrase)
     }
     val tagalogOptions = type == ExerciseType.CHOOSE_TAGALOG ||
@@ -79,32 +157,42 @@ private fun createExercise(
         scene = scene, speaker = speaker)
 }
 
+/** Every path node is an ordinary lesson. Exercise families are mixed each run,
+ *  including speaking, listening, translation, grammar, and short conversations.
+ *  Written production is Tagalog-only; English is learned through choice and word banks.
+ */
 fun lessonExercises(lesson: Lesson, round: Int = 1): List<Exercise> {
     val unit = course.first { parent -> parent.lessons.any { it.id == lesson.id } }
     val pool = unit.lessons.flatMap { it.phrases }
-    val plans = listOf(
-        listOf(ExerciseType.CHOOSE_TAGALOG, ExerciseType.CHOOSE_ENGLISH,
-            ExerciseType.LISTEN, ExerciseType.WORD_BANK, ExerciseType.CHOOSE_TAGALOG,
-            ExerciseType.CHOOSE_ENGLISH),
-        listOf(ExerciseType.MATCH_AUDIO, ExerciseType.CHOOSE_ENGLISH,
-            ExerciseType.WORD_BANK, ExerciseType.LISTEN, ExerciseType.CHOOSE_TAGALOG,
-            ExerciseType.SPEAK_SET),
-        listOf(ExerciseType.SPEAK_TAGALOG, ExerciseType.WORD_BANK,
-            ExerciseType.CHOOSE_ENGLISH, ExerciseType.LISTEN,
-            ExerciseType.MATCH_AUDIO, ExerciseType.CHOOSE_TAGALOG),
-        listOf(ExerciseType.CHOOSE_TAGALOG, ExerciseType.MATCH_AUDIO,
-            ExerciseType.SPEAK_FLASHCARDS, ExerciseType.LISTEN,
-            ExerciseType.SPEAK_TAGALOG, ExerciseType.WORD_BANK)
+    val phraseOrder = lesson.phrases.shuffled()
+    val families = mutableListOf(
+        ExerciseType.CHOOSE_TAGALOG, ExerciseType.CHOOSE_ENGLISH,
+        ExerciseType.WORD_BANK, ExerciseType.FILL_BLANK,
+        ExerciseType.COMPLETE_SENTENCE, ExerciseType.LISTEN,
+        ExerciseType.LISTEN_MISSING, ExerciseType.MATCH_AUDIO,
+        ExerciseType.MATCH_TEXT, ExerciseType.TYPE_TAGALOG,
+        ExerciseType.TYPE_HEARD, ExerciseType.SPEAK_TAGALOG,
+        ExerciseType.SPEAK_SET, ExerciseType.SPEAK_FLASHCARDS,
+        ExerciseType.COMPLETE_CHAT
     )
-    val phrases = lesson.phrases.shuffled(Random(lesson.id.hashCode() * 31 + round))
-    return phrases.mapIndexed { index, phrase ->
-        val requested = plans[(round - 1).coerceIn(0, 3)][index % 6]
-        createExercise(if ((requested == ExerciseType.PICTURE_MATCH ||
-                requested == ExerciseType.IMAGE_FLASHCARD) &&
-            pictureFor(phrase.tagalog) == null) ExerciseType.CHOOSE_TAGALOG else requested,
-            phrase, if (requested in setOf(ExerciseType.MATCH_AUDIO,
-                ExerciseType.SPEAK_SET, ExerciseType.SPEAK_FLASHCARDS)) lesson.phrases
-                else if (requested == ExerciseType.PICTURE_MATCH) allPhrases else pool)
+    // In each six-question lesson, include different skills instead of only choice questions.
+    val listening = listOf(ExerciseType.LISTEN, ExerciseType.MATCH_AUDIO,
+        ExerciseType.LISTEN_MISSING, ExerciseType.TYPE_HEARD).random()
+    val production = listOf(ExerciseType.WORD_BANK, ExerciseType.TYPE_TAGALOG,
+        ExerciseType.COMPLETE_SENTENCE, ExerciseType.FILL_BLANK).random()
+    val speaking = listOf(ExerciseType.SPEAK_TAGALOG, ExerciseType.SPEAK_SET,
+        ExerciseType.SPEAK_FLASHCARDS, ExerciseType.MATCH_TEXT).random()
+    val chosen = (listOf(listening, production, speaking) +
+        families.filterNot { it in setOf(listening, production, speaking) }
+            .shuffled().take(3)).shuffled()
+    return phraseOrder.mapIndexed { index, phrase ->
+        val requested = chosen[index % chosen.size]
+        // Real conversation pairs only; otherwise use a translation question.
+        val selected = if (requested == ExerciseType.COMPLETE_CHAT)
+            lesson.phrases.firstOrNull { it.tagalog in chatPrompts } ?: phrase else phrase
+        createExercise(requested, selected,
+            if (requested in setOf(ExerciseType.MATCH_AUDIO, ExerciseType.MATCH_TEXT,
+                    ExerciseType.SPEAK_SET, ExerciseType.SPEAK_FLASHCARDS)) lesson.phrases else pool)
     }
 }
 
@@ -138,13 +226,13 @@ fun practiceExercises(
     addFrom(pool.filter { vocabulary[vocabularyKey(it)]?.level != VocabularyLevel.MASTERED }, 6)
     addFrom(pool, 6)
     val kinds = listOf(ExerciseType.CHOOSE_ENGLISH, ExerciseType.CHOOSE_TAGALOG,
-        ExerciseType.WORD_BANK, ExerciseType.LISTEN, ExerciseType.MATCH_AUDIO,
-        ExerciseType.SPEAK_TAGALOG).shuffled()
+        ExerciseType.WORD_BANK, ExerciseType.LISTEN_MISSING, ExerciseType.MATCH_AUDIO,
+        ExerciseType.FILL_BLANK).shuffled()
     return selected.values.shuffled().mapIndexed { i, phrase ->
         val kind = kinds[i % kinds.size]
         createExercise(if (kind == ExerciseType.PICTURE_MATCH && pictureFor(phrase.tagalog) == null)
             ExerciseType.CHOOSE_TAGALOG else kind, phrase,
-            if (kind in setOf(ExerciseType.MATCH_AUDIO, ExerciseType.SPEAK_SET,
+            if (kind in setOf(ExerciseType.MATCH_AUDIO, ExerciseType.MATCH_TEXT, ExerciseType.SPEAK_SET,
                 ExerciseType.SPEAK_FLASHCARDS)) pool else allPhrases)
     }
 }
@@ -212,7 +300,8 @@ fun pathActivityExercises(activity: PathActivity, completed: Set<String>): List<
     val pool = (if (learned.isEmpty()) unitPhrases else learned).distinctBy(::vocabularyKey)
     return when (activity.type) {
         PathActivityType.STORY -> storyPhraseSequence(unit).mapIndexed { index, phrase ->
-            createExercise(ExerciseType.STORY, phrase, unitPhrases,
+            createExercise(if (index % 2 == 1 && phrase.tagalog in chatPrompts)
+                ExerciseType.COMPLETE_CHAT else ExerciseType.STORY, phrase, unitPhrases,
                 scene = storyPrompts[unit.number].orEmpty()[index],
                 speaker = if (index % 2 == 0) "ANA" else "YOU")
         }

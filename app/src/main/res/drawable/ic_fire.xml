@@ -1,0 +1,16 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp" android:height="48dp"
+    android:viewportWidth="100" android:viewportHeight="100">
+    <!-- Small, rounded flame mascot: no hairline details so it survives at 24dp. -->
+    <path android:fillColor="#E96A1B"
+        android:pathData="M48,5 C58,24 79,31 82,56 C90,82 72,96 49,96 C24,96 12,78 18,58 C21,47 31,38 33,29 C37,41 45,45 47,47 C56,35 54,19 48,5 Z"/>
+    <path android:fillColor="#FFAF27"
+        android:pathData="M47,24 C54,42 72,47 73,68 C73,84 63,91 48,92 C32,92 24,80 28,66 C30,60 35,52 38,49 C38,59 45,60 48,61 C54,53 53,39 47,24 Z"/>
+    <path android:fillColor="#FFE873"
+        android:pathData="M49,55 C51,64 62,68 61,78 C60,88 54,90 47,89 C38,89 34,83 36,75 C39,71 43,64 49,55 Z"/>
+    <path android:fillColor="#653A24" android:pathData="M39,66 A3.3,4 0,1 1,39,74 A3.3,4 0,1 1,39,66 Z"/>
+    <path android:fillColor="#653A24" android:pathData="M57,66 A3.3,4 0,1 1,57,74 A3.3,4 0,1 1,57,66 Z"/>
+    <path android:strokeColor="#653A24" android:strokeWidth="2.8" android:strokeLineCap="round"
+        android:fillColor="#00000000" android:pathData="M44,79 Q49,83 54,79"/>
+    <path android:fillColor="#FFF5A8" android:pathData="M30,53 Q33,46 38,44 L35,57 Z"/>
+</vector>

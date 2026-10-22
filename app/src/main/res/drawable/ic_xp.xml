@@ -1,0 +1,12 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp" android:height="48dp"
+    android:viewportWidth="100" android:viewportHeight="100">
+    <!-- Chunky energy bolt and spark particles; legible on the XP stat card. -->
+    <path android:fillColor="#E6A800"
+        android:pathData="M52,4 Q58,2 59,12 L55,37 L74,36 Q85,36 78,47 L44,94 Q37,103 34,91 L37,62 L21,63 Q11,63 18,53 L45,11 Q48,6 52,4 Z"/>
+    <path android:fillColor="#FFD43C"
+        android:pathData="M53,4 Q58,4 56,15 L51,42 L71,40 Q78,40 74,47 L43,88 Q38,96 39,83 L42,57 L23,58 Q17,58 22,51 L47,12 Q50,6 53,4 Z"/>
+    <path android:fillColor="#FFF4B3" android:pathData="M48,15 L53,12 L49,42 L38,42 Z"/>
+    <path android:fillColor="#6EDCF5" android:pathData="M80,12 L83,20 L91,23 L83,27 L80,35 L77,27 L69,23 L77,20 Z"/>
+    <path android:fillColor="#82E4FF" android:pathData="M15,73 L17,79 L23,81 L17,83 L15,90 L13,83 L7,81 L13,79 Z"/>
+</vector>
