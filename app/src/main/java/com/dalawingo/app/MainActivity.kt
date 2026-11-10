@@ -46,7 +46,6 @@ import com.dalawingo.app.model.nextLesson
 import com.dalawingo.app.model.course
 import com.dalawingo.app.model.practiceExercises
 import com.dalawingo.app.ui.*
-import com.dalawingo.app.R
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -95,8 +94,7 @@ private data class Finish(
     val earnedQuests: List<DailyQuest>,
     val streakMilestone: Int,
     val previousRounds: Int,
-    val secondsElapsed: Int,
-    val wasPerfectBefore: Boolean
+    val secondsElapsed: Int
 )
 
 @Composable
@@ -190,8 +188,7 @@ private fun DalawingoApp() {
             running.lesson,
             running.lesson?.let { store.state.roundsFor(it.id) } ?: 0,
             running.activity, newlyClaimed, milestone, running.previousRounds,
-            ((SystemClock.elapsedRealtime() - running.startedAtMillis) / 1000L).toInt().coerceAtLeast(0),
-            running.lesson?.id in before.golden
+            ((SystemClock.elapsedRealtime() - running.startedAtMillis) / 1000L).toInt().coerceAtLeast(0)
         )
         currentRun = null
     }
@@ -201,10 +198,8 @@ private fun DalawingoApp() {
         // Only a genuinely new round gets a progress/unlock reveal.
         pathReveal = result.lesson?.let { lesson ->
             val advanced = result.roundCompleted > result.previousRounds
-            val firstPerfect = !result.wasPerfectBefore && lesson.id in store.state.golden
-            if (!advanced && !firstPerfect) return@let null
-            val nextUnlocked = if (advanced && result.previousRounds < ROUNDS_PER_LESSON &&
-                result.roundCompleted == ROUNDS_PER_LESSON)
+            if (!advanced) return@let null
+            val nextUnlocked = if (result.roundCompleted == ROUNDS_PER_LESSON)
                 nextLesson(store.state.completed)?.id else null
             val unitFinished = result.roundCompleted == ROUNDS_PER_LESSON &&
                 course.any { unit ->
@@ -217,11 +212,7 @@ private fun DalawingoApp() {
                 fromRounds = result.previousRounds,
                 toRounds = result.roundCompleted,
                 newlyUnlockedLessonId = nextUnlocked,
-                unitCompleted = unitFinished,
-                justPerfected = (firstPerfect && result.roundCompleted == ROUNDS_PER_LESSON) ||
-                    (advanced && result.previousRounds < ROUNDS_PER_LESSON &&
-                        result.roundCompleted == ROUNDS_PER_LESSON &&
-                        lesson.id in store.state.golden)
+                unitCompleted = unitFinished
             )
         }
         finished = null
@@ -314,7 +305,7 @@ private fun DalawingoApp() {
                 onLocked = ::showLocked,
                 onSelectUnit = { unit ->
                     val position = course.takeWhile { it.number != unit.number }
-                        .sumOf { 1 + it.lessons.size + 1 }
+                        .sumOf { 1 + it.lessons.size + 3 }
                     selectedUnit = null
                     tab = Tab.LESSONS
                     navigationScope.launch { pathScrollState.animateScrollToItem(position) }
@@ -392,11 +383,7 @@ private fun BottomTabs(selected: Tab, onSelect: (Tab) -> Unit) {
                     .clickable { onSelect(item) },
                 contentAlignment = Alignment.Center
             ) {
-                DalaIcon(when (item) {
-                    Tab.PLAYER -> R.drawable.ic_home
-                    Tab.LESSONS -> R.drawable.ic_book
-                    Tab.PROGRESS -> R.drawable.ic_trophy
-                }, item.label, 29.dp, color)
+                GameIcon(item.glyph, Modifier.size(27.dp), color)
             }
         }
     }

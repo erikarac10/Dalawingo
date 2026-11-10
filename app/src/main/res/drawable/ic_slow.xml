@@ -7,7 +7,7 @@
     <!-- Tail -->
     <path
         android:fillColor="#58A700"
-        android:pathData="M18,44 L5,38 Q2,37 4,41 L14,52 Z"/>
+        android:pathData="M18,44 L5,38 Q2,37 4,41 L19,52 Z"/>
 
     <!-- Back feet -->
     <path

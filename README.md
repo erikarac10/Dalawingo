@@ -1,87 +1,60 @@
 # Dalawingo 🇵🇭
 
-**A playful Android app for learning Tagalog, one lesson at a time.**
+**A Duolingo-inspired Android learning app for Tagalog.** Original name, mascot, artwork, course content, and implementation. Written in **Kotlin + Jetpack Compose**, designed for phones, and runnable without a server or a login.
 
-Dalawingo combines bite-sized language lessons with an interactive learning path, daily practice, adaptive vocabulary review, and a customizable animal companion. It's a personal project built with **Kotlin** and **Jetpack Compose**.
+## Run in Android Studio
 
-> **Work in progress.** Features and artwork are still being refined. Some graphics currently use emoji or placeholder assets, and speech recognition depends on device support.
+1. Unzip the `Dalawingo-Android-Studio.zip` archive.
+2. Open **Android Studio → Open** and select the **Dalawingo** folder (the folder containing `settings.gradle.kts`). **Do not create a second project.**
+3. Allow Gradle to sync and install missing SDK components when prompted. Java 17 or higher is required. The project targets Android SDK 36.
+4. Choose an Android emulator or your connected phone (Android 8.0 / API 26 or newer) and click the green **Run ▶** button.
 
-## Features
+The first Gradle sync requires internet access to download the Android and Compose dependencies. The **app itself works offline**.
 
-### 📚 Learn Tagalog
+### Features
 
-- **15 lessons**, with **four rounds per lesson node** and visual progress rings.
-- A Duolingo-inspired learning path with unlockable lessons, unit headers, guidebooks, and animated progress reveals.
-- Multiple-choice, word-bank, listening, speaking, audio-pair matching, speaking flashcards, and picture-based activities.
-- Optional review challenges and short scripted stories along the path.
-- Lesson results showing **XP, elapsed time, and accuracy**.
+- 🏠 **Player landing screen**: the default tab, featuring your tarsier friend, progress card, Continue button and daily quests.
+- 📚 **Learn**: colorful, zigzag lesson path with locked nodes, completed stars, and an unlock sequence.
+- 🗺️ **Units**: five expandable chapter cards. Future units unlock after completing previous lessons; each unit has a guidebook.
+- ✏️ **Interactive lessons**: choose translations, arrange Tagalog word tiles, and identify phrases spoken using Android Text-to-Speech. Every answer gives immediate feedback.
+- 💗 **Hearts**: up to five, lose one for a wrong answer. Practice earns one back; spend 50 gems for a refill, or return the next day.
+- ⚡ **XP, gems and streaks**: earned through completed lessons and practice; tracked across app launches.
+- 🎯 **Daily quests**: earn XP, finish a lesson, and practice.
+- 👤 **Profile**: change your name, see total XP / day streak / lesson count, unlock achievements and manage hearts.
+- 🇵🇭 **Tagalog only**: 5 units, 15 lessons, 90 hand-written English↔Tagalog phrase pairs.
+- 💾 **Offline save**: progress stored in Android SharedPreferences, on this device.
 
-### 🧠 Practice and progress
+### How progression works
 
-- Daily practice using vocabulary from completed lessons.
-- Adaptive review that tracks phrase-level attempts, accuracy, consecutive correct answers, and review timing.
-- Vocabulary grouped into **New, Weak, Developing, and Mastered**, with additional spaced-review scheduling.
-- XP, learning streaks, golden lesson mastery, and a **Tagalog Score** reflecting course and vocabulary progress.
+All lessons are initially locked **except the first**. Finish lesson 1 to unlock lesson 2, and so on. Complete three lessons to unlock the next unit. Finished lessons can be replayed without spending hearts. Practice uses the phrases from lessons you've learned, or early-course phrases if you are new. Daily streaks advance when you finish a lesson or practice on consecutive calendar days.
 
-### 🏆 Quests and rewards
+### Listening exercises
 
-- Three rotating daily quests with **Bronze, Silver, and Gold** rewards.
-- **25 Pesos** for the first completed daily-practice session each day.
-- Pesos earned from lessons, perfect scores, unit completion, quests, and achievements.
-- Claimable achievements with unlock conditions, progress, dates, and rewards.
-- Timed XP boosts that can be saved and activated later.
+Dalawingo asks Android's Text-to-Speech engine to pronounce Tagalog. Whether Tagalog speech is available depends on the TTS voices installed on your device. All listening questions include **SHOW TEXT INSTEAD**, so nothing is blocked if your device has no Tagalog voice.
 
-### 🐾 Companion and customization
-
-- A customizable animal companion on the Player tab.
-- A shop and wardrobe for pets, clothing, accessories, and backgrounds.
-- Cosmetic purchases and achievement-exclusive unlocks saved locally.
-
-## App navigation
-
-| Screen | Purpose |
-| --- | --- |
-| **Player** | Animal companion, Pesos wallet, featured Daily Practice, and daily quests |
-| **Learn** | Learning path, lesson rounds, guidebooks, and bonus activities |
-| **Progress** | Learning statistics, vocabulary mastery, achievements, and boosts |
-
-The app uses an icon-only bottom navigation bar. Units and guidebooks open from the Learn path rather than separate bottom tabs.
-
-## Built with
-
-- **Kotlin**
-- **Jetpack Compose** for Android UI
-- Android text-to-speech and speech-recognition APIs for audio activities
-- **SharedPreferences** for on-device progress, rewards, and customization data
-
-## Getting started
-
-1. Clone or download the repository.
-2. Open the project folder in **Android Studio**.
-3. Let Gradle sync and install any SDK components Android Studio requests.
-4. Run the `app` configuration on an Android emulator or device.
-5. Grant microphone access when prompted if you want to use speaking activities.
-
-For speaking exercises, use a device or emulator with a speech-recognition service that supports Filipino/Tagalog. Audio behavior may differ between devices.
-
-## Project structure
+### Project map
 
 ```text
-app/src/main/
-├── AndroidManifest.xml
-└── java/com/dalawingo/app/
-    ├── MainActivity.kt       # Navigation and game flow
-    ├── data/                 # Persistent learner progress and rewards
-    ├── model/                # Course content, exercises, quests, achievements
-    └── ui/                   # Compose screens, minigames, and components
+app/src/main/java/com/dalawingo/app/
+  MainActivity.kt              App navigation / session flow
+  model/Course.kt              Tagalog course content + lesson unlocks
+  model/ExerciseFactory.kt     Question generation
+  data/ProgressStore.kt        Device-only saved progress, XP and streaks
+  ui/Theme.kt                  Colors
+  ui/Components.kt             Buttons, cards, custom tarsier mascot
+  ui/HomeScreen.kt             Player dashboard + quests
+  ui/PathScreen.kt             Learning path
+  ui/UnitsScreen.kt            Expandable units + vocabulary guidebook
+  ui/LessonScreen.kt           Interactive exercise / results screens
+  ui/ProfileScreen.kt          Stats and achievements
 ```
 
-## In progress
+Tests: `app/src/test/java/com/dalawingo/app/model/CourseTest.kt`. Run `./gradlew testDebugUnitTest` or select **Run Tests** in Android Studio.
 
-- Replacing placeholder emojis and graphics with a consistent custom icon and character-art system.
-- Refining animations, lesson interactions, and responsive layouts.
-- Testing speech recognition, accessibility, and Android device compatibility.
+### Build setup
 
-## Note
+- Android Gradle Plugin 8.13.2, Gradle 8.13, Kotlin 2.2.21, Compose BOM 2026.04.01.
+- The included `gradle-wrapper.jar` is a **small self-contained Gradle bootstrap launcher** whose Java source is at `build-support/GradleWrapperMain.java`. It downloads the pinned official Gradle distribution during first sync and then invokes it. For a conventional official Gradle wrapper, run `gradle wrapper --gradle-version 8.13` from the project directory once Gradle is installed.
+- Android Studio can generate an APK: **Build → Build Bundle(s) / APK(s) → Build APK(s)**.
 
-Dalawingo is an independent learning project inspired by the approachable, game-like design of language-learning apps such as Duolingo. It is **not affiliated with or endorsed by Duolingo**.
+**Scope**: A playable, offline, single-player Duolingo-style clone; not the commercial Duolingo app or its copyrighted assets. There is no login, cloud sync, server leaderboard, paid shop, or remotely generated lessons.

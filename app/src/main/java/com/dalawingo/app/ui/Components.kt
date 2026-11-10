@@ -4,16 +4,6 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.interaction.collectIsPressedAsState
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
-import androidx.compose.runtime.rememberCoroutineScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -33,7 +23,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.dalawingo.app.R
 
 @Composable
 fun DalaButton(
@@ -45,48 +34,23 @@ fun DalaButton(
     enabled: Boolean = true,
     textColor: Color = Color.White
 ) {
-    val interaction = remember { MutableInteractionSource() }
-    val pressed by interaction.collectIsPressedAsState()
-    var clicking by remember { mutableStateOf(false) }
-    val scope = rememberCoroutineScope()
     Box(
         modifier = modifier
             .height(57.dp)
             .clip(RoundedCornerShape(17.dp))
             .background(if (enabled) pressedColor else Border)
-            .clickable(enabled = enabled, interactionSource = interaction, indication = null) {
-                if (!clicking) {
-                    clicking = true
-                    scope.launch {
-                        delay(115)
-                        clicking = false
-                        onClick()
-                    }
-                }
-            }
+            .clickable(enabled = enabled, onClick = onClick)
     ) {
         Box(
             modifier = Modifier
-                .offset(y = if (pressed || clicking) 4.dp else 0.dp)
                 .fillMaxWidth()
                 .height(53.dp)
                 .clip(RoundedCornerShape(16.dp))
                 .background(if (enabled) color else Color(0xFFE9E9E9)),
             contentAlignment = Alignment.Center
         ) {
-            Row(verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.Center) {
-                Text(text.replace("→", "").trim().uppercase(),
-                    fontWeight = FontWeight.ExtraBold,
-                    color = if (enabled) textColor else Muted,
-                    letterSpacing = 0.6.sp, fontSize = 15.sp,
-                    textAlign = TextAlign.Center, maxLines = 1)
-                if ('→' in text) {
-                    Spacer(Modifier.width(7.dp))
-                    DalaIcon(R.drawable.ic_arrow_right, null, 17.dp,
-                        if (enabled) textColor else Muted)
-                }
-            }
+            Text(text.uppercase(), fontWeight = FontWeight.ExtraBold, color = if (enabled) textColor else Muted,
+                letterSpacing = 0.6.sp, fontSize = 15.sp, textAlign = TextAlign.Center)
         }
     }
 }
@@ -118,10 +82,7 @@ fun SurfaceCard(modifier: Modifier = Modifier, content: @Composable ColumnScope.
 fun ProgressLine(progress: Float, color: Color = Leaf, modifier: Modifier = Modifier, height: androidx.compose.ui.unit.Dp = 13.dp) {
     Box(modifier = modifier.height(height).clip(CircleShape).background(Color(0xFFE6E6E6))) {
         Box(modifier = Modifier.fillMaxHeight().fillMaxWidth(progress.coerceIn(0f, 1f))
-            .clip(CircleShape).background(color)) {
-            Box(Modifier.fillMaxWidth().fillMaxHeight(.25f).padding(horizontal = 6.dp)
-                .background(Color.White.copy(alpha = .28f), CircleShape))
-        }
+            .clip(CircleShape).background(color))
     }
 }
 
@@ -144,11 +105,7 @@ fun StatChip(symbol: String, count: String, color: Color, onClick: (() -> Unit)?
         .then(if (onClick != null) Modifier.clickable(onClick = onClick) else Modifier)
         .padding(horizontal = 7.dp, vertical = 9.dp),
         verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(4.dp)) {
-        when (symbol) {
-            "🔥" -> DalaIcon(com.dalawingo.app.R.drawable.ic_fire, "Streak", 21.dp, color)
-            "🪙" -> DalaIcon(com.dalawingo.app.R.drawable.ic_peso_coin, "Pesos", 24.dp)
-            else -> Text(symbol, fontSize = 20.sp)
-        }
+        Text(symbol, fontSize = 20.sp)
         Text(count, color = color, fontWeight = FontWeight.ExtraBold, fontSize = 16.sp)
     }
 }
